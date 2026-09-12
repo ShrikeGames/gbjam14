@@ -1,0 +1,31 @@
+//Music 1
+setcpm(32)
+
+$: note("<[0 2 4 2] [5 4 2 4] [2 4 6 4] [6 4 2 4] [7 6 4 2] [5 4 5 7] [3 5 7 5] [0 2 4 2] [5 4 2 4] [2 4 6 4] [6 4 2 4] [7 6 4 2] [5 4 5 7] [3 5 7 5] [4 2 4 0] >")
+  .scale("A2:minor")
+  .sound("gm_acoustic_bass").ply("<2 1 1 1>")
+  .gain(.7)
+
+$: note("<[a1 a2] [f1 f2] [c1 c2] [g1 g2] [a1 a2] [f1 f2] [d1 d2] [a1 a2] [f1 f2] [c1 c2] [g1 g2] [a1 a2] [f1 f2] [d1 d2] [e1 e2]>")
+  .scale("A2:minor")
+  .sound("gm_piano")
+  .gain(.3)
+
+$: note("<[a3,c3,e3] [f3,a3,c3] [c3,e3,g3] [g3,b3,d3] [a3,c3,e3] [f3,a3,c3] [d3,f3,a3] [a3,c3,e3] [f3,a3,c3] [c3,e3,g3] [g3,b3,d3] [a3,c3,e3] [f3,a3,c3] [d3,f3,a3] [e3,g3,b3]>")
+  .scale("A2:minor")
+  .sound("piano")
+  .gain(.3)
+
+// SFX
+setcpm(4)
+
+$: note("<[0 ~ 1 ~ 2 ~ 3 ~ 4 ~ 5 ~ 6 ~ 7 ~ 8]>")
+  .sound("casio")
+  .gain(.7)
+
+setcpm(4)
+
+$: note("<[0 ~ 1 ~ 2 ~ 3 ~ 4 ~ 5 ~ 6 ~ 7 ~ 8]>")
+  .scale("A2:minor")
+  .sound("casio")
+  .gain(.7)

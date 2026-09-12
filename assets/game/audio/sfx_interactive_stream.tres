@@ -1,0 +1,106 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://cadp15jvpjsmy"]
+
+[ext_resource type="AudioStream" uid="uid://pysc1obmklo6" path="res://assets/game/audio/sfx/beep0.mp3" id="1_qhkgc"]
+[ext_resource type="AudioStream" uid="uid://wfnttmob8j7w" path="res://assets/game/audio/sfx/beep1.mp3" id="2_d0b30"]
+[ext_resource type="AudioStream" uid="uid://crw8dxgtcwy0s" path="res://assets/game/audio/sfx/casio1.mp3" id="3_ovjpd"]
+[ext_resource type="AudioStream" uid="uid://4n0kah2autkr" path="res://assets/game/audio/sfx/casio2.mp3" id="4_0xhoo"]
+[ext_resource type="AudioStream" uid="uid://6ren0sec0fcj" path="res://assets/game/audio/sfx/casio3.mp3" id="5_sod2m"]
+[ext_resource type="AudioStream" uid="uid://bdyf1ljyoo5us" path="res://assets/game/audio/sfx/jazz0.mp3" id="6_y3sxu"]
+[ext_resource type="AudioStream" uid="uid://bstcupvjmgxqo" path="res://assets/game/audio/sfx/jazz1.mp3" id="7_uu4ei"]
+[ext_resource type="AudioStream" uid="uid://d3g2y3nmsshk" path="res://assets/game/audio/sfx/jazz2.mp3" id="8_2jx20"]
+[ext_resource type="AudioStream" uid="uid://b77pyxww1x7a5" path="res://assets/game/audio/sfx/jazz3.mp3" id="9_qbycp"]
+[ext_resource type="AudioStream" uid="uid://cs24bmq064wx0" path="res://assets/game/audio/sfx/jazz4.mp3" id="10_yugu5"]
+[ext_resource type="AudioStream" uid="uid://dsir6niwt10rm" path="res://assets/game/audio/sfx/jazz5.mp3" id="11_dmlly"]
+[ext_resource type="AudioStream" uid="uid://bu1r7mciexwsy" path="res://assets/game/audio/sfx/jazz6.mp3" id="12_d3dk8"]
+[ext_resource type="AudioStream" uid="uid://coq3jxhmpak70" path="res://assets/game/audio/sfx/beep2.mp3" id="13_7mgdv"]
+[ext_resource type="AudioStream" uid="uid://dxa40cn02jkha" path="res://assets/game/audio/sfx/jazz7.mp3" id="14_bpln3"]
+[ext_resource type="AudioStream" uid="uid://chph8fj22ivm4" path="res://assets/game/audio/sfx/jazz8.mp3" id="15_cr8lp"]
+[ext_resource type="AudioStream" uid="uid://dubgf8125812q" path="res://assets/game/audio/silence.mp3" id="16_nq31i"]
+[ext_resource type="AudioStream" uid="uid://d323urmlq67he" path="res://assets/game/audio/sfx/beep3.mp3" id="17_5uq8s"]
+[ext_resource type="AudioStream" uid="uid://btxopwfswvf6v" path="res://assets/game/audio/sfx/beep4.mp3" id="18_acira"]
+[ext_resource type="AudioStream" uid="uid://drnsrb00ts5c2" path="res://assets/game/audio/sfx/beep5.mp3" id="19_eal58"]
+[ext_resource type="AudioStream" uid="uid://cblrwvk8jekff" path="res://assets/game/audio/sfx/beep6.mp3" id="20_sopns"]
+[ext_resource type="AudioStream" uid="uid://dw6y6mxbt7ylp" path="res://assets/game/audio/sfx/beep7.mp3" id="21_clgkm"]
+[ext_resource type="AudioStream" uid="uid://xsxldd5r57wm" path="res://assets/game/audio/sfx/beep8.mp3" id="22_f31qs"]
+[ext_resource type="AudioStream" uid="uid://cr7x0rut2rp4i" path="res://assets/game/audio/sfx/casio0.mp3" id="23_nc40l"]
+
+[resource]
+clip_count = 23
+clip_0/name = &"Beep 0"
+clip_0/stream = ExtResource("1_qhkgc")
+clip_0/auto_advance = 0
+clip_1/name = &"Beep 1"
+clip_1/stream = ExtResource("2_d0b30")
+clip_1/auto_advance = 0
+clip_2/name = &"Beep 2"
+clip_2/stream = ExtResource("13_7mgdv")
+clip_2/auto_advance = 0
+clip_3/name = &"Beep 3"
+clip_3/stream = ExtResource("17_5uq8s")
+clip_3/auto_advance = 0
+clip_4/name = &"Beep 4"
+clip_4/stream = ExtResource("18_acira")
+clip_4/auto_advance = 0
+clip_5/name = &"Beep 5"
+clip_5/stream = ExtResource("19_eal58")
+clip_5/auto_advance = 0
+clip_6/name = &"Beep 6"
+clip_6/stream = ExtResource("20_sopns")
+clip_6/auto_advance = 0
+clip_7/name = &"Beep 7"
+clip_7/stream = ExtResource("21_clgkm")
+clip_7/auto_advance = 0
+clip_8/name = &"Beep 8"
+clip_8/stream = ExtResource("22_f31qs")
+clip_8/auto_advance = 0
+clip_9/name = &"Casio 0"
+clip_9/stream = ExtResource("23_nc40l")
+clip_9/auto_advance = 0
+clip_10/name = &"Casio 1"
+clip_10/stream = ExtResource("3_ovjpd")
+clip_10/auto_advance = 0
+clip_11/name = &"Casio 2"
+clip_11/stream = ExtResource("4_0xhoo")
+clip_11/auto_advance = 0
+clip_12/name = &"Casio 3"
+clip_12/stream = ExtResource("5_sod2m")
+clip_12/auto_advance = 0
+clip_13/name = &"Jazz 0"
+clip_13/stream = ExtResource("6_y3sxu")
+clip_13/auto_advance = 0
+clip_14/name = &"Jazz 1"
+clip_14/stream = ExtResource("7_uu4ei")
+clip_14/auto_advance = 0
+clip_15/name = &"Jazz 2"
+clip_15/stream = ExtResource("8_2jx20")
+clip_15/auto_advance = 0
+clip_16/name = &"Jazz 3"
+clip_16/stream = ExtResource("9_qbycp")
+clip_16/auto_advance = 0
+clip_17/name = &"Jazz 4"
+clip_17/stream = ExtResource("10_yugu5")
+clip_17/auto_advance = 0
+clip_18/name = &"Jazz 5"
+clip_18/stream = ExtResource("11_dmlly")
+clip_18/auto_advance = 0
+clip_19/name = &"Jazz 6"
+clip_19/stream = ExtResource("12_d3dk8")
+clip_19/auto_advance = 0
+clip_20/name = &"Jazz 7"
+clip_20/stream = ExtResource("14_bpln3")
+clip_20/auto_advance = 0
+clip_21/name = &"Jazz 8"
+clip_21/stream = ExtResource("15_cr8lp")
+clip_21/auto_advance = 0
+clip_22/name = &"Silence"
+clip_22/stream = ExtResource("16_nq31i")
+clip_22/auto_advance = 0
+initial_clip = 22
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 0.0,
+"fade_mode": 2,
+"from_time": 3,
+"to_time": 1
+}
+}

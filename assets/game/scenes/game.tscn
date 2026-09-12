@@ -3,10 +3,21 @@
 [ext_resource type="Script" uid="uid://ddnync1521sh" path="res://assets/game/scripts/camera.gd" id="1_aif40"]
 [ext_resource type="Script" uid="uid://blg6wtrow3dfx" path="res://assets/game/scripts/terrain_manager.gd" id="2_fxu02"]
 [ext_resource type="PackedScene" uid="uid://p20k4gsg37ib" path="res://assets/game/scenes/player.tscn" id="3_fxu02"]
+[ext_resource type="Script" uid="uid://d0d8gb6w7onrh" path="res://assets/game/scripts/shop.gd" id="4_2v020"]
 [ext_resource type="Script" uid="uid://ctviwct0qvcb8" path="res://assets/game/scripts/ui.gd" id="4_3blqa"]
 [ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="4_aif40"]
 [ext_resource type="Script" uid="uid://d0y04eoyvxm5" path="res://assets/game/scripts/hide_timer.gd" id="6_fy400"]
 [ext_resource type="Texture2D" uid="uid://d4k5ohuch75aw" path="res://assets/game/images/shop.png" id="7_7sfe6"]
+[ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="8_hihoh"]
+[ext_resource type="Script" uid="uid://blfyka1gcotly" path="res://assets/system/scripts/main_menu.gd" id="8_oo18y"]
+[ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="9_wyj15"]
+[ext_resource type="Script" uid="uid://bptaiagbxx83e" path="res://assets/game/scripts/shop_menu.gd" id="11_w05n1"]
+[ext_resource type="Material" uid="uid://6o1uy33vqh3x" path="res://pallet_swap_1.tres" id="13_koqv6"]
+[ext_resource type="Script" uid="uid://2wikfjfkr5wv" path="res://assets/game/scripts/pallet_swapper.gd" id="14_koqv6"]
+[ext_resource type="AudioStream" uid="uid://3jo4jfvh42fl" path="res://assets/game/audio/music_interactive_stream.tres" id="15_koqv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w05n1"]
+size = Vector2(51, 44)
 
 [node name="Game" type="Node2D" unique_id=1964057340]
 
@@ -20,28 +31,36 @@ player = NodePath("../Player")
 [node name="TerrainManager" type="Node2D" parent="." unique_id=712860163]
 script = ExtResource("2_fxu02")
 
-[node name="Shop" type="Sprite2D" parent="." unique_id=2020397157]
-position = Vector2(192, 48)
+[node name="Shop" type="Sprite2D" parent="." unique_id=2020397157 node_paths=PackedStringArray("shop_menu")]
+position = Vector2(192, 128)
 texture = ExtResource("7_7sfe6")
+script = ExtResource("4_2v020")
+shop_menu = NodePath("../UI/ShopMenu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Shop" unique_id=811107758]
 custom_minimum_size = Vector2(102, 0)
-offset_left = -64.0
-offset_top = -21.0
-offset_right = 64.0
-offset_bottom = 19.0
+offset_left = -24.0
+offset_top = 2.0
+offset_right = 104.0
+offset_bottom = 42.0
 size_flags_horizontal = 3
 theme = ExtResource("4_aif40")
-text = "Placeholder
-Shop"
+text = "Shop"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player" parent="." unique_id=447483926 node_paths=PackedStringArray("friends_container") instance=ExtResource("3_fxu02")]
+[node name="Area2D" type="Area2D" parent="Shop" unique_id=1893526719]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Area2D" unique_id=2037297965]
+position = Vector2(38.5, 10)
+shape = SubResource("RectangleShape2D_w05n1")
+
+[node name="Player" parent="." unique_id=447483926 node_paths=PackedStringArray("friends_container", "sfx_player") instance=ExtResource("3_fxu02")]
 position = Vector2(80, 59)
 friends_container = NodePath("../Friends")
+sfx_player = NodePath("../SFXPlayer")
 
 [node name="Friends" type="Node2D" parent="." unique_id=77677285]
 
@@ -57,7 +76,6 @@ friend_increment_text = NodePath("IncrementalTextContainer/FriendCount")
 offset_top = 128.0
 offset_right = 160.0
 offset_bottom = 144.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="UI/CenterContainer" unique_id=925349514]
@@ -71,7 +89,6 @@ offset_left = 8.0
 offset_top = 128.0
 offset_right = 152.0
 offset_bottom = 144.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("4_aif40")
 
@@ -100,7 +117,6 @@ offset_left = 112.0
 offset_top = 120.0
 offset_right = 228.0
 offset_bottom = 136.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("4_aif40")
 
@@ -127,7 +143,6 @@ offset_left = 47.0
 offset_top = 120.0
 offset_right = 163.0
 offset_bottom = 136.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("4_aif40")
 
@@ -149,5 +164,113 @@ target = NodePath("..")
 player = NodePath("../../../../Player")
 listen_id = 1
 
+[node name="MainMenu" type="CenterContainer" parent="UI" unique_id=2043568747 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(160, 0)
+offset_right = 160.0
+offset_bottom = 28.0
+theme = ExtResource("4_aif40")
+script = ExtResource("8_oo18y")
+menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Rows/Options")]
+sfx_player = NodePath("MenuSFXPlayer")
+other_menus = [NodePath("../ShopMenu")]
+
+[node name="Rows" type="VBoxContainer" parent="UI/MainMenu" unique_id=2089598964]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="RichTextLabel" parent="UI/MainMenu/Rows" unique_id=2082585300]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Menu"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" parent="UI/MainMenu/Rows" unique_id=596866353 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Continue"
+
+[node name="NewGame" parent="UI/MainMenu/Rows" unique_id=1893686181 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "New Game"
+
+[node name="Options" parent="UI/MainMenu/Rows" unique_id=2139197802 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Options"
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/MainMenu" unique_id=874919071]
+stream = ExtResource("9_wyj15")
+bus = &"SFX"
+
+[node name="ShopMenu" type="CenterContainer" parent="UI" unique_id=1705642188 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(160, 0)
+offset_right = 160.0
+offset_bottom = 28.0
+theme = ExtResource("4_aif40")
+script = ExtResource("11_w05n1")
+menu_items = [NodePath("Rows/Recall"), NodePath("Rows/Friend"), NodePath("Rows/Close")]
+sfx_player = NodePath("MenuSFXPlayer")
+other_menus = [NodePath("../MainMenu")]
+
+[node name="Rows" type="VBoxContainer" parent="UI/ShopMenu" unique_id=701241635]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="RichTextLabel" parent="UI/ShopMenu/Rows" unique_id=1173544830]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Shop"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recall" parent="UI/ShopMenu/Rows" unique_id=1137546451 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Recall $1"
+
+[node name="Friend" parent="UI/ShopMenu/Rows" unique_id=1896859361 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Friend $5"
+
+[node name="Close" parent="UI/ShopMenu/Rows" unique_id=2071106376 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Close"
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/ShopMenu" unique_id=1554509958]
+stream = ExtResource("9_wyj15")
+bus = &"SFX"
+
+[node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=1665316771 node_paths=PackedStringArray("player", "music_player")]
+visible = false
+material = ExtResource("13_koqv6")
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+script = ExtResource("14_koqv6")
+player = NodePath("../../Player")
+depth_palettes = Array[PackedVector3Array]([PackedVector3Array(0.02, 0.031, 0.137, 0.141, 0.172, 0.418, 0.402, 0.438, 0.707, 0.758, 0.785, 0.984), PackedVector3Array(0.52, 0.031, 0.137, 0.641, 0.172, 0.418, 0.902, 0.438, 0.707, 0.758, 0.785, 0.984), PackedVector3Array(0.27, 0.531, 0.137, 0.391, 0.672, 0.418, 0.652, 0.938, 0.707, 1, 1, 0.984)])
+music_player = NodePath("../../MusicPlayer")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=352336139]
+stream = ExtResource("15_koqv6")
+autoplay = true
+bus = &"Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1978715075]
+stream = ExtResource("9_wyj15")
+bus = &"SFX"
+
+[connection signal="body_entered" from="Shop/Area2D" to="Shop" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="UI/IncrementalTextContainer/FriendCount/Timer" to="UI/IncrementalTextContainer/FriendCount/Timer" method="_on_timeout"]
 [connection signal="timeout" from="UI/IncrementalTextContainer2/Gold/Timer" to="UI/IncrementalTextContainer2/Gold/Timer" method="_on_timeout"]

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://6o1uy33vqh3x"]
+
+[ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="1_3yrmo"]
+
+[resource]
+shader = ExtResource("1_3yrmo")
+shader_parameter/palette = PackedVector3Array(0.02, 0.031, 0.137, 0.141, 0.172, 0.418, 0.402, 0.438, 0.707, 0.758, 0.785, 0.984)
+shader_parameter/shader_active = true

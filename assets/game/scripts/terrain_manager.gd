@@ -5,7 +5,11 @@ extends Node2D
 @export var map_height:int = 90
 @export var tile_width:int = 16
 @export var tile_height:int = 16
-
+var tiles_by_depth:Array[Array]=[
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3],
+	[1,1,1,1,1,1,1,1,1,2,2,4,3,0,0,0,0],
+	[1,1,1,1,1,1,1,2,2,2,4,4,3,3,3,2,2],
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +17,7 @@ func _ready() -> void:
 	for y in range(0, map_height):
 		for x in range(0, map_width):
 			
-			if y == 5 and x > 6 and x < 17:
+			if y == 10 and x > 6 and x < 17:
 				tile_type = 2
 				_create_tile(x*tile_width, y*tile_height, tile_type)
 				continue
@@ -22,9 +26,10 @@ func _ready() -> void:
 				tile_type = 2
 				_create_tile(x*tile_width, y*tile_height, tile_type)
 			elif y > map_height * 0.1:
-				var tiles:Array[int] = [1,1,1,1,1,1,1,1,1,2,3]
+				var tiles:Array = tiles_by_depth[int(y/32.0)]
 				tile_type = tiles.pick_random()
-				_create_tile(x*tile_width, y*tile_height, tile_type)
+				if tile_type != 0:
+					_create_tile(x*tile_width, y*tile_height, tile_type)
 			
 				
 

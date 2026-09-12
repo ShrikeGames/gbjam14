@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bhp0kju8n8dip"]
+
+[ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="1_4ku00"]
+[ext_resource type="Script" uid="uid://dfpwre7drxhvu" path="res://assets/system/scripts/menu_item.gd" id="2_josiq"]
+
+[node name="MenuItem" type="CenterContainer" unique_id=596866353 node_paths=PackedStringArray("selected_indicator", "menu_option")]
+offset_right = 160.0
+offset_bottom = 16.0
+theme = ExtResource("1_4ku00")
+script = ExtResource("2_josiq")
+selected_indicator = NodePath("Selected")
+menu_option = NodePath("MenuOption")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1610376284]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+color = Color(0.40392157, 0.4392157, 0.70980394, 1)
+
+[node name="Selected" type="CenterContainer" parent="." unique_id=233539329]
+visible = false
+layout_mode = 2
+
+[node name="SelectedColourBG" type="ColorRect" parent="Selected" unique_id=1328986115]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+color = Color(0.14117648, 0.17254902, 0.41960785, 1)
+
+[node name="Selected" type="GridContainer" parent="Selected" unique_id=1605577194]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SelectedLeft" type="RichTextLabel" parent="Selected/Selected" unique_id=1765459804]
+clip_contents = false
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = ">"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Filler" type="RichTextLabel" parent="Selected/Selected" unique_id=648246102]
+clip_contents = false
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="SelectedRight" type="RichTextLabel" parent="Selected/Selected" unique_id=1001661336]
+clip_contents = false
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "<"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="MenuOption" type="RichTextLabel" parent="." unique_id=2141551608]
+clip_contents = false
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Game"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

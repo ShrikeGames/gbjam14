@@ -10,13 +10,23 @@ signal friend_count_changed
 @export var max_friends:int = 2
 var current_friends:int = 0
 
+@export var sfx_player:AudioStreamPlayer
+
 var movement:Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var audio_stream_player_stream = preload("res://assets/game/audio/sfx_interactive_stream.tres")
+	sfx_player.stream = audio_stream_player_stream
+	sfx_player.play()
 	
-	pass # Replace with function body.
-
+	Global.recall_friends.connect(_recall_friends)
+	Global.add_friend.connect(_add_friend)
+	
+func _add_friend():
+	max_friends += 1
+	friend_count_changed.emit(current_friends, max_friends, 1)
+	
 func _process(_delta: float) -> void:
 	movement = Vector2.ZERO
 	
@@ -28,6 +38,7 @@ func _process(_delta: float) -> void:
 		movement.y -= lift_speed
 	if Input.is_action_just_pressed("DOWN"):
 		drill.drill_down()
+		Global.play_audio_clip(sfx_player, "Beep 5")
 	if Input.is_action_just_released("DOWN"):
 		drill.stop_drill()
 	if Input.is_action_just_pressed("A"):
@@ -52,23 +63,34 @@ func _spawn_friend(direction:int = 1):
 		return
 	
 	var friend:Friend = Global.friend.instantiate()
-	friend.position = self.global_position
+	friend.global_position = self.global_position
 	friend.direction = direction
 	friends_container.add_child(friend)
 
+func _recall_friends():
+	for friend in friends_container.get_children():
+		if is_instance_of(friend, Friend):
+			_recall_friend(friend)
 
+func _recall_friend(friend:Friend):
+	if friend.worth > 0:
+		Global.play_audio_clip(sfx_player, "Beep 8")
+		Global.save_data["gold"] += friend.worth
+		Global.gold_changed.emit(Global.save_data["gold"], friend.worth)
+	friend.get_parent().remove_child(friend)
+	current_friends -= 1
+	friend_count_changed.emit(current_friends, max_friends, 1)
 
 func _on_collection_area_body_entered(body: Node2D) -> void:
 	if not is_instance_of(body, Friend) and not is_instance_of(body, Item):
 		return
 	if is_instance_of(body, Friend) and body.lifetime >= 3.0:
-		if body.worth > 0:
-			Global.save_data["gold"] += body.worth
-			Global.gold_changed.emit(Global.save_data["gold"], body.worth)
-		body.get_parent().remove_child(body)
-		current_friends -= 1
-		friend_count_changed.emit(current_friends, max_friends, 1)
+		_recall_friend(body)
 	if is_instance_of(body, Item):
+		Global.play_audio_clip(sfx_player, "Beep 5")
 		Global.save_data["gold"] += body.worth
 		Global.gold_changed.emit(Global.save_data["gold"], body.worth)
 		body.get_parent().remove_child(body)
+
+func _on_body_entered(_body: Node) -> void:
+	Global.play_audio_clip(sfx_player, "Beep 0")

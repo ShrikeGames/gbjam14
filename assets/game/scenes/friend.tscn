@@ -2,52 +2,163 @@
 
 [ext_resource type="Script" uid="uid://h5imghmc8gf7" path="res://assets/game/scripts/friend.gd" id="1_g0x56"]
 [ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_m6sa4"]
-[ext_resource type="Texture2D" uid="uid://cwf3qao0kxo0j" path="res://assets/game/images/friend.png" id="2_m6sa4"]
 [ext_resource type="PackedScene" uid="uid://bvmqw4eocixc7" path="res://assets/game/scenes/drill.tscn" id="4_tyc6d"]
+[ext_resource type="PackedScene" uid="uid://buy2dqnuthgfl" path="res://assets/game/scenes/friend/friend_leg_segment.tscn" id="5_4uwhj"]
+[ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="5_qv1gp"]
+[ext_resource type="Texture2D" uid="uid://civuhjsm08buf" path="res://assets/game/images/friend/friend_head.png" id="6_4ldn5"]
+[ext_resource type="Script" uid="uid://dr74c40xu0otj" path="res://assets/game/scripts/arm_ray_cast.gd" id="6_6vh0g"]
+[ext_resource type="Script" uid="uid://d3k37dg6aqrv2" path="res://assets/game/scripts/target_from_ray_cast.gd" id="7_4ldn5"]
+[ext_resource type="Texture2D" uid="uid://rq23mu3shj8m" path="res://assets/game/images/friend/friend_eye.png" id="8_micnu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tyc6d"]
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qv1gp"]
-radius = 7.071068
+radius = 4.1231055
 
-[node name="Friend" type="RigidBody2D" unique_id=457346670 node_paths=PackedStringArray("drill1", "drill2")]
+[node name="Friend" type="RigidBody2D" unique_id=457346670 node_paths=PackedStringArray("drill1", "drill2", "sfx_player", "eyes")]
 collision_layer = 4
 collision_mask = 2
 physics_material_override = ExtResource("1_m6sa4")
 can_sleep = false
 lock_rotation = true
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 16
 script = ExtResource("1_g0x56")
-drill1 = NodePath("Drill")
-drill2 = NodePath("Drill2")
-
-[node name="Drill" parent="." unique_id=95538242 instance=ExtResource("4_tyc6d")]
-position = Vector2(0, -6)
-rotation = -1.5707963
-scale = Vector2(0.5, 0.5)
-drill_direction = 1
-
-[node name="Drill2" parent="." unique_id=2084034538 instance=ExtResource("4_tyc6d")]
-position = Vector2(0, -6)
-rotation = 1.5707964
-scale = Vector2(0.5, 0.5)
-drill_direction = -1
-
-[node name="Friend" type="Sprite2D" parent="." unique_id=2082691282]
-position = Vector2(0, -8)
-texture = ExtResource("2_m6sa4")
+drill1 = NodePath("Right/FriendArmSegment/FriendArmSegment/Drill")
+drill2 = NodePath("Left/FriendArmSegment2/FriendArmSegment/Drill")
+sfx_player = NodePath("SFXPlayer")
+eyes = [NodePath("Eyes/RightEye"), NodePath("Eyes/LeftEye")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279318758]
-visible = false
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_tyc6d")
 
 [node name="CollectArea" type="Area2D" parent="." unique_id=1915065442]
+position = Vector2(0, -1)
 collision_layer = 8
 collision_mask = 8
 
 [node name="CollectAreaShape" type="CollisionShape2D" parent="CollectArea" unique_id=1589282005]
-position = Vector2(0, -7)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_qv1gp")
 
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2146097176]
+stream = ExtResource("5_qv1gp")
+max_distance = 320.0
+bus = &"SFX"
+
+[node name="Right" type="Node2D" parent="." unique_id=1524149446]
+
+[node name="FriendLegSegment" parent="Right" unique_id=801123190 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(2, -8)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+target_node = NodePath("FriendLegSegment2")
+
+[node name="FriendLegSegment2" parent="Right/FriendLegSegment" unique_id=1079650467 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(4, 0)
+target_node = NodePath("../../RightFootTarget")
+
+[node name="FriendArmSegment" parent="Right" unique_id=2120887558 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(2, -9)
+target_node = NodePath("FriendArmSegment")
+
+[node name="FriendArmSegment" parent="Right/FriendArmSegment" unique_id=2023407227 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(4, 0)
+target_node = NodePath("../../TargetFromRayCast")
+
+[node name="Drill" parent="Right/FriendArmSegment/FriendArmSegment" unique_id=95538242 instance=ExtResource("4_tyc6d")]
+position = Vector2(1, 4.973799e-14)
+rotation = -1.5707963
+scale = Vector2(0.345, 0.345)
+drill_direction = 1
+
+[node name="RightArmRayCast" type="RayCast2D" parent="Right" unique_id=1831692478 node_paths=PackedStringArray("tip")]
+position = Vector2(0, -9)
+target_position = Vector2(12, 0)
+collision_mask = 2
+hit_from_inside = true
+script = ExtResource("6_6vh0g")
+tip = NodePath("Tip")
+
+[node name="Tip" type="Node2D" parent="Right/RightArmRayCast" unique_id=1553125760]
+position = Vector2(12, 0)
+
+[node name="TargetFromRayCast" type="Node2D" parent="Right" unique_id=865199673 node_paths=PackedStringArray("raycast")]
+position = Vector2(6, -5)
+script = ExtResource("7_4ldn5")
+raycast = NodePath("../RightArmRayCast")
+
+[node name="RightFootTarget" type="Node2D" parent="Right" unique_id=1738828636]
+position = Vector2(2, 0)
+
+[node name="Left" type="Node2D" parent="." unique_id=1726801577]
+
+[node name="FriendLegSegment2" parent="Left" unique_id=26602706 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(-1.9999998, -8)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+target_node = NodePath("FriendLegSegment2")
+
+[node name="FriendLegSegment2" parent="Left/FriendLegSegment2" unique_id=1696474749 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(4, 0)
+target_node = NodePath("../../LeftFootTarget")
+
+[node name="FriendArmSegment2" parent="Left" unique_id=846942462 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(-2, -9)
+rotation = -3.1415925
+target_node = NodePath("FriendArmSegment")
+
+[node name="FriendArmSegment" parent="Left/FriendArmSegment2" unique_id=60094597 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
+position = Vector2(4, 0)
+target_node = NodePath("../../TargetFromRayCast2")
+
+[node name="Drill" parent="Left/FriendArmSegment2/FriendArmSegment" unique_id=1051741885 instance=ExtResource("4_tyc6d")]
+position = Vector2(1, 4.973799e-14)
+rotation = -1.5707963
+scale = Vector2(0.345, 0.345)
+drill_direction = 1
+
+[node name="LeftArmRayCast" type="RayCast2D" parent="Left" unique_id=1234540122 node_paths=PackedStringArray("tip")]
+position = Vector2(0, -9)
+target_position = Vector2(-12, 0)
+collision_mask = 2
+hit_from_inside = true
+script = ExtResource("6_6vh0g")
+tip = NodePath("Tip")
+
+[node name="Tip" type="Node2D" parent="Left/LeftArmRayCast" unique_id=448866306]
+position = Vector2(-12, 0)
+
+[node name="TargetFromRayCast2" type="Node2D" parent="Left" unique_id=1347846765 node_paths=PackedStringArray("raycast")]
+position = Vector2(-6, -5)
+script = ExtResource("7_4ldn5")
+raycast = NodePath("../LeftArmRayCast")
+
+[node name="LeftFootTarget" type="Node2D" parent="Left" unique_id=207225983]
+position = Vector2(-2, 0)
+
+[node name="FriendHead" type="Sprite2D" parent="." unique_id=724501189]
+position = Vector2(0, -8)
+texture = ExtResource("6_4ldn5")
+
+[node name="Eyes" type="Node2D" parent="." unique_id=727332317]
+
+[node name="RightEye" type="Node2D" parent="Eyes" unique_id=2136923571]
+position = Vector2(2, -11)
+
+[node name="FriendEye" type="Sprite2D" parent="Eyes/RightEye" unique_id=909241844]
+position = Vector2(0.5, 0)
+texture = ExtResource("8_micnu")
+
+[node name="LeftEye" type="Node2D" parent="Eyes" unique_id=323569762]
+position = Vector2(-2, -11)
+
+[node name="FriendEye" type="Sprite2D" parent="Eyes/LeftEye" unique_id=125074728]
+position = Vector2(0.5, 0)
+texture = ExtResource("8_micnu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

@@ -4,7 +4,7 @@ signal cannot_drill
 
 @export var curve:Curve
 
-var original_position:Vector2 = self.position
+var original_position:Vector2
 var drill_state:float = 0.0
 var drill_move_speed:float = 0.1
 var max_move_depth:float = 12.0
@@ -13,7 +13,7 @@ var is_drilling:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	original_position = self.position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

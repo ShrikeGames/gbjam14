@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://3jo4jfvh42fl"]
+
+[ext_resource type="AudioStream" uid="uid://djva183kh4o63" path="res://assets/game/audio/music/music1.mp3" id="1_4tgqf"]
+[ext_resource type="AudioStream" uid="uid://cl0f6cukyh0gc" path="res://assets/game/audio/music/music2.mp3" id="2_eqquj"]
+[ext_resource type="AudioStream" uid="uid://dnlbkabx5upjh" path="res://assets/game/audio/music/music3.mp3" id="3_tg3a1"]
+
+[resource]
+clip_count = 3
+clip_0/name = &"Music 1"
+clip_0/stream = ExtResource("1_4tgqf")
+clip_0/auto_advance = 0
+clip_1/name = &"Music 2"
+clip_1/stream = ExtResource("2_eqquj")
+clip_1/auto_advance = 0
+clip_2/name = &"Music 3"
+clip_2/stream = ExtResource("3_tg3a1")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 1
+}
+}

@@ -57,3 +57,19 @@ https://github.com/user-attachments/assets/ccd6a21d-a351-42f9-9966-75a67c46bac0
 
 
 
+## Day 2
+
+Plans:
+
+- Add music track
+- Add SFX
+- Add Menus (Main Menu, Store, Pause Menu)
+- Add Decide on player and friends theme + make proper art for them
+- Add first enemy
+
+## Day 3
+
+Plans:
+
+- Create character sprite to show in corner and reacts to events
+- 

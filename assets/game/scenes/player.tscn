@@ -19,18 +19,19 @@ max_contacts_reported = 16
 script = ExtResource("1_d7eyr")
 drill = NodePath("Drill")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045004492]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_d7eyr")
-
 [node name="Drill" parent="." unique_id=2084034538 instance=ExtResource("3_d7eyr")]
-position = Vector2(0, -5)
+position = Vector2(0, -12)
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1047096000]
+position = Vector2(0, -12)
 texture = ExtResource("4_15l51")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045004492]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_d7eyr")
+
 [node name="CollectionArea" type="Area2D" parent="." unique_id=1582143129]
-position = Vector2(0, 3)
+position = Vector2(0, -9)
 collision_layer = 12
 collision_mask = 12
 
@@ -38,4 +39,5 @@ collision_mask = 12
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_1g0c1")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]
