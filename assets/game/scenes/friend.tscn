@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://40rx6ndecio2"]
+
+[ext_resource type="Script" uid="uid://h5imghmc8gf7" path="res://assets/game/scripts/friend.gd" id="1_g0x56"]
+[ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_m6sa4"]
+[ext_resource type="Texture2D" uid="uid://cwf3qao0kxo0j" path="res://assets/game/images/friend.png" id="2_m6sa4"]
+[ext_resource type="PackedScene" uid="uid://bvmqw4eocixc7" path="res://assets/game/scenes/drill.tscn" id="4_tyc6d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyc6d"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qv1gp"]
+radius = 7.071068
+
+[node name="Friend" type="RigidBody2D" unique_id=457346670 node_paths=PackedStringArray("drill1", "drill2")]
+collision_layer = 4
+collision_mask = 2
+physics_material_override = ExtResource("1_m6sa4")
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_g0x56")
+drill1 = NodePath("Drill")
+drill2 = NodePath("Drill2")
+
+[node name="Drill" parent="." unique_id=95538242 instance=ExtResource("4_tyc6d")]
+position = Vector2(0, -6)
+rotation = -1.5707963
+scale = Vector2(0.5, 0.5)
+drill_direction = 1
+
+[node name="Drill2" parent="." unique_id=2084034538 instance=ExtResource("4_tyc6d")]
+position = Vector2(0, -6)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+drill_direction = -1
+
+[node name="Friend" type="Sprite2D" parent="." unique_id=2082691282]
+position = Vector2(0, -8)
+texture = ExtResource("2_m6sa4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279318758]
+visible = false
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_tyc6d")
+
+[node name="CollectArea" type="Area2D" parent="." unique_id=1915065442]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollectAreaShape" type="CollisionShape2D" parent="CollectArea" unique_id=1589282005]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_qv1gp")
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bvmqw4eocixc7"]
+
+[ext_resource type="Script" uid="uid://ch4agq18h5tsy" path="res://assets/game/scripts/drill.gd" id="1_dn27n"]
+[ext_resource type="Texture2D" uid="uid://crx6j6v12lukb" path="res://assets/game/images/player_drill.png" id="2_qte73"]
+
+[sub_resource type="Curve" id="Curve_fy400"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.1053498, 0.0, 0, 0]
+point_count = 2
+
+[node name="Drill" type="Node2D" unique_id=2084034538]
+script = ExtResource("1_dn27n")
+curve = SubResource("Curve_fy400")
+
+[node name="PlayerDrill" type="Sprite2D" parent="." unique_id=949478522]
+position = Vector2(0, 10)
+texture = ExtResource("2_qte73")
+
+[node name="DrillArea" type="Area2D" parent="." unique_id=1550929221]
+position = Vector2(0, -5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="DrillColliderShape" type="CollisionPolygon2D" parent="DrillArea" unique_id=1091091603]
+position = Vector2(0, 4)
+polygon = PackedVector2Array(2, 11, 10, -1, -10, -1, -2, 11)
+
+[connection signal="body_entered" from="DrillArea" to="." method="_on_drill_area_body_entered"]
+[connection signal="body_exited" from="DrillArea" to="." method="_on_drill_area_body_exited"]

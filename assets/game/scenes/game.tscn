@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://cjlxnr5c3xpnh"]
+
+[ext_resource type="Script" uid="uid://ddnync1521sh" path="res://assets/game/scripts/camera.gd" id="1_aif40"]
+[ext_resource type="Script" uid="uid://blg6wtrow3dfx" path="res://assets/game/scripts/terrain_manager.gd" id="2_fxu02"]
+[ext_resource type="PackedScene" uid="uid://p20k4gsg37ib" path="res://assets/game/scenes/player.tscn" id="3_fxu02"]
+[ext_resource type="Script" uid="uid://ctviwct0qvcb8" path="res://assets/game/scripts/ui.gd" id="4_3blqa"]
+[ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="4_aif40"]
+[ext_resource type="Script" uid="uid://d0y04eoyvxm5" path="res://assets/game/scripts/hide_timer.gd" id="6_fy400"]
+[ext_resource type="Texture2D" uid="uid://d4k5ohuch75aw" path="res://assets/game/images/shop.png" id="7_7sfe6"]
+
+[node name="Game" type="Node2D" unique_id=1964057340]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1488212775 node_paths=PackedStringArray("player")]
+position = Vector2(80, 60)
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
+script = ExtResource("1_aif40")
+player = NodePath("../Player")
+
+[node name="TerrainManager" type="Node2D" parent="." unique_id=712860163]
+script = ExtResource("2_fxu02")
+
+[node name="Shop" type="Sprite2D" parent="." unique_id=2020397157]
+position = Vector2(192, 48)
+texture = ExtResource("7_7sfe6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop" unique_id=811107758]
+custom_minimum_size = Vector2(102, 0)
+offset_left = -64.0
+offset_top = -21.0
+offset_right = 64.0
+offset_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource("4_aif40")
+text = "Placeholder
+Shop"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" parent="." unique_id=447483926 node_paths=PackedStringArray("friends_container") instance=ExtResource("3_fxu02")]
+position = Vector2(80, 59)
+friends_container = NodePath("../Friends")
+
+[node name="Friends" type="Node2D" parent="." unique_id=77677285]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=489932100 node_paths=PackedStringArray("gold_text", "friend_text", "player", "gold_increment_text", "friend_increment_text")]
+script = ExtResource("4_3blqa")
+gold_text = NodePath("TotalTextContainer/Gold")
+friend_text = NodePath("TotalTextContainer/FriendCount")
+player = NodePath("../Player")
+gold_increment_text = NodePath("IncrementalTextContainer2/Gold")
+friend_increment_text = NodePath("IncrementalTextContainer/FriendCount")
+
+[node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=1888298729]
+offset_top = 128.0
+offset_right = 160.0
+offset_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/CenterContainer" unique_id=925349514]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+
+[node name="TotalTextContainer" type="HBoxContainer" parent="UI" unique_id=1200425232]
+custom_minimum_size = Vector2(144, 16)
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 152.0
+offset_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_aif40")
+
+[node name="Gold" type="RichTextLabel" parent="UI/TotalTextContainer" unique_id=1843075008]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gold:00000"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="FriendCount" type="RichTextLabel" parent="UI/TotalTextContainer" unique_id=236756412]
+clip_contents = false
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+text = "02/02"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="IncrementalTextContainer" type="HBoxContainer" parent="UI" unique_id=2135836996]
+custom_minimum_size = Vector2(80, 16)
+offset_left = 112.0
+offset_top = 120.0
+offset_right = 228.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_aif40")
+
+[node name="FriendCount" type="RichTextLabel" parent="UI/IncrementalTextContainer" unique_id=1674502240]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+text = "+1"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/IncrementalTextContainer/FriendCount" unique_id=73985151 node_paths=PackedStringArray("target", "player")]
+wait_time = 2.0
+one_shot = true
+script = ExtResource("6_fy400")
+target = NodePath("..")
+player = NodePath("../../../../Player")
+
+[node name="IncrementalTextContainer2" type="HBoxContainer" parent="UI" unique_id=1750679473]
+custom_minimum_size = Vector2(80, 16)
+offset_left = 47.0
+offset_top = 120.0
+offset_right = 163.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_aif40")
+
+[node name="Gold" type="RichTextLabel" parent="UI/IncrementalTextContainer2" unique_id=114245838]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "+1"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/IncrementalTextContainer2/Gold" unique_id=2069638919 node_paths=PackedStringArray("target", "player")]
+wait_time = 2.0
+one_shot = true
+script = ExtResource("6_fy400")
+target = NodePath("..")
+player = NodePath("../../../../Player")
+listen_id = 1
+
+[connection signal="timeout" from="UI/IncrementalTextContainer/FriendCount/Timer" to="UI/IncrementalTextContainer/FriendCount/Timer" method="_on_timeout"]
+[connection signal="timeout" from="UI/IncrementalTextContainer2/Gold/Timer" to="UI/IncrementalTextContainer2/Gold/Timer" method="_on_timeout"]

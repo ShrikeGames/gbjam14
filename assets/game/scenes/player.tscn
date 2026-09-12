@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://p20k4gsg37ib"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_1g0c1"]
+[ext_resource type="Script" uid="uid://dmr1orvbyknvd" path="res://assets/game/scripts/player.gd" id="1_d7eyr"]
+[ext_resource type="PackedScene" uid="uid://bvmqw4eocixc7" path="res://assets/game/scenes/drill.tscn" id="3_d7eyr"]
+[ext_resource type="Texture2D" uid="uid://dljudls0a4shp" path="res://assets/game/images/player.png" id="4_15l51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7eyr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1g0c1"]
+radius = 6.0827627
+
+[node name="Player" type="RigidBody2D" unique_id=447483926 node_paths=PackedStringArray("drill")]
+physics_material_override = ExtResource("1_1g0c1")
+lock_rotation = true
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("1_d7eyr")
+drill = NodePath("Drill")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045004492]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_d7eyr")
+
+[node name="Drill" parent="." unique_id=2084034538 instance=ExtResource("3_d7eyr")]
+position = Vector2(0, -5)
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1047096000]
+texture = ExtResource("4_15l51")
+
+[node name="CollectionArea" type="Area2D" parent="." unique_id=1582143129]
+position = Vector2(0, 3)
+collision_layer = 12
+collision_mask = 12
+
+[node name="CollectionAreaShape" type="CollisionShape2D" parent="CollectionArea" unique_id=675130601]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_1g0c1")
+
+[connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

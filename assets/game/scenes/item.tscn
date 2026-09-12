@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxw7d3mikwctf"]
+
+[ext_resource type="Script" uid="uid://bxu56kx2s61g" path="res://assets/game/scripts/item.gd" id="1_6itn2"]
+[ext_resource type="Texture2D" uid="uid://b8nra2ddronod" path="res://assets/game/images/item0.png" id="2_f5p3e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sfe6"]
+radius = 8.0
+
+[node name="Item" type="RigidBody2D" unique_id=1602027267 node_paths=PackedStringArray("sprite")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_6itn2")
+sprite = NodePath("Item")
+
+[node name="Item" type="Sprite2D" parent="." unique_id=1636030869]
+texture = ExtResource("2_f5p3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853122623]
+shape = SubResource("CircleShape2D_7sfe6")

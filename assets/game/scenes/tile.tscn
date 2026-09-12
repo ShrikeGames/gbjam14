@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bh7yt5w4vpauw"]
+
+[ext_resource type="Script" uid="uid://xboomhdw572p" path="res://assets/game/scripts/tile.gd" id="1_hkbhc"]
+[ext_resource type="Texture2D" uid="uid://bo3hfqehpkxpi" path="res://assets/game/images/tile0.png" id="1_wvg6v"]
+[ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_ydhyu"]
+[ext_resource type="Texture2D" uid="uid://b6lrfbjynosv7" path="res://assets/game/images/cracks0.png" id="4_w1yx6"]
+[ext_resource type="Texture2D" uid="uid://bednyr2ws0w7d" path="res://assets/game/images/cracks1.png" id="5_4p4rh"]
+[ext_resource type="Texture2D" uid="uid://b4b5sov2agw6d" path="res://assets/game/images/cracks2.png" id="6_o3irs"]
+[ext_resource type="Texture2D" uid="uid://bnqmn7qbvj2y7" path="res://assets/game/images/cracks3.png" id="7_4dqt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkbhc"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwxdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4dqt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o3irs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4p4rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w1yx6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Tile" type="StaticBody2D" unique_id=393603085 node_paths=PackedStringArray("sprite", "cracks")]
+collision_layer = 3
+collision_mask = 2
+physics_material_override = ExtResource("1_ydhyu")
+script = ExtResource("1_hkbhc")
+sprite = NodePath("Tile")
+cracks = NodePath("Cracks")
+
+[node name="Tile" type="Sprite2D" parent="." unique_id=737383589]
+position = Vector2(8, 8)
+texture = ExtResource("1_wvg6v")
+
+[node name="TileCollider" type="CollisionShape2D" parent="." unique_id=452210262]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_hkbhc")
+
+[node name="Cracks" type="AnimatedSprite2D" parent="." unique_id=1639250001]
+visible = false
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_kwxdl")
+frame = 2
+frame_progress = 0.31804484
