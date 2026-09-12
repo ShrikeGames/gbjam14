@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://h5imghmc8gf7" path="res://assets/game/scripts/friend.gd" id="1_g0x56"]
 [ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_m6sa4"]
-[ext_resource type="PackedScene" uid="uid://bvmqw4eocixc7" path="res://assets/game/scenes/drill.tscn" id="4_tyc6d"]
 [ext_resource type="PackedScene" uid="uid://buy2dqnuthgfl" path="res://assets/game/scenes/friend/friend_leg_segment.tscn" id="5_4uwhj"]
+[ext_resource type="PackedScene" uid="uid://b1ac28htvc8wu" path="res://assets/game/scenes/friend_drill.tscn" id="5_6vh0g"]
 [ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="5_qv1gp"]
 [ext_resource type="Texture2D" uid="uid://civuhjsm08buf" path="res://assets/game/images/friend/friend_head.png" id="6_4ldn5"]
 [ext_resource type="Script" uid="uid://dr74c40xu0otj" path="res://assets/game/scripts/arm_ray_cast.gd" id="6_6vh0g"]
@@ -26,8 +26,8 @@ continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 16
 script = ExtResource("1_g0x56")
-drill1 = NodePath("Right/FriendArmSegment/FriendArmSegment/Drill")
-drill2 = NodePath("Left/FriendArmSegment2/FriendArmSegment/Drill")
+drill1 = NodePath("Right/FriendArmSegment/FriendArmSegment/FriendDrill")
+drill2 = NodePath("Left/FriendArmSegment2/FriendArmSegment/FriendDrill")
 sfx_player = NodePath("SFXPlayer")
 eyes = [NodePath("Eyes/RightEye"), NodePath("Eyes/LeftEye")]
 
@@ -54,7 +54,6 @@ bus = &"SFX"
 [node name="FriendLegSegment" parent="Right" unique_id=801123190 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
 position = Vector2(2, -8)
 rotation = 1.5707964
-scale = Vector2(0.99999994, 0.99999994)
 target_node = NodePath("FriendLegSegment2")
 
 [node name="FriendLegSegment2" parent="Right/FriendLegSegment" unique_id=1079650467 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
@@ -69,11 +68,8 @@ target_node = NodePath("FriendArmSegment")
 position = Vector2(4, 0)
 target_node = NodePath("../../TargetFromRayCast")
 
-[node name="Drill" parent="Right/FriendArmSegment/FriendArmSegment" unique_id=95538242 instance=ExtResource("4_tyc6d")]
+[node name="FriendDrill" parent="Right/FriendArmSegment/FriendArmSegment" unique_id=1925118269 instance=ExtResource("5_6vh0g")]
 position = Vector2(1, 4.973799e-14)
-rotation = -1.5707963
-scale = Vector2(0.345, 0.345)
-drill_direction = 1
 
 [node name="RightArmRayCast" type="RayCast2D" parent="Right" unique_id=1831692478 node_paths=PackedStringArray("tip")]
 position = Vector2(0, -9)
@@ -92,14 +88,13 @@ script = ExtResource("7_4ldn5")
 raycast = NodePath("../RightArmRayCast")
 
 [node name="RightFootTarget" type="Node2D" parent="Right" unique_id=1738828636]
-position = Vector2(2, 0)
+position = Vector2(4, 0)
 
 [node name="Left" type="Node2D" parent="." unique_id=1726801577]
 
 [node name="FriendLegSegment2" parent="Left" unique_id=26602706 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
 position = Vector2(-1.9999998, -8)
 rotation = 1.5707964
-scale = Vector2(0.99999994, 0.99999994)
 target_node = NodePath("FriendLegSegment2")
 
 [node name="FriendLegSegment2" parent="Left/FriendLegSegment2" unique_id=1696474749 node_paths=PackedStringArray("target_node") instance=ExtResource("5_4uwhj")]
@@ -115,11 +110,8 @@ target_node = NodePath("FriendArmSegment")
 position = Vector2(4, 0)
 target_node = NodePath("../../TargetFromRayCast2")
 
-[node name="Drill" parent="Left/FriendArmSegment2/FriendArmSegment" unique_id=1051741885 instance=ExtResource("4_tyc6d")]
+[node name="FriendDrill" parent="Left/FriendArmSegment2/FriendArmSegment" unique_id=264918852 instance=ExtResource("5_6vh0g")]
 position = Vector2(1, 4.973799e-14)
-rotation = -1.5707963
-scale = Vector2(0.345, 0.345)
-drill_direction = 1
 
 [node name="LeftArmRayCast" type="RayCast2D" parent="Left" unique_id=1234540122 node_paths=PackedStringArray("tip")]
 position = Vector2(0, -9)
@@ -138,7 +130,7 @@ script = ExtResource("7_4ldn5")
 raycast = NodePath("../LeftArmRayCast")
 
 [node name="LeftFootTarget" type="Node2D" parent="Left" unique_id=207225983]
-position = Vector2(-2, 0)
+position = Vector2(-4, 0)
 
 [node name="FriendHead" type="Sprite2D" parent="." unique_id=724501189]
 position = Vector2(0, -8)
