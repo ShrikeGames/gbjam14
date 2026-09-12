@@ -53,5 +53,7 @@ Swap colour pallet out at specific depths
 - Original Kirby
 
 
- 
+https://github.com/user-attachments/assets/ccd6a21d-a351-42f9-9966-75a67c46bac0
+
+
 
