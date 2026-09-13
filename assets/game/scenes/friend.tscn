@@ -117,7 +117,7 @@ tip = NodePath("Tip")
 position = Vector2(-12, 0)
 
 [node name="TargetFromRayCast" type="Node2D" parent="Right" unique_id=865199673 node_paths=PackedStringArray("raycast")]
-position = Vector2(6, -5)
+position = Vector2(2, -21)
 script = ExtResource("7_4ldn5")
 raycast = NodePath("../RightArmRayCast")
 

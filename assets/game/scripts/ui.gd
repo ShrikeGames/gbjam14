@@ -44,7 +44,6 @@ func _friend_count_changed(friend_count:int, max_friend_count:int, friend_increm
 		player.portrait.play("happy")
 	else:
 		friend_increment_text.text = "%s"%[friend_increment_count]
-		player.portrait.play("idle")
 	
 	friend_text.text = "%02d/%02d"%[max_friend_count-friend_count, max_friend_count]
 	

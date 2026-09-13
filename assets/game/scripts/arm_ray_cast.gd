@@ -14,4 +14,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	lifetime += delta * 2.0
-	self.rotation_degrees = self.original_rotation - sin(lifetime) * max_degrees
+	self.rotation_degrees = self.original_rotation - sin(lifetime * 5) * max_degrees
