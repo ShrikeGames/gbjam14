@@ -27,7 +27,7 @@ func _ready() -> void:
 				continue
 			
 			if y == 0 or x == 0 or y == map_height-1 or x ==  map_width -1:
-				tile_type = 2
+				tile_type = 9
 				_create_tile(x*tile_width, y*tile_height, tile_type)
 			elif y > 5:
 				var tiles:Array = tiles_by_depth[int(y/32.0)]

@@ -44,6 +44,7 @@ var tile_stats:Dictionary = {
 		"drop_item": -1,
 		"worth": 0,
 	},
+	
 	3: {
 		"is_drillable": true,
 		"hp": 4,
@@ -57,7 +58,14 @@ var tile_stats:Dictionary = {
 		"hardness": 1,
 		"drop_item": 0,
 		"worth": 10,
-	}
+	},
+	9: {
+		"is_drillable": false,
+		"hp": 99,
+		"hardness": 99,
+		"drop_item": -1,
+		"worth": 0,
+	},
 }
 var tile = load("res://assets/game/scenes/tile.tscn")
 var friend = load("res://assets/game/scenes/friend.tscn")

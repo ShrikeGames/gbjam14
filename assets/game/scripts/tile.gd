@@ -27,7 +27,7 @@ func is_drillable():
 func _process(delta: float) -> void:
 	iframes = clampf(iframes-delta, 0, max_iframes)
 	if being_drilled and iframes <= 0 and is_drillable():
-		hp -= Global.save_data["damage"]
+		hp -= (Global.save_data["damage"] - Global.tile_stats[tile_id]["hardness"])
 		# 1, 0.75, 0.5, 0.25
 		# 4, 3, 2, 1
 		cracks.set_frame_and_progress(int(((hp/max_hp)*4)-1),0)
