@@ -75,6 +75,7 @@ Plans:
 - Create character sprite to show in corner and reacts to events
 - Offset palette swap by half a tile to avoid it flickering back and forth
 - Finish menus
+- Update terrain generation
 
 https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 
@@ -83,11 +84,15 @@ Story Ideas:
 - Riko Saves The World
 - A long long time ago... the world ended.
 - With no civilization people to returned to...
-- The Old Gold Standard
-- You are Rico, a human tasked with .
-
-
+- The Good Old Gold Standard
+- You are Rico, a human tasked with leading Molepeople to mine for gold.
+- You must keep you and your family fed and healthy.
+- Then earn enough gold to pay for a trip to live on Mars.
 
 ## Day 4
-- Update terrain generation
-- Add first enemy (snake)
+
+- Add day cycle, when night comes go to new scene for managing family
+- Each day new map generated but keep upgrades
+- Create intro cinematic that tells story
+- Add first enemy
+- 
