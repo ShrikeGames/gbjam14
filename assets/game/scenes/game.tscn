@@ -11,19 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://d4k5ohuch75aw" path="res://assets/game/images/shop.png" id="7_7sfe6"]
 [ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="8_hihoh"]
 [ext_resource type="Script" uid="uid://blfyka1gcotly" path="res://assets/system/scripts/main_menu.gd" id="8_oo18y"]
+[ext_resource type="Texture2D" uid="uid://bcmpdv6gijof2" path="res://assets/game/images/art/portraits/player_idle_h.png" id="9_n2xap"]
 [ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="9_wyj15"]
+[ext_resource type="Texture2D" uid="uid://drb1jxedxkw0m" path="res://assets/game/images/art/portraits/player_happy_h.png" id="10_5xyhb"]
+[ext_resource type="Texture2D" uid="uid://dfc8po7opbbca" path="res://assets/game/images/art/portraits/player_sad_h.png" id="11_d8i2o"]
 [ext_resource type="Script" uid="uid://bptaiagbxx83e" path="res://assets/game/scripts/shop_menu.gd" id="11_w05n1"]
+[ext_resource type="Texture2D" uid="uid://dv8ykn8kcj6u" path="res://assets/game/images/art/portraits/friend_happy_h.png" id="12_n2xap"]
+[ext_resource type="Texture2D" uid="uid://brjqv8ruyyl66" path="res://assets/game/images/art/portraits/friend_idle_h.png" id="13_5xyhb"]
 [ext_resource type="Material" uid="uid://6o1uy33vqh3x" path="res://pallet_swap_1.tres" id="13_koqv6"]
+[ext_resource type="Texture2D" uid="uid://bvbwig7mxq3pm" path="res://assets/game/images/art/portraits/friend_sad_h.png" id="14_d8i2o"]
 [ext_resource type="Script" uid="uid://2wikfjfkr5wv" path="res://assets/game/scripts/pallet_swapper.gd" id="14_koqv6"]
 [ext_resource type="AudioStream" uid="uid://3jo4jfvh42fl" path="res://assets/game/audio/music_interactive_stream.tres" id="15_koqv6"]
-[ext_resource type="Texture2D" uid="uid://c6xn44437crka" path="res://assets/game/images/art/portraits/player_idle.png" id="16_5j8md"]
-[ext_resource type="Texture2D" uid="uid://chkx68y82d2ku" path="res://assets/game/images/art/portraits/shopkeep_happy.png" id="17_7k3ly"]
-[ext_resource type="Texture2D" uid="uid://ihjm1p5jh2y0" path="res://assets/game/images/art/portraits/player_happy.png" id="17_ugrqh"]
-[ext_resource type="Texture2D" uid="uid://ddm5he8uaqsew" path="res://assets/game/images/art/portraits/player_sad.png" id="18_7k3ly"]
-[ext_resource type="Texture2D" uid="uid://852jfyyv8h1d" path="res://assets/game/images/art/portraits/shopkeep_sad.png" id="18_bgypw"]
-[ext_resource type="Texture2D" uid="uid://cawf6v8cynegt" path="res://assets/game/images/art/portraits/friend_idle.png" id="21_n2xap"]
-[ext_resource type="Texture2D" uid="uid://icl8ma66eroq" path="res://assets/game/images/art/portraits/friend_happy.png" id="22_5xyhb"]
-[ext_resource type="Texture2D" uid="uid://dxmafmig3f2c1" path="res://assets/game/images/art/portraits/friend_sad.png" id="23_d8i2o"]
+[ext_resource type="Texture2D" uid="uid://ootrtof5gcyu" path="res://assets/game/images/art/portraits/shopkeep_idle_h.png" id="20_5xyhb"]
+[ext_resource type="Texture2D" uid="uid://dhyhqpwfvbqx0" path="res://assets/game/images/art/portraits/shopkeep_happy_h.png" id="21_d8i2o"]
+[ext_resource type="Texture2D" uid="uid://c8fklmha7uqgp" path="res://assets/game/images/art/portraits/shopkeep_sad_H.png" id="22_7dd8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w05n1"]
 size = Vector2(51, 44)
@@ -32,7 +33,7 @@ size = Vector2(51, 44)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_5j8md")
+"texture": ExtResource("9_n2xap")
 }, {
 "duration": 1.0,
 "texture": null
@@ -43,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_ugrqh")
+"texture": ExtResource("10_5xyhb")
 }, {
 "duration": 1.0,
 "texture": null
@@ -54,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_5j8md")
+"texture": ExtResource("9_n2xap")
 }],
 "loop": true,
 "name": &"idle",
@@ -62,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_7k3ly")
+"texture": ExtResource("11_d8i2o")
 }, {
 "duration": 1.0,
 "texture": null
@@ -84,7 +85,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_5xyhb")
+"texture": ExtResource("12_n2xap")
 }, {
 "duration": 1.0,
 "texture": null
@@ -95,7 +96,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_n2xap")
+"texture": ExtResource("13_5xyhb")
 }, {
 "duration": 1.0,
 "texture": null
@@ -106,7 +107,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_d8i2o")
+"texture": ExtResource("14_d8i2o")
 }, {
 "duration": 1.0,
 "texture": null
@@ -120,7 +121,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_1e2d6")
+"texture": ExtResource("20_5xyhb")
 }],
 "loop": true,
 "name": &"default",
@@ -128,10 +129,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_7k3ly")
+"texture": ExtResource("21_d8i2o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_1e2d6")
+"texture": ExtResource("20_5xyhb")
 }],
 "loop": false,
 "name": &"happy",
@@ -139,10 +140,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_bgypw")
+"texture": ExtResource("22_7dd8x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_1e2d6")
+"texture": ExtResource("20_5xyhb")
 }],
 "loop": false,
 "name": &"sad",
@@ -214,15 +215,14 @@ friend = NodePath("FriendPortrait")
 [node name="PlayerPortrait" type="AnimatedSprite2D" parent="UI" unique_id=1650146467]
 process_mode = 3
 position = Vector2(30, 93)
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_bgypw")
-animation = &"happy"
+animation = &"sad"
 autoplay = "default"
 
 [node name="FriendPortrait" type="AnimatedSprite2D" parent="UI" unique_id=1165044621]
-position = Vector2(124, 92)
-scale = Vector2(0.5, 0.5)
+position = Vector2(122, 92)
 sprite_frames = SubResource("SpriteFrames_7dd8x")
+autoplay = "default"
 
 [node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=1888298729]
 offset_top = 128.0
@@ -401,8 +401,8 @@ menu_text = "Close"
 [node name="ShopkeeperPortrait" type="AnimatedSprite2D" parent="UI/ShopMenu" unique_id=1321793139]
 process_mode = 3
 position = Vector2(128, 92)
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_og8ln")
+animation = &"sad"
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/ShopMenu" unique_id=1554509958]
 stream = ExtResource("9_wyj15")
