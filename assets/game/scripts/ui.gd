@@ -53,5 +53,13 @@ func _gold_changed(gold_count:int, gold_increment_count:int):
 	else:
 		gold_increment_text.text = "%s"%[gold_increment_count]
 		shopkeeper.play("happy")
+		player.portrait.play("happy")
 	gold_text.text = "Gold:%05d"%[gold_count]
 	
+
+
+func _on_player_portrait_animation_finished() -> void:
+	if get_tree().paused:
+		player.portrait.play("idle")
+	else:
+		player.portrait.play("default")

@@ -78,6 +78,12 @@ Plans:
 
 https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 
+Story Ideas:
+	
+- Riko Saves The World
+- 
+
+
 ## Day 4
 - Update terrain generation
 - Add first enemy (snake)

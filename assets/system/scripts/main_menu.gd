@@ -31,6 +31,7 @@ func select_option():
 func other_options():
 	if Input.is_action_just_pressed("START"):
 		self.visible = true
+		Global.shop_open.emit()
 		_update()
 
 func _process(_delta: float) -> void:
@@ -40,7 +41,6 @@ func _process(_delta: float) -> void:
 				return
 	
 	if self.visible:
-		Global.shop_open.emit()
 		if Input.is_action_just_pressed("DOWN"):
 			selected_id = wrapi(selected_id+1, 0, len(menu_items))
 			Global.play_audio_clip(sfx_player, "Beep 0")
