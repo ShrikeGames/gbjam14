@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	for i in range(0, len(depth_palettes)):
-		if player.global_position.y >= (i*32)*16 and player.global_position.y < ((i+1)*32)*16:
+		if player.global_position.y >= 8+((i*32)*16) and player.global_position.y < 8+(((i+1)*32)*16):
 			update_material(i)
 			break
 	

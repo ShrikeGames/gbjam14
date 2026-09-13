@@ -25,6 +25,7 @@ func _update():
 func select_option():
 	if selected_id == 0:
 		self.visible = false
+		Global.shop_close.emit()
 		get_tree().paused = false
 
 func other_options():
@@ -39,6 +40,7 @@ func _process(_delta: float) -> void:
 				return
 	
 	if self.visible:
+		Global.shop_open.emit()
 		if Input.is_action_just_pressed("DOWN"):
 			selected_id = wrapi(selected_id+1, 0, len(menu_items))
 			Global.play_audio_clip(sfx_player, "Beep 0")

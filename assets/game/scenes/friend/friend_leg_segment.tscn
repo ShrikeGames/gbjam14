@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://buy2dqnuthgfl"]
 
 [ext_resource type="Script" uid="uid://crdibcgcaebi7" path="res://assets/system/scripts/friend/friend_leg_segment.gd" id="1_3rqs0"]
-[ext_resource type="Texture2D" uid="uid://cbvxio8es4ekb" path="res://assets/game/images/friend/friend_leg_segment.png" id="1_dl2fk"]
+[ext_resource type="Texture2D" uid="uid://b0obfjpebcc08" path="res://assets/game/images/art/friend_hand.png" id="3_tq3vq"]
 
 [node name="FriendLegSegment" type="Node2D" unique_id=801123190]
 script = ExtResource("1_3rqs0")
 
-[node name="FriendLegSegment" type="Sprite2D" parent="." unique_id=1232169744]
+[node name="FriendHand" type="Sprite2D" parent="." unique_id=1149437493]
+position = Vector2(2, 0)
 rotation = -1.5707964
-texture = ExtResource("1_dl2fk")
-offset = Vector2(0, 2)
+texture = ExtResource("3_tq3vq")

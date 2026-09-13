@@ -3,28 +3,63 @@
 [ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_1g0c1"]
 [ext_resource type="Script" uid="uid://dmr1orvbyknvd" path="res://assets/game/scripts/player.gd" id="1_d7eyr"]
 [ext_resource type="PackedScene" uid="uid://bvmqw4eocixc7" path="res://assets/game/scenes/drill.tscn" id="3_d7eyr"]
-[ext_resource type="Texture2D" uid="uid://dljudls0a4shp" path="res://assets/game/images/player.png" id="4_15l51"]
+[ext_resource type="Texture2D" uid="uid://bpkug2dhywn63" path="res://assets/game/images/art/player0.png" id="4_038ak"]
+[ext_resource type="Texture2D" uid="uid://ck28nr60g8g4f" path="res://assets/game/images/art/player1.png" id="5_15l51"]
+[ext_resource type="Texture2D" uid="uid://dmeppk85yg1ih" path="res://assets/game/images/art/player2.png" id="6_a7nvu"]
+[ext_resource type="Script" uid="uid://dq6wc7m8jvtme" path="res://assets/game/scripts/drill.gd" id="7_15l51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwl12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_038ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_15l51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a7nvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_15l51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_a7nvu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.248703, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7eyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g0c1"]
 radius = 6.0827627
 
-[node name="Player" type="RigidBody2D" unique_id=447483926 node_paths=PackedStringArray("drill")]
+[node name="Player" type="RigidBody2D" unique_id=447483926 node_paths=PackedStringArray("drill", "sprite")]
 physics_material_override = ExtResource("1_1g0c1")
 lock_rotation = true
 continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 16
 script = ExtResource("1_d7eyr")
-drill = NodePath("Drill")
+drill = NodePath("PlayerAnimatedSprite/Drill")
+sprite = NodePath("PlayerAnimatedSprite")
 
-[node name="Drill" parent="." unique_id=2084034538 instance=ExtResource("3_d7eyr")]
-position = Vector2(0, -12)
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=944259297]
+z_index = 1
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_gwl12")
+autoplay = "default"
+frame_progress = 0.83461255
 
-[node name="Player" type="Sprite2D" parent="." unique_id=1047096000]
-position = Vector2(0, -12)
-texture = ExtResource("4_15l51")
+[node name="Drill" parent="PlayerAnimatedSprite" unique_id=2084034538 instance=ExtResource("3_d7eyr")]
+z_as_relative = false
+position = Vector2(0, 5)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_15l51")
+curve = SubResource("Curve_a7nvu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045004492]
 position = Vector2(0, -10)

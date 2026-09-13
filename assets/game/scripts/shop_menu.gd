@@ -10,13 +10,18 @@ func select_option():
 			Global.recall_friends.emit()
 			Global.save_data["gold"] -= 1
 			Global.gold_changed.emit(Global.save_data["gold"], -1)
+		else:
+			Global.cannot_afford.emit()
 	elif selected_id == 1:
 		if Global.save_data["gold"] >= 5:
 			Global.add_friend.emit()
 			Global.save_data["gold"] -= 5
 			Global.gold_changed.emit(Global.save_data["gold"], -5)
+		else:
+			Global.cannot_afford.emit()
 	elif selected_id == 2:
 		self.visible = false
+		Global.shop_close.emit()
 		get_tree().paused = false
 
 func other_options():

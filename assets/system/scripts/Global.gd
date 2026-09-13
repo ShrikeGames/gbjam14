@@ -4,6 +4,11 @@ signal gold_changed
 signal item_pickedup
 signal recall_friends
 signal add_friend
+signal cannot_afford
+signal friend_got_item
+signal friend_died
+signal shop_open
+signal shop_close
 
 var enable_rotation:bool = true
 
@@ -46,7 +51,7 @@ var tile_stats:Dictionary = {
 		"is_drillable": true,
 		"hp": 8,
 		"drop_item": 0,
-		"worth": 0,
+		"worth": 10,
 	}
 }
 var tile = load("res://assets/game/scenes/tile.tscn")

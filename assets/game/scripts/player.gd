@@ -8,9 +8,13 @@ signal friend_count_changed
 @export var drill:Drill
 @export var friends_container:Node2D
 @export var max_friends:int = 2
+@export var sprite:AnimatedSprite2D
+var sprite_original_position:Vector2
+var lifetime:float = 0.0
 var current_friends:int = 0
 
 @export var sfx_player:AudioStreamPlayer
+@export var portrait:AnimatedSprite2D
 
 var movement:Vector2 = Vector2.ZERO
 
@@ -22,12 +26,14 @@ func _ready() -> void:
 	
 	Global.recall_friends.connect(_recall_friends)
 	Global.add_friend.connect(_add_friend)
+	self.sprite_original_position = sprite.position
 	
 func _add_friend():
 	max_friends += 1
 	friend_count_changed.emit(current_friends, max_friends, 1)
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	lifetime += delta
 	movement = Vector2.ZERO
 	
 	if Input.is_action_pressed("RIGHT"):
@@ -51,6 +57,7 @@ func _process(_delta: float) -> void:
 	movement.x *= move_speed
 	movement.y *= lift_speed
 	
+	sprite.position = sprite_original_position + Vector2(0, sin(lifetime*4)*2)
 
 func _physics_process(_delta: float) -> void:
 	self.apply_central_force(movement)
@@ -63,7 +70,7 @@ func _spawn_friend(direction:int = 1):
 		return
 	
 	var friend:Friend = Global.friend.instantiate()
-	friend.global_position = self.global_position
+	friend.global_position = self.global_position - Vector2(0, 8.0)
 	friend.direction = direction
 	friends_container.add_child(friend)
 
@@ -73,6 +80,7 @@ func _recall_friends():
 			_recall_friend(friend)
 
 func _recall_friend(friend:Friend):
+	portrait.play("happy")
 	if friend.worth > 0:
 		Global.play_audio_clip(sfx_player, "Beep 8")
 		Global.save_data["gold"] += friend.worth
@@ -89,6 +97,7 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, Item):
 		Global.play_audio_clip(sfx_player, "Beep 5")
 		Global.save_data["gold"] += body.worth
+		portrait.play("happy")
 		Global.gold_changed.emit(Global.save_data["gold"], body.worth)
 		body.get_parent().remove_child(body)
 

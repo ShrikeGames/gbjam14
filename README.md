@@ -73,7 +73,9 @@ Plans:
 - Create proper art for character and friends (Mole themed)
 - Add new art for shop keeper
 - Create character sprite to show in corner and reacts to events
+- Offset palette swap by half a tile to avoid it flickering back and forth
 - Finish menus
-- Add first enemy (snake)
-- Update terrain generation
 
+## Day 4
+- Update terrain generation
+- Add first enemy (snake)

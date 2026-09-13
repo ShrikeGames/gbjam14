@@ -7,7 +7,7 @@ signal cannot_drill
 var original_position:Vector2
 var drill_state:float = 0.0
 var drill_move_speed:float = 0.1
-var max_move_depth:float = 12.0
+var max_move_depth:float = 6.0
 var is_drilling:bool = false
 @export var drill_direction:int = 0
 
@@ -24,10 +24,6 @@ func _process(_delta: float) -> void:
 		drill_state=clampf(drill_state-drill_move_speed, 0, 1.0)
 	if drill_direction == 0:
 		self.position.y = self.original_position.y + curve.sample(drill_state) * max_move_depth
-	if drill_direction > 0:
-		self.position.x = self.original_position.x + curve.sample(drill_state) * max_move_depth
-	if drill_direction < 0:
-		self.position.x = self.original_position.x - curve.sample(drill_state) * max_move_depth
 	
 func drill_down():
 	is_drilling = true
