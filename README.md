@@ -64,12 +64,16 @@ Plans:
 - Add music track
 - Add SFX
 - Add Menus (Main Menu, Store, Pause Menu)
-- Add Decide on player and friends theme + make proper art for them
-- Add first enemy
+- Decide on player and friends theme
 
 ## Day 3
 
 Plans:
 
+- Create proper art for character and friends (Mole themed)
+- Add new art for shop keeper
 - Create character sprite to show in corner and reacts to events
-- 
+- Finish menus
+- Add first enemy (snake)
+- Update terrain generation
+
