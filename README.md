@@ -76,6 +76,8 @@ Plans:
 - Offset palette swap by half a tile to avoid it flickering back and forth
 - Finish menus
 
+https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
+
 ## Day 4
 - Update terrain generation
 - Add first enemy (snake)
