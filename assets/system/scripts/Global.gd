@@ -17,7 +17,12 @@ var tile_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile1.png"),
 	ResourceLoader.load("res://assets/game/images/tile2.png"),
 	ResourceLoader.load("res://assets/game/images/tile3.png"),
-	ResourceLoader.load("res://assets/game/images/tile4.png")
+	ResourceLoader.load("res://assets/game/images/tile4.png"),
+	ResourceLoader.load("res://assets/game/images/tile0.png"),
+	ResourceLoader.load("res://assets/game/images/tile0.png"),
+	ResourceLoader.load("res://assets/game/images/tile0.png"),
+	ResourceLoader.load("res://assets/game/images/tile0.png"),
+	ResourceLoader.load("res://assets/game/images/tile9.png")
 ]
 var item_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/item0.png")
