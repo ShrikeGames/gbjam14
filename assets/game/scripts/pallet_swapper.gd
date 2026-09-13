@@ -3,10 +3,10 @@ extends ColorRect
 @export var player:Player
 @export var depth_palettes:Array[PackedVector3Array]
 @export var music_player:AudioStreamPlayer
-var current_index:int = 0
+var current_index:int = -1
 
 func _ready() -> void:
-	update_material(0)
+	update_material(current_index)
 	var audio_stream_player_stream = preload("res://assets/game/audio/music_interactive_stream.tres")
 	music_player.stream = audio_stream_player_stream
 	music_player.play()
@@ -22,7 +22,6 @@ func _process(_delta: float) -> void:
 func update_material(index:int):
 	if index == current_index:
 		return
-	print(depth_palettes[index])
 	current_index = index
 	Global.play_audio_clip(music_player, "Music %d"%[index+1])
 	material.set_shader_parameter('palette', depth_palettes[index])

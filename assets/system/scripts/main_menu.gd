@@ -30,6 +30,10 @@ func select_option():
 
 func other_options():
 	if Input.is_action_just_pressed("START"):
+		if other_menus:
+			for other_menu in other_menus:
+				if other_menu.visible:
+					return
 		self.visible = true
 		Global.shop_open.emit()
 		_update()

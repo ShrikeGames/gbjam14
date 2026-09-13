@@ -29,6 +29,39 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w05n1"]
 size = Vector2(51, 44)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_og8ln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_5xyhb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_d8i2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5xyhb")
+}],
+"loop": false,
+"name": &"happy",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_7dd8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5xyhb")
+}],
+"loop": false,
+"name": &"sad",
+"speed": 1.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgypw"]
 animations = [{
 "frames": [{
@@ -108,39 +141,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_og8ln"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_5xyhb")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_d8i2o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_5xyhb")
-}],
-"loop": false,
-"name": &"happy",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_7dd8x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_5xyhb")
-}],
-"loop": false,
-"name": &"sad",
-"speed": 1.0
-}]
-
 [node name="Game" type="Node2D" unique_id=1964057340]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1488212775 node_paths=PackedStringArray("player")]
@@ -154,7 +154,7 @@ player = NodePath("../Player")
 script = ExtResource("2_fxu02")
 
 [node name="Shop" type="Sprite2D" parent="." unique_id=2020397157 node_paths=PackedStringArray("shop_menu")]
-position = Vector2(229, 128)
+position = Vector2(198, 64)
 texture = ExtResource("7_7sfe6")
 script = ExtResource("4_2v020")
 shop_menu = NodePath("../UI/ShopMenu")
@@ -202,6 +202,100 @@ gold_increment_text = NodePath("IncrementalTextContainer2/Gold")
 friend_increment_text = NodePath("IncrementalTextContainer/FriendCount")
 shopkeeper = NodePath("ShopMenu/ShopkeeperPortrait")
 friend = NodePath("FriendPortrait")
+
+[node name="MainMenu" type="CenterContainer" parent="UI" unique_id=2043568747 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
+process_mode = 3
+visible = false
+offset_right = 160.0
+offset_bottom = 64.0
+theme = ExtResource("4_aif40")
+script = ExtResource("8_oo18y")
+menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Rows/Options")]
+sfx_player = NodePath("MenuSFXPlayer")
+other_menus = [NodePath("../ShopMenu")]
+
+[node name="Rows" type="VBoxContainer" parent="UI/MainMenu" unique_id=2089598964]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="RichTextLabel" parent="UI/MainMenu/Rows" unique_id=2082585300]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Menu"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" parent="UI/MainMenu/Rows" unique_id=596866353 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Continue"
+
+[node name="NewGame" parent="UI/MainMenu/Rows" unique_id=1893686181 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "New Game"
+
+[node name="Options" parent="UI/MainMenu/Rows" unique_id=2139197802 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Options"
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/MainMenu" unique_id=874919071]
+stream = ExtResource("9_wyj15")
+bus = &"SFX"
+
+[node name="ShopMenu" type="CenterContainer" parent="UI" unique_id=1705642188 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
+process_mode = 3
+visible = false
+offset_right = 160.0
+offset_bottom = 80.0
+theme = ExtResource("4_aif40")
+script = ExtResource("11_w05n1")
+menu_items = [NodePath("Rows/Recall"), NodePath("Rows/Friend"), NodePath("Rows/Drill"), NodePath("Rows/Close")]
+sfx_player = NodePath("MenuSFXPlayer")
+other_menus = [NodePath("../MainMenu")]
+
+[node name="Rows" type="VBoxContainer" parent="UI/ShopMenu" unique_id=701241635]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="RichTextLabel" parent="UI/ShopMenu/Rows" unique_id=1173544830]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Shop"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recall" parent="UI/ShopMenu/Rows" unique_id=1137546451 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Recall $1"
+
+[node name="Friend" parent="UI/ShopMenu/Rows" unique_id=1896859361 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Friend $5"
+
+[node name="Drill" parent="UI/ShopMenu/Rows" unique_id=282668395 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Drill $10"
+
+[node name="Close" parent="UI/ShopMenu/Rows" unique_id=2071106376 instance=ExtResource("8_hihoh")]
+layout_mode = 2
+menu_text = "Close"
+
+[node name="ShopkeeperPortrait" type="AnimatedSprite2D" parent="UI/ShopMenu" unique_id=1321793139]
+process_mode = 3
+position = Vector2(128, 92)
+sprite_frames = SubResource("SpriteFrames_og8ln")
+animation = &"sad"
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/ShopMenu" unique_id=1554509958]
+stream = ExtResource("9_wyj15")
+bus = &"SFX"
 
 [node name="PlayerPortrait" type="AnimatedSprite2D" parent="UI" unique_id=1650146467]
 process_mode = 3
@@ -307,98 +401,6 @@ target = NodePath("..")
 player = NodePath("../../../../Player")
 listen_id = 1
 
-[node name="MainMenu" type="CenterContainer" parent="UI" unique_id=2043568747 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
-process_mode = 3
-visible = false
-custom_minimum_size = Vector2(160, 0)
-offset_right = 160.0
-offset_bottom = 28.0
-theme = ExtResource("4_aif40")
-script = ExtResource("8_oo18y")
-menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Rows/Options")]
-sfx_player = NodePath("MenuSFXPlayer")
-other_menus = [NodePath("../ShopMenu")]
-
-[node name="Rows" type="VBoxContainer" parent="UI/MainMenu" unique_id=2089598964]
-custom_minimum_size = Vector2(160, 0)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Title" type="RichTextLabel" parent="UI/MainMenu/Rows" unique_id=2082585300]
-clip_contents = false
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-text = "Menu"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Continue" parent="UI/MainMenu/Rows" unique_id=596866353 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "Continue"
-
-[node name="NewGame" parent="UI/MainMenu/Rows" unique_id=1893686181 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "New Game"
-
-[node name="Options" parent="UI/MainMenu/Rows" unique_id=2139197802 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "Options"
-
-[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/MainMenu" unique_id=874919071]
-stream = ExtResource("9_wyj15")
-bus = &"SFX"
-
-[node name="ShopMenu" type="CenterContainer" parent="UI" unique_id=1705642188 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
-process_mode = 3
-visible = false
-custom_minimum_size = Vector2(160, 0)
-offset_right = 160.0
-offset_bottom = 28.0
-theme = ExtResource("4_aif40")
-script = ExtResource("11_w05n1")
-menu_items = [NodePath("Rows/Recall"), NodePath("Rows/Friend"), NodePath("Rows/Close")]
-sfx_player = NodePath("MenuSFXPlayer")
-other_menus = [NodePath("../MainMenu")]
-
-[node name="Rows" type="VBoxContainer" parent="UI/ShopMenu" unique_id=701241635]
-custom_minimum_size = Vector2(160, 0)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Title" type="RichTextLabel" parent="UI/ShopMenu/Rows" unique_id=1173544830]
-clip_contents = false
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-text = "Shop"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Recall" parent="UI/ShopMenu/Rows" unique_id=1137546451 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "Recall $1"
-
-[node name="Friend" parent="UI/ShopMenu/Rows" unique_id=1896859361 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "Friend $5"
-
-[node name="Close" parent="UI/ShopMenu/Rows" unique_id=2071106376 instance=ExtResource("8_hihoh")]
-layout_mode = 2
-menu_text = "Close"
-
-[node name="ShopkeeperPortrait" type="AnimatedSprite2D" parent="UI/ShopMenu" unique_id=1321793139]
-process_mode = 3
-position = Vector2(128, 92)
-sprite_frames = SubResource("SpriteFrames_og8ln")
-animation = &"sad"
-
-[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/ShopMenu" unique_id=1554509958]
-stream = ExtResource("9_wyj15")
-bus = &"SFX"
-
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=1665316771 node_paths=PackedStringArray("player", "music_player")]
 visible = false
 material = ExtResource("13_koqv6")
@@ -408,7 +410,7 @@ offset_bottom = 40.0
 color = Color(0.7607843, 0.7882353, 0.9882353, 1)
 script = ExtResource("14_koqv6")
 player = NodePath("../../Player")
-depth_palettes = Array[PackedVector3Array]([PackedVector3Array(0.02, 0.031, 0.137, 0.141, 0.172, 0.418, 0.402, 0.438, 0.707, 0.758, 0.785, 0.984), PackedVector3Array(0.52, 0.031, 0.137, 0.641, 0.172, 0.418, 0.902, 0.438, 0.707, 0.758, 0.785, 0.984), PackedVector3Array(0.27, 0.531, 0.137, 0.391, 0.672, 0.418, 0.652, 0.938, 0.707, 1, 1, 0.984)])
+depth_palettes = Array[PackedVector3Array]([PackedVector3Array(0.02, 0.031, 0.137, 0.141, 0.172, 0.418, 0.402, 0.438, 0.707, 0.758, 0.785, 0.984), PackedVector3Array(0.25, 0.16, 0.13, 0.63, 0.42, 0.3, 0.96, 0.92, 0.84, 0.85, 0.72, 0.56), PackedVector3Array(0.28, 0.11, 0.08, 0.76, 0.36, 0.2, 0.95, 0.7, 0.45, 0.99, 0.93, 0.85), PackedVector3Array(0.05, 0.18, 0.22, 0.16, 0.51, 0.53, 0.55, 0.82, 0.8, 0.98, 0.96, 0.95), PackedVector3Array(0.19, 0.09, 0.18, 0.52, 0.3, 0.45, 0.8, 0.64, 0.74, 0.96, 0.91, 0.94)])
 music_player = NodePath("../../MusicPlayer")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=352336139]

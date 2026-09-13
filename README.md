@@ -81,7 +81,11 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 Story Ideas:
 	
 - Riko Saves The World
-- 
+- A long long time ago... the world ended.
+- With no civilization people to returned to...
+- The Old Gold Standard
+- You are Rico, a human tasked with .
+
 
 
 ## Day 4

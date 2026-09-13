@@ -22,11 +22,11 @@ func update_sprite():
 	self.sprite.texture = Global.tile_sprites[tile_id]
 
 func is_drillable():
-	return Global.tile_stats[tile_id]["is_drillable"]
+	return Global.tile_stats[tile_id]["is_drillable"] and Global.save_data["damage"] > Global.tile_stats[tile_id]["hardness"]
 
 func _process(delta: float) -> void:
 	iframes = clampf(iframes-delta, 0, max_iframes)
-	if being_drilled and iframes <= 0:
+	if being_drilled and iframes <= 0 and is_drillable():
 		hp -= Global.save_data["damage"]
 		# 1, 0.75, 0.5, 0.25
 		# 4, 3, 2, 1

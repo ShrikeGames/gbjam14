@@ -26,30 +26,35 @@ var tile_stats:Dictionary = {
 	0: {
 		"is_drillable": true,
 		"hp": 1,
+		"hardness": 0,
 		"drop_item": -1,
 		"worth": 0,
 	},
 	1: {
 		"is_drillable": true,
 		"hp": 2,
+		"hardness": 0,
 		"drop_item": -1,
 		"worth": 0,
 	},
 	2: {
-		"is_drillable": false,
-		"hp": 99,
+		"is_drillable": true,
+		"hp": 10,
+		"hardness": 4,
 		"drop_item": -1,
 		"worth": 0,
 	},
 	3: {
 		"is_drillable": true,
 		"hp": 4,
+		"hardness": 0,
 		"drop_item": 0,
 		"worth": 1,
 	},
 	4: {
 		"is_drillable": true,
 		"hp": 8,
+		"hardness": 1,
 		"drop_item": 0,
 		"worth": 10,
 	}

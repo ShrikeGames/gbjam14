@@ -4,5 +4,5 @@
 
 [resource]
 shader = ExtResource("1_3yrmo")
-shader_parameter/palette = PackedVector3Array(0.02, 0.031, 0.137, 0.141, 0.172, 0.418, 0.402, 0.438, 0.707, 0.758, 0.785, 0.984)
+shader_parameter/palette = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/shader_active = true

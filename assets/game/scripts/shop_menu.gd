@@ -20,6 +20,13 @@ func select_option():
 		else:
 			Global.cannot_afford.emit()
 	elif selected_id == 2:
+		if Global.save_data["gold"] >= 10:
+			Global.save_data["damage"] += 2
+			Global.save_data["gold"] -= 10
+			Global.gold_changed.emit(Global.save_data["gold"], -10)
+		else:
+			Global.cannot_afford.emit()
+	elif selected_id == 3:
 		self.visible = false
 		Global.shop_close.emit()
 		get_tree().paused = false
