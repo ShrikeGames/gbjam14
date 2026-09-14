@@ -74,7 +74,6 @@ Plans:
 - Add new art for shop keeper
 - Create character sprite to show in corner and reacts to events
 - Offset palette swap by half a tile to avoid it flickering back and forth
-- Finish menus
 - Update terrain generation
 
 https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
@@ -91,6 +90,7 @@ Story Ideas:
 
 ## Day 4
 
+- Finish menus
 - Add day cycle, when night comes go to new scene for managing family
 - Each day new map generated but keep upgrades
 - Create intro cinematic that tells story

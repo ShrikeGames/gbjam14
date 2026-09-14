@@ -5,6 +5,7 @@ class_name MainMenu
 @export var menu_items:Array[GBMenuItem] = []
 @export var sfx_player:AudioStreamPlayer
 @export var other_menus:Array[MainMenu]
+var game_scene:String = "res://assets/game/scenes/game.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +28,11 @@ func select_option():
 		self.visible = false
 		Global.shop_close.emit()
 		get_tree().paused = false
-
+	elif selected_id == 1:
+		Global.save_data = Global.DEFAULT_SAVE_DATA.duplicate(true)
+		Global.save()
+		get_tree().change_scene_to_file(game_scene)
+	
 func other_options():
 	if Input.is_action_just_pressed("START"):
 		if other_menus:

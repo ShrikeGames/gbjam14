@@ -22,7 +22,7 @@ collision_mask = 2
 
 [node name="DrillColliderShape" type="CollisionPolygon2D" parent="DrillArea" unique_id=1091091603]
 position = Vector2(0, 4)
-polygon = PackedVector2Array(2, 11, 10, -1, -10, -1, -2, 11)
+polygon = PackedVector2Array(10, 11, 10, -1, -10, -1, -10, 11)
 
 [connection signal="body_entered" from="DrillArea" to="." method="_on_drill_area_body_entered"]
 [connection signal="body_exited" from="DrillArea" to="." method="_on_drill_area_body_exited"]

@@ -7,11 +7,9 @@ signal friend_count_changed
 @export var right_speed:float = 25.0
 @export var drill:Drill
 @export var friends_container:Node2D
-@export var max_friends:int = 2
 @export var sprite:AnimatedSprite2D
 var sprite_original_position:Vector2
 var lifetime:float = 0.0
-var current_friends:int = 0
 
 @export var sfx_player:AudioStreamPlayer
 @export var portrait:AnimatedSprite2D
@@ -29,8 +27,8 @@ func _ready() -> void:
 	self.sprite_original_position = sprite.position
 	
 func _add_friend():
-	max_friends += 1
-	friend_count_changed.emit(current_friends, max_friends, 1)
+	Global.save_data["max_friends"] += 1
+	friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], 1)
 	
 func _process(delta: float) -> void:
 	lifetime += delta
@@ -63,9 +61,9 @@ func _physics_process(_delta: float) -> void:
 	self.apply_central_force(movement)
 
 func _spawn_friend(direction:int = 1):
-	if current_friends < max_friends:
-		current_friends += 1
-		friend_count_changed.emit(current_friends, max_friends, -1)
+	if Global.save_data["current_friends"] < Global.save_data["max_friends"]:
+		Global.save_data["current_friends"] += 1
+		friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], -1)
 	else:
 		return
 	
@@ -86,8 +84,8 @@ func _recall_friend(friend:Friend):
 		Global.save_data["gold"] += friend.worth
 		Global.gold_changed.emit(Global.save_data["gold"], friend.worth)
 	friend.get_parent().remove_child(friend)
-	current_friends -= 1
-	friend_count_changed.emit(current_friends, max_friends, 1)
+	Global.save_data["current_friends"] -= 1
+	friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], 1)
 
 func _on_collection_area_body_entered(body: Node2D) -> void:
 	if not is_instance_of(body, Friend) and not is_instance_of(body, Item):
