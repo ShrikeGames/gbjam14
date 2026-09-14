@@ -316,6 +316,15 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Spacer2" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=43167537]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/HomeMenu" unique_id=1005249611]
 stream = ExtResource("11_4pew8")
 bus = &"SFX"
