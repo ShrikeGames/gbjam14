@@ -86,6 +86,7 @@ func play_audio_clip(audio_player, clip_name:String):
 
 var DEFAULT_SAVE_DATA:Dictionary = {
 	"started": false,
+	"skip_intro": true,
 	"gold": 0,
 	"damage": 1,
 	"current_friends": 0,

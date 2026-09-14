@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dnlbkabx5upjh" path="res://assets/game/audio/music/music3.mp3" id="3_tg3a1"]
 
 [resource]
-clip_count = 3
+clip_count = 7
 clip_0/name = &"Music 1"
 clip_0/stream = ExtResource("1_4tgqf")
 clip_0/auto_advance = 0
@@ -15,6 +15,18 @@ clip_1/auto_advance = 0
 clip_2/name = &"Music 3"
 clip_2/stream = ExtResource("3_tg3a1")
 clip_2/auto_advance = 0
+clip_3/name = &"Music 4"
+clip_3/stream = ExtResource("1_4tgqf")
+clip_3/auto_advance = 0
+clip_4/name = &"Music 5"
+clip_4/stream = ExtResource("2_eqquj")
+clip_4/auto_advance = 0
+clip_5/name = &"Music 6"
+clip_5/stream = ExtResource("3_tg3a1")
+clip_5/auto_advance = 0
+clip_6/name = &"Music 7"
+clip_6/stream = ExtResource("3_tg3a1")
+clip_6/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,

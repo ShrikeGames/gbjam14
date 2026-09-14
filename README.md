@@ -89,6 +89,8 @@ Story Ideas:
 ## Day 4
 
 - Finish menus
+- Add boulder that can fall and crush friends/damage player
+- Change palette when entering shop, picking up gold, etc
 - Add day cycle, when night comes go to new scene for managing family
 - Each day new map generated but keep upgrades
 - Create intro cinematic that tells story

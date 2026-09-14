@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxu56kx2s61g" path="res://assets/game/scripts/item.gd" id="1_6itn2"]
 [ext_resource type="Texture2D" uid="uid://b8nra2ddronod" path="res://assets/game/images/item0.png" id="2_f5p3e"]
+[ext_resource type="PackedScene" uid="uid://ky6uk51qfwh8" path="res://assets/game/scenes/sparkle.tscn" id="3_f5p3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sfe6"]
 radius = 8.0
@@ -9,6 +10,10 @@ radius = 8.0
 [node name="Item" type="RigidBody2D" unique_id=1602027267 node_paths=PackedStringArray("sprite")]
 collision_layer = 8
 collision_mask = 2
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 16
 script = ExtResource("1_6itn2")
 sprite = NodePath("Item")
 
@@ -17,3 +22,9 @@ texture = ExtResource("2_f5p3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853122623]
 shape = SubResource("CircleShape2D_7sfe6")
+
+[node name="Sparkle" parent="." unique_id=1829852087 instance=ExtResource("3_f5p3e")]
+position = Vector2(3, 0)
+
+[node name="Sparkle2" parent="." unique_id=1238048097 instance=ExtResource("3_f5p3e")]
+position = Vector2(-2, 0)

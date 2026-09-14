@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ky6uk51qfwh8"]
+
+[ext_resource type="Texture2D" uid="uid://twg8jljflufs" path="res://assets/game/images/sparkle.png" id="1_fowib"]
+[ext_resource type="Script" uid="uid://bjyrtqdvbv34f" path="res://assets/game/scripts/sparkle.gd" id="2_q7eb6"]
+
+[node name="Sparkle" type="Sprite2D" unique_id=1829852087]
+texture = ExtResource("1_fowib")
+script = ExtResource("2_q7eb6")
