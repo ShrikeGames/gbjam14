@@ -15,8 +15,7 @@ void fragment() {
 
 		for(int i = 0;i< palette.length(); i++)
 		{
-			vec3 new_difference = screen_texture_color.rgb - palette[i].rgb;
-			float dist = dot(new_difference,new_difference); //Length squared
+			float dist = distance(screen_texture_color.rgb, palette[i].rgb);
 
 			if(dist<closest_distance){ //This colour must be closer to the original
 				closest_distance = dist;
