@@ -1,5 +1,4 @@
-# gbjam14
-Entry for GMJam14: Gameboy Styled Game
+# Dirt Pay: Entry for GMJam14
 
 Game Jam Information: https://itch.io/jam/gbjam-14
 
@@ -79,12 +78,11 @@ Plans:
 https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 
 Story Ideas:
-	
-- Riko Saves The World
+
 - A long long time ago... the world ended.
 - With no civilization people to returned to...
 - The Good Old Gold Standard
-- You are Rico, a human tasked with leading Molepeople to mine for gold.
+- You are Riko, a human tasked with leading Molepeople to mine for gold.
 - You must keep you and your family fed and healthy.
 - Then earn enough gold to pay for a trip to live on Mars.
 

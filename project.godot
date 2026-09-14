@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GB Jam 14"
+config/name="Dirt Pay"
 run/main_scene="uid://bje58ixhdolj8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.7607843, 0.7882353, 0.9882353, 1)
