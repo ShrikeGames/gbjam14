@@ -94,5 +94,7 @@ Story Ideas:
 - Add day cycle, when night comes go to new scene for managing family
 - Each day new map generated but keep upgrades
 - Create intro cinematic that tells story
+- Start the player with some gold and on the family screen, deduct it all to show how much things will cost
+- Then they can click to start the day and mine
 - Add first enemy
 - 

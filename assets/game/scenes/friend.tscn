@@ -29,6 +29,9 @@ animations = [{
 "texture": ExtResource("5_s4lmk")
 }, {
 "duration": 1.0,
+"texture": ExtResource("4_0hd7q")
+}, {
+"duration": 1.0,
 "texture": ExtResource("6_f0m8b")
 }],
 "loop": true,
@@ -87,7 +90,6 @@ bus = &"SFX"
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ni6aq")
 autoplay = "default"
-frame_progress = 0.42311707
 
 [node name="Right" type="Node2D" parent="." unique_id=1524149446]
 position = Vector2(-2, 4)
