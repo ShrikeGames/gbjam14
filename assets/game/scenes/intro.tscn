@@ -141,7 +141,7 @@
 [ext_resource type="Texture2D" uid="uid://4pqxnaiop0ti" path="res://assets/system/art/shrikegames_intro_gbsize0137.jpg" id="139_fytym"]
 [ext_resource type="Texture2D" uid="uid://lsu35eroq3yt" path="res://assets/system/art/shrikegames_intro_gbsize0138.jpg" id="140_demqs"]
 [ext_resource type="Texture2D" uid="uid://cov2botisxiil" path="res://assets/system/art/shrikegames_intro_gbsize0139.jpg" id="141_c4ejd"]
-[ext_resource type="Material" uid="uid://6o1uy33vqh3x" path="res://pallet_swap_1.tres" id="142_nuabr"]
+[ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="142_40jxv"]
 [ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_40jxv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g6mp"]
@@ -572,6 +572,12 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfdmr"]
+shader = ExtResource("142_40jxv")
+shader_parameter/reference_palette = PackedColorArray(0.011764706, 0.011764706, 0.011764706, 1, 0.12156863, 0.12156863, 0.12156863, 1, 0.4, 0.4, 0.4, 1, 1, 1, 1, 1)
+shader_parameter/palette = PackedColorArray(0.01, 0.01, 0.01, 1, 0.3180199, 0.31801975, 0.31801972, 1, 0.9079417, 0.9079417, 0.90794164, 1, 1, 1, 1, 1)
+shader_parameter/shader_active = true
+
 [node name="Intro" type="Node2D" unique_id=386532816]
 script = ExtResource("1_0ut8l")
 
@@ -584,7 +590,7 @@ sprite_frames = SubResource("SpriteFrames_7g6mp")
 autoplay = "default"
 
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=999130770]
-material = ExtResource("142_nuabr")
+material = SubResource("ShaderMaterial_wfdmr")
 custom_minimum_size = Vector2(160, 144)
 offset_right = 40.0
 offset_bottom = 40.0

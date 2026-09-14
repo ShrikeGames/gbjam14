@@ -86,11 +86,16 @@ func play_audio_clip(audio_player, clip_name:String):
 
 var DEFAULT_SAVE_DATA:Dictionary = {
 	"started": false,
-	"skip_intro": true,
+	"skip_intro": false,
 	"gold": 0,
 	"damage": 1,
 	"current_friends": 0,
-	"max_friends": 2
+	"max_friends": 2,
+	"prices": [
+		1,
+		5,
+		10
+	]
 }
 var save_data:Dictionary = DEFAULT_SAVE_DATA.duplicate(true)
 

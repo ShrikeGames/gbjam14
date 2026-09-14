@@ -4,5 +4,6 @@
 
 [resource]
 shader = ExtResource("1_3yrmo")
+shader_parameter/reference_palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
 shader_parameter/palette = PackedColorArray(0.01, 0.01, 0.01, 1, 0.12, 0.12, 0.12, 1, 0.4, 0.4, 0.4, 1, 1, 1, 1, 1)
 shader_parameter/shader_active = true

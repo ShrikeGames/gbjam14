@@ -88,13 +88,18 @@ Story Ideas:
 
 ## Day 4
 
-- Finish menus
+- Shop prices increase with every purchase
+- Change palette when entering shop
 - Add boulder that can fall and crush friends/damage player
-- Change palette when entering shop, picking up gold, etc
 - Add day cycle, when night comes go to new scene for managing family
 - Each day new map generated but keep upgrades
 - Create intro cinematic that tells story
 - Start the player with some gold and on the family screen, deduct it all to show how much things will cost
 - Then they can click to start the day and mine
 - Add first enemy
-- 
+- Depth title pop-up when goes being depth palettes?
+- Family sprite
+- House sprite
+- Shop sprite
+- City from intro sprite
+- Create options menu
