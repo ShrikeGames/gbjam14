@@ -9,6 +9,7 @@ class_name UI
 @export var friend_increment_text:RichTextLabel
 @export var shopkeeper:AnimatedSprite2D
 @export var friend:AnimatedSprite2D
+@export var day:RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +20,8 @@ func _ready() -> void:
 	Global.friend_died.connect(_friend_died)
 	Global.shop_open.connect(_shop_open)
 	Global.shop_close.connect(_shop_close)
+	Global.player_hurt.connect(_player_hurt)
+	day.text = "Day %s"%[int(Global.save_data["day"])]
 	_gold_changed(Global.save_data["gold"],0)
 	_friend_count_changed(Global.save_data["current_friends"],Global.save_data["max_friends"],0)
 	
@@ -27,6 +30,9 @@ func _shop_open():
 
 func _shop_close():
 	player.portrait.play("default")
+
+func _player_hurt():
+	player.portrait.play("sad")
 
 func _cannot_afford():
 	shopkeeper.play("sad")
@@ -37,6 +43,8 @@ func _friend_got_item():
 
 func _friend_died():
 	friend.play("sad")
+	_friend_count_changed(Global.save_data["current_friends"],Global.save_data["max_friends"],0)
+
 
 func _friend_count_changed(friend_count:int, max_friend_count:int, friend_increment_count:int):
 	if friend_increment_count > 0:

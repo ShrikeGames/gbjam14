@@ -11,13 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://d4k5ohuch75aw" path="res://assets/game/images/shop.png" id="7_7sfe6"]
 [ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="8_hihoh"]
 [ext_resource type="Script" uid="uid://blfyka1gcotly" path="res://assets/system/scripts/main_menu.gd" id="8_oo18y"]
-[ext_resource type="Texture2D" uid="uid://dpppeoptf7agt" path="res://assets/game/images/art/heart_full.png" id="9_7am1a"]
+[ext_resource type="Script" uid="uid://byvvrtmjprnf" path="res://assets/game/scripts/health_ui.gd" id="9_em1am"]
 [ext_resource type="Texture2D" uid="uid://bcmpdv6gijof2" path="res://assets/game/images/art/portraits/player_idle_h.png" id="9_n2xap"]
 [ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="9_wyj15"]
 [ext_resource type="Texture2D" uid="uid://drb1jxedxkw0m" path="res://assets/game/images/art/portraits/player_happy_h.png" id="10_5xyhb"]
-[ext_resource type="Texture2D" uid="uid://6fkdmpje51vw" path="res://assets/game/images/art/heart_half.png" id="10_8dpxv"]
 [ext_resource type="Texture2D" uid="uid://dfc8po7opbbca" path="res://assets/game/images/art/portraits/player_sad_h.png" id="11_d8i2o"]
-[ext_resource type="Texture2D" uid="uid://rblf4ivx2bit" path="res://assets/game/images/art/heart_empty.png" id="11_em1am"]
 [ext_resource type="Script" uid="uid://bptaiagbxx83e" path="res://assets/game/scripts/shop_menu.gd" id="11_w05n1"]
 [ext_resource type="Texture2D" uid="uid://dv8ykn8kcj6u" path="res://assets/game/images/art/portraits/friend_happy_h.png" id="12_n2xap"]
 [ext_resource type="Texture2D" uid="uid://brjqv8ruyyl66" path="res://assets/game/images/art/portraits/friend_idle_h.png" id="13_5xyhb"]
@@ -28,27 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://ootrtof5gcyu" path="res://assets/game/images/art/portraits/shopkeep_idle_h.png" id="20_5xyhb"]
 [ext_resource type="Texture2D" uid="uid://dhyhqpwfvbqx0" path="res://assets/game/images/art/portraits/shopkeep_happy_h.png" id="21_d8i2o"]
 [ext_resource type="Texture2D" uid="uid://c8fklmha7uqgp" path="res://assets/game/images/art/portraits/shopkeep_sad_H.png" id="22_7dd8x"]
+[ext_resource type="Script" uid="uid://dhu5xc4ex7mjb" path="res://assets/game/scripts/time_ui.gd" id="25_8dpxv"]
+[ext_resource type="Texture2D" uid="uid://cm16528s6rtrc" path="res://assets/game/images/art/time_ui.png" id="28_7am1a"]
 [ext_resource type="PackedScene" uid="uid://dxw7d3mikwctf" path="res://assets/game/scenes/item.tscn" id="29_8dpxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w05n1"]
 size = Vector2(51, 44)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wg31x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_7am1a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_8dpxv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_em1am")
-}],
-"loop": false,
-"name": &"default",
-"speed": 1.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_og8ln"]
 animations = [{
@@ -206,14 +189,14 @@ scale = Vector2(0.125, 0.125)
 texture = ExtResource("6_1e2d6")
 
 [node name="Player" parent="." unique_id=447483926 node_paths=PackedStringArray("friends_container", "sfx_player", "portrait") instance=ExtResource("3_fxu02")]
-position = Vector2(80, 59)
+position = Vector2(80, 81)
 friends_container = NodePath("../Friends")
 sfx_player = NodePath("../SFXPlayer")
 portrait = NodePath("../UI/PlayerPortrait")
 
 [node name="Friends" type="Node2D" parent="." unique_id=77677285]
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=489932100 node_paths=PackedStringArray("gold_text", "friend_text", "player", "gold_increment_text", "friend_increment_text", "shopkeeper", "friend")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=489932100 node_paths=PackedStringArray("gold_text", "friend_text", "player", "gold_increment_text", "friend_increment_text", "shopkeeper", "friend", "day")]
 process_mode = 3
 script = ExtResource("4_3blqa")
 gold_text = NodePath("TotalTextContainer/Gold")
@@ -223,24 +206,14 @@ gold_increment_text = NodePath("IncrementalTextContainer2/Gold")
 friend_increment_text = NodePath("IncrementalTextContainer/FriendCount")
 shopkeeper = NodePath("ShopMenu/ShopkeeperPortrait")
 friend = NodePath("FriendPortrait")
+day = NodePath("Day")
 
 [node name="Health" type="CenterContainer" parent="UI" unique_id=175809443]
 process_mode = 3
 offset_right = 160.0
 offset_bottom = 80.0
 theme = ExtResource("4_aif40")
-
-[node name="Heart" type="AnimatedSprite2D" parent="UI/Health" unique_id=361848011]
-position = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_wg31x")
-
-[node name="Heart2" type="AnimatedSprite2D" parent="UI/Health" unique_id=1089622087]
-position = Vector2(24, 8)
-sprite_frames = SubResource("SpriteFrames_wg31x")
-
-[node name="Heart3" type="AnimatedSprite2D" parent="UI/Health" unique_id=150787291]
-position = Vector2(40, 8)
-sprite_frames = SubResource("SpriteFrames_wg31x")
+script = ExtResource("9_em1am")
 
 [node name="MainMenu" type="CenterContainer" parent="UI" unique_id=2043568747 node_paths=PackedStringArray("menu_items", "sfx_player", "other_menus")]
 process_mode = 3
@@ -443,6 +416,30 @@ target = NodePath("..")
 player = NodePath("../../../../Player")
 listen_id = 1
 
+[node name="TimeUi" type="Sprite2D" parent="UI" unique_id=1981969100 node_paths=PackedStringArray("timer")]
+position = Vector2(144, 16)
+texture = ExtResource("28_7am1a")
+script = ExtResource("25_8dpxv")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="UI/TimeUi" unique_id=1700775613]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="Day" type="RichTextLabel" parent="UI" unique_id=201992186]
+clip_contents = false
+custom_minimum_size = Vector2(64, 16)
+offset_left = 96.0
+offset_right = 160.0
+offset_bottom = 16.0
+theme = ExtResource("4_aif40")
+text = "Day 1"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=1665316771 node_paths=PackedStringArray("player", "music_player")]
 visible = false
 material = ExtResource("13_koqv6")
@@ -465,9 +462,10 @@ stream = ExtResource("9_wyj15")
 bus = &"SFX"
 
 [node name="Item" parent="." unique_id=1602027267 instance=ExtResource("29_8dpxv")]
-position = Vector2(103, 50)
+position = Vector2(103, 69)
 
 [connection signal="body_entered" from="Shop/Area2D" to="Shop" method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="UI/PlayerPortrait" to="UI" method="_on_player_portrait_animation_finished"]
 [connection signal="timeout" from="UI/IncrementalTextContainer/FriendCount/Timer" to="UI/IncrementalTextContainer/FriendCount/Timer" method="_on_timeout"]
 [connection signal="timeout" from="UI/IncrementalTextContainer2/Gold/Timer" to="UI/IncrementalTextContainer2/Gold/Timer" method="_on_timeout"]
+[connection signal="timeout" from="UI/TimeUi/Timer" to="UI/TimeUi" method="_on_timer_timeout"]

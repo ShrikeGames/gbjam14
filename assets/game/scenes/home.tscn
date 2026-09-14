@@ -1,0 +1,344 @@
+[gd_scene format=3 uid="uid://c6yn0fbphri63"]
+
+[ext_resource type="Script" uid="uid://bh1vy4tf4yidq" path="res://assets/game/scripts/family_ui.gd" id="1_s4ts7"]
+[ext_resource type="Texture2D" uid="uid://cmbuofioxdt2s" path="res://assets/game/images/art/portraits/family/mom_happy.png" id="2_r11qq"]
+[ext_resource type="Texture2D" uid="uid://bw3op2kubsjw3" path="res://assets/game/images/art/portraits/family/mom_sad.png" id="3_nkun6"]
+[ext_resource type="Texture2D" uid="uid://dtnmo6coodmpc" path="res://assets/game/images/art/portraits/family/kid_happy.png" id="4_f58e3"]
+[ext_resource type="Texture2D" uid="uid://bwujg8cqy640a" path="res://assets/game/images/art/portraits/family/kid_sad.png" id="5_0htt0"]
+[ext_resource type="Texture2D" uid="uid://bd2gc0o841pb0" path="res://assets/game/images/art/portraits/family/pet_happy.png" id="6_4evq4"]
+[ext_resource type="Texture2D" uid="uid://ccobbvcwbbsyr" path="res://assets/game/images/art/portraits/family/pet_sad.png" id="7_cveg1"]
+[ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="8_m26aw"]
+[ext_resource type="Script" uid="uid://6pixv2ut7k7k" path="res://assets/game/scripts/home_menu.gd" id="8_s4ts7"]
+[ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="10_lqrdg"]
+[ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="11_4pew8"]
+[ext_resource type="AudioStream" uid="uid://3jo4jfvh42fl" path="res://assets/game/audio/music_interactive_stream.tres" id="14_s4ts7"]
+[ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="142_1khxd"]
+[ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_mxr11"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f58e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r11qq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nkun6")
+}],
+"loop": false,
+"name": &"sad",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4evq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f58e3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0htt0")
+}],
+"loop": false,
+"name": &"sad",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd0en"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4evq4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cveg1")
+}],
+"loop": false,
+"name": &"sad",
+"speed": 1.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfdmr"]
+shader = ExtResource("142_1khxd")
+shader_parameter/reference_palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/shader_active = true
+
+[node name="Home" type="Node2D" unique_id=386532816]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=733880445]
+process_mode = 3
+
+[node name="Family" type="Node2D" parent="UI" unique_id=1710194470]
+position = Vector2(80, 72)
+script = ExtResource("1_s4ts7")
+
+[node name="mom" type="AnimatedSprite2D" parent="UI/Family" unique_id=1086356763]
+sprite_frames = SubResource("SpriteFrames_f58e3")
+animation = &"dead"
+autoplay = "default"
+
+[node name="kid" type="AnimatedSprite2D" parent="UI/Family" unique_id=2120917254]
+sprite_frames = SubResource("SpriteFrames_4evq4")
+animation = &"dead"
+autoplay = "default"
+
+[node name="pet" type="AnimatedSprite2D" parent="UI/Family" unique_id=1421446352]
+position = Vector2(8, -14)
+sprite_frames = SubResource("SpriteFrames_yd0en")
+animation = &"dead"
+autoplay = "default"
+
+[node name="HomeMenu" type="CenterContainer" parent="UI" unique_id=1085428381 node_paths=PackedStringArray("day", "gold_value", "rent_value", "food_value", "heat_value", "other_label", "other_value", "total_value", "menu_items", "sfx_player")]
+process_mode = 3
+offset_right = 160.0
+offset_bottom = 78.0
+theme = ExtResource("8_m26aw")
+script = ExtResource("8_s4ts7")
+day = NodePath("Rows/Day")
+gold_value = NodePath("Rows/Gold/Value")
+rent_value = NodePath("Rows/Rent/Value")
+food_value = NodePath("Rows/Food/Value")
+heat_value = NodePath("Rows/Heat/Value")
+other_label = NodePath("Rows/Other/Label")
+other_value = NodePath("Rows/Other/Value")
+total_value = NodePath("Rows/Total/Value")
+menu_items = [NodePath("../Continue")]
+sfx_player = NodePath("MenuSFXPlayer")
+
+[node name="Rows" type="VBoxContainer" parent="UI/HomeMenu" unique_id=867118602]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Day" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=1196788305]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Day 1"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gold" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=53312051]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Gold" unique_id=1488535720]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Savings"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Gold" unique_id=838589539]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "00000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Rent" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=470748255]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Rent" unique_id=117800501]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Rent"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Rent" unique_id=1339426012]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "-10"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Food" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=1641829117]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Food" unique_id=1153332684]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Food"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Food" unique_id=1416133366]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "-10"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Heat" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=981163414]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Heat" unique_id=193586587]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Heat"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Heat" unique_id=1541752323]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "-10"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Other" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=893608346]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Other" unique_id=433240359]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Birthday"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Other" unique_id=134601995]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "-10"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Total" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=1247495301]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/HomeMenu/Rows/Total" unique_id=881711511]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "Remaining"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/HomeMenu/Rows/Total" unique_id=429588400]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "00000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=2006616762]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/HomeMenu" unique_id=1005249611]
+stream = ExtResource("11_4pew8")
+bus = &"SFX"
+
+[node name="Continue" parent="UI" unique_id=596866353 instance=ExtResource("10_lqrdg")]
+offset_top = 128.0
+offset_bottom = 144.0
+menu_text = "Continue"
+
+[node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=999130770]
+material = SubResource("ShaderMaterial_wfdmr")
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1541596330]
+stream = ExtResource("143_mxr11")
+autoplay = true
+bus = &"Music"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=361969906]
+process_mode = 3
+stream = ExtResource("14_s4ts7")
+autoplay = true
+bus = &"Music"

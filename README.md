@@ -77,6 +77,22 @@ Plans:
 
 https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 
+## Day 4
+
+- Shop prices increase with every purchase
+- Change palette when entering shop
+- Add boulder that can fall and crush friends/damage player
+- Add day/night cycle, go to home scene at start of each day
+- Each day new map generated but keep upgrades
+- Start the player with some gold and on the family screen, deduct it all to show how much things will cost
+- Then they can click to start the day and mine
+- Family sprite
+- House sprite
+- Shop sprite
+- Family gets sad/dies if you don't have enough gold for the day
+
+## Day 5
+
 Story Ideas:
 
 - A long long time ago... the world ended.
@@ -86,20 +102,12 @@ Story Ideas:
 - You must keep you and your family fed and healthy.
 - Then earn enough gold to pay for a trip to live on Mars.
 
-## Day 4
-
-- Shop prices increase with every purchase
-- Change palette when entering shop
-- Add boulder that can fall and crush friends/damage player
-- Add day cycle, when night comes go to new scene for managing family
-- Each day new map generated but keep upgrades
 - Create intro cinematic that tells story
-- Start the player with some gold and on the family screen, deduct it all to show how much things will cost
-- Then they can click to start the day and mine
 - Add first enemy
 - Depth title pop-up when goes being depth palettes?
-- Family sprite
-- House sprite
-- Shop sprite
 - City from intro sprite
 - Create options menu
+- Fix bugs around friends being killed, counter being wrong, possible null pointer
+- Press button to skip ShrikeGames intro video
+- Create more music tracks?
+- Test if player dies if hospital bill shows up

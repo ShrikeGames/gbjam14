@@ -50,10 +50,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
-"speed": 12.0
+"speed": 1.0
 }]
 
-[node name="Friend" type="RigidBody2D" unique_id=457346670 node_paths=PackedStringArray("drill", "sfx_player", "sprite", "arm")]
+[node name="Friend" type="RigidBody2D" unique_id=457346670 node_paths=PackedStringArray("drill", "sfx_player", "sprite", "arm", "arm_container")]
+disable_mode = 2
 collision_layer = 4
 collision_mask = 2
 physics_material_override = ExtResource("1_m6sa4")
@@ -67,6 +68,7 @@ drill = NodePath("Right/FriendArmSegment/FriendDrill")
 sfx_player = NodePath("SFXPlayer")
 sprite = NodePath("FriendAnimatedSprite")
 arm = NodePath("Right/FriendArmSegment")
+arm_container = NodePath("Right")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279318758]
 position = Vector2(0, -7)
@@ -89,7 +91,10 @@ bus = &"SFX"
 [node name="FriendAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1672559897]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ni6aq")
+animation = &"die"
 autoplay = "default"
+frame = 1
+frame_progress = 0.028639542
 
 [node name="Right" type="Node2D" parent="." unique_id=1524149446]
 position = Vector2(-2, 4)
@@ -125,3 +130,4 @@ raycast = NodePath("../RightArmRayCast")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
+[connection signal="animation_finished" from="FriendAnimatedSprite" to="." method="_on_friend_animated_sprite_animation_finished"]

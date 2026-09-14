@@ -9,6 +9,9 @@ signal friend_got_item
 signal friend_died
 signal shop_open
 signal shop_close
+signal player_hurt
+signal player_died
+signal family_hurt
 
 var enable_rotation:bool = true
 
@@ -20,7 +23,7 @@ var tile_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile2.png"),
 	ResourceLoader.load("res://assets/game/images/tile3.png"),
 	ResourceLoader.load("res://assets/game/images/tile4.png"),
-	ResourceLoader.load("res://assets/game/images/tile0.png"),
+	ResourceLoader.load("res://assets/game/images/tile5.png"),
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
@@ -47,7 +50,7 @@ var tile_stats:Dictionary = {
 	2: {
 		"is_drillable": true,
 		"hp": 10,
-		"hardness": 4,
+		"hardness": 6,
 		"drop_item": -1,
 		"worth": 0,
 	},
@@ -64,7 +67,14 @@ var tile_stats:Dictionary = {
 		"hp": 12,
 		"hardness": 2,
 		"drop_item": 0,
-		"worth": 10,
+		"worth": 5,
+	},
+	5: {
+		"is_drillable": true,
+		"hp": 10,
+		"hardness": 4,
+		"drop_item": -1,
+		"worth": 0,
 	},
 	9: {
 		"is_drillable": false,
@@ -75,8 +85,10 @@ var tile_stats:Dictionary = {
 	},
 }
 var tile = load("res://assets/game/scenes/tile.tscn")
+var moveable_tile = load("res://assets/game/scenes/moveabletile.tscn")
 var friend = load("res://assets/game/scenes/friend.tscn")
 var item = load("res://assets/game/scenes/item.tscn")
+var heart = load("res://assets/game/scenes/heart.tscn")
 
 func play_audio_clip(audio_player, clip_name:String):
 	var playback = audio_player.get_stream_playback() as AudioStreamPlaybackInteractive
@@ -85,17 +97,29 @@ func play_audio_clip(audio_player, clip_name:String):
 
 
 var DEFAULT_SAVE_DATA:Dictionary = {
+	"day": 1,
+	"completed_days": 0,
+	"rent": 5,
+	"food": 5,
+	"heat": 2,
+	"event_cost": "",
+	"event_name": "",
 	"started": false,
 	"skip_intro": false,
-	"gold": 0,
+	"gold": 12,
 	"damage": 1,
 	"current_friends": 0,
 	"max_friends": 2,
+	"hp": 6,
+	"max_hp": 6,
 	"prices": [
 		1,
 		5,
 		10
-	]
+	],
+	"mom": 2,
+	"kid": 2,
+	"pet": 2
 }
 var save_data:Dictionary = DEFAULT_SAVE_DATA.duplicate(true)
 

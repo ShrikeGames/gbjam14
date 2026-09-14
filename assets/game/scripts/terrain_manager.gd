@@ -6,13 +6,13 @@ extends Node2D
 @export var tile_width:int = 16
 @export var tile_height:int = 16
 var tiles_by_depth:Array[Array]=[
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3],
-	[1,1,1,1,1,1,1,1,1,2,2,4,3,0,0,0,0],
-	[1,1,1,1,1,1,2,0,0,2,4,4,3,3,0,0,0],
-	[1,1,1,1,0,0,0,0,4,4,2,3,0,0,0,1,1],
-	[2,2,2,2,2,1,1,1,1,1,4,4,4,4,0,0,0],
-	[1,3,4,2],
-	[1,3,4,2]
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,2,3,5],
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,4,3,0,0,0,0,5],
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,0,0,2,4,4,3,3,0,0,0,5],
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,4,4,2,3,0,0,0,1,1,5],
+	[1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,1,4,4,4,4,0,0,0,5],
+	[1,3,4,2,5],
+	[1,3,4,2,5]
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -38,7 +38,14 @@ func _ready() -> void:
 				
 
 func _create_tile(x:int, y:int, tile_type:int) -> void:
-	var tile:Tile = Global.tile.instantiate()
-	tile.position = Vector2(x,y)
-	tile.tile_id = tile_type
-	self.add_child(tile)
+	if tile_type == 5:
+		var tile:MoveableTile = Global.moveable_tile.instantiate()
+		tile.position = Vector2(x,y)
+		tile.tile_id = tile_type
+		self.add_child(tile)
+	else:
+		var tile:Tile = Global.tile.instantiate()
+		tile.position = Vector2(x,y)
+		tile.tile_id = tile_type
+		self.add_child(tile)
+	

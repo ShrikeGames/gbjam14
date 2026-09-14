@@ -12,6 +12,10 @@ var worth:int = 0
 @export var sfx_player:AudioStreamPlayer2D
 @export var sprite:AnimatedSprite2D
 @export var arm:LegSegment
+@export var arm_container:Node2D
+
+
+var dead:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	drill.cannot_drill.connect(_cannot_drill)
@@ -22,11 +26,15 @@ func _ready() -> void:
 	
 	
 func _cannot_drill(_tile:Tile):
+	if dead:
+		return
 	drill.stop_drill()
 	self.direction *= -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if dead:
+		return
 	lifetime += delta
 	movement = Vector2.ZERO
 	if self.direction < 0:
@@ -48,9 +56,13 @@ func _process(delta: float) -> void:
 	movement.y *= lift_speed
 	
 func _physics_process(_delta: float) -> void:
+	if dead:
+		return
 	self.apply_central_force(movement)
 
 func _on_collect_area_body_entered(body: Node2D) -> void:
+	if dead:
+		return
 	if not is_instance_of(body, Item):
 		return
 	if is_instance_of(body, Item):
@@ -60,4 +72,11 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 		body.get_parent().remove_child(body)
 
 func _on_body_entered(_body: Node) -> void:
+	if dead:
+		return
 	Global.play_audio_clip(sfx_player, "Beep 0")
+
+
+func _on_friend_animated_sprite_animation_finished() -> void:
+	if sprite.animation == "die":
+		dead = true

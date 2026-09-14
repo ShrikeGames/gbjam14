@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://jq1brool011m"]
+
+[ext_resource type="Texture2D" uid="uid://dpppeoptf7agt" path="res://assets/game/images/art/heart_full.png" id="1_uj6cu"]
+[ext_resource type="Texture2D" uid="uid://6fkdmpje51vw" path="res://assets/game/images/art/heart_half.png" id="2_mdlxt"]
+[ext_resource type="Texture2D" uid="uid://rblf4ivx2bit" path="res://assets/game/images/art/heart_empty.png" id="3_ouhed"]
+[ext_resource type="Script" uid="uid://bm67w2ha7hh5s" path="res://assets/game/scripts/heart.gd" id="4_mdlxt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wg31x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uj6cu")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mdlxt")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ouhed")
+}],
+"loop": false,
+"name": &"2",
+"speed": 1.0
+}]
+
+[node name="Heart" type="AnimatedSprite2D" unique_id=1152517809]
+sprite_frames = SubResource("SpriteFrames_wg31x")
+animation = &"0"
+script = ExtResource("4_mdlxt")

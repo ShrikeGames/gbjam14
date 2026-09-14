@@ -1,11 +1,11 @@
 extends Node2D
 
-var game_scene:String = "res://assets/game/scenes/game.tscn"
+var game_scene:String = "res://assets/game/scenes/home.tscn"
 
 func _ready() -> void:
 	Global.load_data()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.save_data["skip_intro"]:
 		get_tree().change_scene_to_file(game_scene)
 		return

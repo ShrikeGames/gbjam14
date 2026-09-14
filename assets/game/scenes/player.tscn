@@ -38,6 +38,7 @@ point_count = 2
 radius = 6.0827627
 
 [node name="Player" type="RigidBody2D" unique_id=447483926 node_paths=PackedStringArray("drill", "sprite")]
+collision_layer = 257
 physics_material_override = ExtResource("1_1g0c1")
 lock_rotation = true
 continuous_cd = 2
@@ -60,6 +61,7 @@ position = Vector2(0, 5)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("7_15l51")
 curve = SubResource("Curve_a7nvu")
+drill_direction = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045004492]
 position = Vector2(0, -10)

@@ -74,10 +74,12 @@ func _spawn_friend(direction:int = 1):
 
 func _recall_friends():
 	for friend in friends_container.get_children():
-		if is_instance_of(friend, Friend):
+		if is_instance_of(friend, Friend) and not friend.dead:
 			_recall_friend(friend)
 
 func _recall_friend(friend:Friend):
+	if friend.dead:
+		return
 	portrait.play("happy")
 	if friend.worth > 0:
 		Global.play_audio_clip(sfx_player, "Beep 8")
