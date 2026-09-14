@@ -283,6 +283,15 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="Spacer" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=2006616762]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Total" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=1247495301]
 layout_mode = 2
 theme_override_constants/h_separation = 0
@@ -305,24 +314,6 @@ text = "00000"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Spacer" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=2006616762]
-clip_contents = false
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Spacer2" type="RichTextLabel" parent="UI/HomeMenu/Rows" unique_id=43167537]
-clip_contents = false
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/HomeMenu" unique_id=1005249611]
