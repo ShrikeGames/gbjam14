@@ -3,7 +3,7 @@ extends ColorRect
 @export var player:Player
 @export var depth_palettes:Array[PackedVector3Array]
 @export var music_player:AudioStreamPlayer
-var current_index:int = -1
+var current_index:int = 0
 
 func _ready() -> void:
 	update_material(current_index)
@@ -11,6 +11,7 @@ func _ready() -> void:
 	music_player.stream = audio_stream_player_stream
 	music_player.play()
 	self.visible = true
+	material.set_shader_parameter('palette', depth_palettes[current_index])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

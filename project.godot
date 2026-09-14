@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="GB Jam 14"
-run/main_scene="uid://cjlxnr5c3xpnh"
+run/main_scene="uid://bje58ixhdolj8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.7607843, 0.7882353, 0.9882353, 1)
+boot_splash/image="uid://ccfc88jbufwy7"
 config/icon="res://icon.svg"
 
 [autoload]

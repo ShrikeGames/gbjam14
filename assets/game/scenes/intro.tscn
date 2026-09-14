@@ -1,0 +1,598 @@
+[gd_scene format=3 uid="uid://bje58ixhdolj8"]
+
+[ext_resource type="Script" uid="uid://dkodmrgt6fpg6" path="res://assets/game/scripts/intro.gd" id="1_0ut8l"]
+[ext_resource type="Texture2D" uid="uid://b81u60ah50r3e" path="res://assets/system/art/shrikegames_intro_gbsize0000.jpg" id="2_wfdmr"]
+[ext_resource type="Texture2D" uid="uid://bbjk7ghia3oeb" path="res://assets/system/art/shrikegames_intro_gbsize0001.jpg" id="3_mbjby"]
+[ext_resource type="Texture2D" uid="uid://bwtsgfgt2rpm1" path="res://assets/system/art/shrikegames_intro_gbsize0002.jpg" id="4_v5uhn"]
+[ext_resource type="Texture2D" uid="uid://dubmhjusc2yu6" path="res://assets/system/art/shrikegames_intro_gbsize0003.jpg" id="5_igtbf"]
+[ext_resource type="Texture2D" uid="uid://b8m3t42y66q2q" path="res://assets/system/art/shrikegames_intro_gbsize0004.jpg" id="6_5xhdx"]
+[ext_resource type="Texture2D" uid="uid://cum0u0vmgijf" path="res://assets/system/art/shrikegames_intro_gbsize0005.jpg" id="7_c5com"]
+[ext_resource type="Texture2D" uid="uid://buila53nlhxd5" path="res://assets/system/art/shrikegames_intro_gbsize0006.jpg" id="8_amvia"]
+[ext_resource type="Texture2D" uid="uid://7wxsqth3pusf" path="res://assets/system/art/shrikegames_intro_gbsize0007.jpg" id="9_g4ian"]
+[ext_resource type="Texture2D" uid="uid://lb5xfutsa5kr" path="res://assets/system/art/shrikegames_intro_gbsize0008.jpg" id="10_0tngk"]
+[ext_resource type="Texture2D" uid="uid://bxdplbamp6ppk" path="res://assets/system/art/shrikegames_intro_gbsize0009.jpg" id="11_b28pi"]
+[ext_resource type="Texture2D" uid="uid://doy4hk75khnbv" path="res://assets/system/art/shrikegames_intro_gbsize0010.jpg" id="12_idr5w"]
+[ext_resource type="Texture2D" uid="uid://bo18yvcf7n8b0" path="res://assets/system/art/shrikegames_intro_gbsize0011.jpg" id="13_qu8vm"]
+[ext_resource type="Texture2D" uid="uid://dw5s85l18qpc4" path="res://assets/system/art/shrikegames_intro_gbsize0012.jpg" id="14_be0bc"]
+[ext_resource type="Texture2D" uid="uid://5by47qqsdcs4" path="res://assets/system/art/shrikegames_intro_gbsize0013.jpg" id="15_1d6ts"]
+[ext_resource type="Texture2D" uid="uid://bv6ogpilyi0vm" path="res://assets/system/art/shrikegames_intro_gbsize0014.jpg" id="16_kvkxv"]
+[ext_resource type="Texture2D" uid="uid://cjofeqq284sns" path="res://assets/system/art/shrikegames_intro_gbsize0015.jpg" id="17_xa3xh"]
+[ext_resource type="Texture2D" uid="uid://bd7ov66yx4pm8" path="res://assets/system/art/shrikegames_intro_gbsize0016.jpg" id="18_x82l1"]
+[ext_resource type="Texture2D" uid="uid://ci0n160y54d6" path="res://assets/system/art/shrikegames_intro_gbsize0017.jpg" id="19_hpjat"]
+[ext_resource type="Texture2D" uid="uid://b8a6j5lk1nyr2" path="res://assets/system/art/shrikegames_intro_gbsize0018.jpg" id="20_btpvc"]
+[ext_resource type="Texture2D" uid="uid://cl7xtiypggu6f" path="res://assets/system/art/shrikegames_intro_gbsize0019.jpg" id="21_6rkgw"]
+[ext_resource type="Texture2D" uid="uid://b32gnalgw3q2t" path="res://assets/system/art/shrikegames_intro_gbsize0020.jpg" id="22_jtukn"]
+[ext_resource type="Texture2D" uid="uid://fj62qrhdovjj" path="res://assets/system/art/shrikegames_intro_gbsize0021.jpg" id="23_mx4x2"]
+[ext_resource type="Texture2D" uid="uid://depa4k2efbe3j" path="res://assets/system/art/shrikegames_intro_gbsize0022.jpg" id="24_3w0t4"]
+[ext_resource type="Texture2D" uid="uid://dik5ne7jgqvhd" path="res://assets/system/art/shrikegames_intro_gbsize0023.jpg" id="25_yju0n"]
+[ext_resource type="Texture2D" uid="uid://bs1nkk1tqiqf" path="res://assets/system/art/shrikegames_intro_gbsize0024.jpg" id="26_8qfrd"]
+[ext_resource type="Texture2D" uid="uid://b5r3oh0t0286y" path="res://assets/system/art/shrikegames_intro_gbsize0025.jpg" id="27_5mi6v"]
+[ext_resource type="Texture2D" uid="uid://ppnp1wa01csk" path="res://assets/system/art/shrikegames_intro_gbsize0026.jpg" id="28_0gwme"]
+[ext_resource type="Texture2D" uid="uid://dhqbr3q5tpmv" path="res://assets/system/art/shrikegames_intro_gbsize0027.jpg" id="29_j5r4a"]
+[ext_resource type="Texture2D" uid="uid://c0mhte8xms2v4" path="res://assets/system/art/shrikegames_intro_gbsize0028.jpg" id="30_ko3ke"]
+[ext_resource type="Texture2D" uid="uid://cw35eqns6v88x" path="res://assets/system/art/shrikegames_intro_gbsize0029.jpg" id="31_tnfxr"]
+[ext_resource type="Texture2D" uid="uid://dh661hrttwxaq" path="res://assets/system/art/shrikegames_intro_gbsize0030.jpg" id="32_yspxq"]
+[ext_resource type="Texture2D" uid="uid://be4iu1hyfytdk" path="res://assets/system/art/shrikegames_intro_gbsize0031.jpg" id="33_ejos6"]
+[ext_resource type="Texture2D" uid="uid://bvl6whk06j1am" path="res://assets/system/art/shrikegames_intro_gbsize0032.jpg" id="34_1ativ"]
+[ext_resource type="Texture2D" uid="uid://7u17f3f3m53n" path="res://assets/system/art/shrikegames_intro_gbsize0033.jpg" id="35_s2lp0"]
+[ext_resource type="Texture2D" uid="uid://dn5xc6qkeptan" path="res://assets/system/art/shrikegames_intro_gbsize0034.jpg" id="36_ocgnj"]
+[ext_resource type="Texture2D" uid="uid://juswtgh0dff5" path="res://assets/system/art/shrikegames_intro_gbsize0035.jpg" id="37_6qarr"]
+[ext_resource type="Texture2D" uid="uid://cxhl13g6bbvpn" path="res://assets/system/art/shrikegames_intro_gbsize0036.jpg" id="38_yjac7"]
+[ext_resource type="Texture2D" uid="uid://djc7w1gs1lwrr" path="res://assets/system/art/shrikegames_intro_gbsize0037.jpg" id="39_yp5w0"]
+[ext_resource type="Texture2D" uid="uid://b3yug1bamcps6" path="res://assets/system/art/shrikegames_intro_gbsize0038.jpg" id="40_yuwuh"]
+[ext_resource type="Texture2D" uid="uid://dp52njlyvioeu" path="res://assets/system/art/shrikegames_intro_gbsize0039.jpg" id="41_pqivc"]
+[ext_resource type="Texture2D" uid="uid://dii37db82wod7" path="res://assets/system/art/shrikegames_intro_gbsize0040.jpg" id="42_t40yq"]
+[ext_resource type="Texture2D" uid="uid://7n8frc72a870" path="res://assets/system/art/shrikegames_intro_gbsize0041.jpg" id="43_8elu3"]
+[ext_resource type="Texture2D" uid="uid://6wymva7qmba3" path="res://assets/system/art/shrikegames_intro_gbsize0042.jpg" id="44_rg5aw"]
+[ext_resource type="Texture2D" uid="uid://dd17p50qfi2dd" path="res://assets/system/art/shrikegames_intro_gbsize0043.jpg" id="45_whtkd"]
+[ext_resource type="Texture2D" uid="uid://vpic3vqqc6ue" path="res://assets/system/art/shrikegames_intro_gbsize0044.jpg" id="46_njlla"]
+[ext_resource type="Texture2D" uid="uid://bba8fi61iqcum" path="res://assets/system/art/shrikegames_intro_gbsize0045.jpg" id="47_p5q6n"]
+[ext_resource type="Texture2D" uid="uid://cyr5mdx1pygnp" path="res://assets/system/art/shrikegames_intro_gbsize0046.jpg" id="48_drpv7"]
+[ext_resource type="Texture2D" uid="uid://bdnhdnejlov7e" path="res://assets/system/art/shrikegames_intro_gbsize0047.jpg" id="49_dypfd"]
+[ext_resource type="Texture2D" uid="uid://rsf1jv53v43r" path="res://assets/system/art/shrikegames_intro_gbsize0048.jpg" id="50_drkww"]
+[ext_resource type="Texture2D" uid="uid://denl2n12l235" path="res://assets/system/art/shrikegames_intro_gbsize0049.jpg" id="51_focsd"]
+[ext_resource type="Texture2D" uid="uid://0cxscbssq7pg" path="res://assets/system/art/shrikegames_intro_gbsize0050.jpg" id="52_b85u0"]
+[ext_resource type="Texture2D" uid="uid://dq4rwq5ypdf5" path="res://assets/system/art/shrikegames_intro_gbsize0051.jpg" id="53_fj8t7"]
+[ext_resource type="Texture2D" uid="uid://ba1ldynreni4s" path="res://assets/system/art/shrikegames_intro_gbsize0052.jpg" id="54_gli38"]
+[ext_resource type="Texture2D" uid="uid://c3k4axny7g3my" path="res://assets/system/art/shrikegames_intro_gbsize0053.jpg" id="55_r1iis"]
+[ext_resource type="Texture2D" uid="uid://dytno24njt3br" path="res://assets/system/art/shrikegames_intro_gbsize0054.jpg" id="56_r6vv1"]
+[ext_resource type="Texture2D" uid="uid://dqum0c6lhioav" path="res://assets/system/art/shrikegames_intro_gbsize0055.jpg" id="57_cxp8w"]
+[ext_resource type="Texture2D" uid="uid://fpv65igyk4iy" path="res://assets/system/art/shrikegames_intro_gbsize0056.jpg" id="58_51c13"]
+[ext_resource type="Texture2D" uid="uid://bxm4fqsvku5d" path="res://assets/system/art/shrikegames_intro_gbsize0057.jpg" id="59_hj4ib"]
+[ext_resource type="Texture2D" uid="uid://c6fkpvfrmhfn7" path="res://assets/system/art/shrikegames_intro_gbsize0058.jpg" id="60_d7duu"]
+[ext_resource type="Texture2D" uid="uid://bwqf6t7kr083e" path="res://assets/system/art/shrikegames_intro_gbsize0059.jpg" id="61_sqqrc"]
+[ext_resource type="Texture2D" uid="uid://dlimd3j344k6y" path="res://assets/system/art/shrikegames_intro_gbsize0060.jpg" id="62_4l3t8"]
+[ext_resource type="Texture2D" uid="uid://bwelc3a8w25pq" path="res://assets/system/art/shrikegames_intro_gbsize0061.jpg" id="63_msdpo"]
+[ext_resource type="Texture2D" uid="uid://32i5fgwfojja" path="res://assets/system/art/shrikegames_intro_gbsize0062.jpg" id="64_5d61v"]
+[ext_resource type="Texture2D" uid="uid://cnhcdk5gqjotp" path="res://assets/system/art/shrikegames_intro_gbsize0063.jpg" id="65_u72b8"]
+[ext_resource type="Texture2D" uid="uid://cnocj3bb1gguc" path="res://assets/system/art/shrikegames_intro_gbsize0064.jpg" id="66_2tssy"]
+[ext_resource type="Texture2D" uid="uid://dt3kj7lc03pj2" path="res://assets/system/art/shrikegames_intro_gbsize0065.jpg" id="67_gs41q"]
+[ext_resource type="Texture2D" uid="uid://5vb7k2cqefxk" path="res://assets/system/art/shrikegames_intro_gbsize0066.jpg" id="68_wfi2l"]
+[ext_resource type="Texture2D" uid="uid://cxunt562sjdnh" path="res://assets/system/art/shrikegames_intro_gbsize0067.jpg" id="69_ci2gw"]
+[ext_resource type="Texture2D" uid="uid://c2k2dalrsjclu" path="res://assets/system/art/shrikegames_intro_gbsize0068.jpg" id="70_amhyj"]
+[ext_resource type="Texture2D" uid="uid://d10g4f1v1hy6t" path="res://assets/system/art/shrikegames_intro_gbsize0069.jpg" id="71_uyi6g"]
+[ext_resource type="Texture2D" uid="uid://oua5ynm1gu4m" path="res://assets/system/art/shrikegames_intro_gbsize0070.jpg" id="72_mwbyf"]
+[ext_resource type="Texture2D" uid="uid://cccfqtwope1qc" path="res://assets/system/art/shrikegames_intro_gbsize0071.jpg" id="73_0orri"]
+[ext_resource type="Texture2D" uid="uid://dp5od2lpvmlmc" path="res://assets/system/art/shrikegames_intro_gbsize0072.jpg" id="74_am1jo"]
+[ext_resource type="Texture2D" uid="uid://cwcsyb0xbia3s" path="res://assets/system/art/shrikegames_intro_gbsize0073.jpg" id="75_hoou7"]
+[ext_resource type="Texture2D" uid="uid://byfhv1sm8tv2d" path="res://assets/system/art/shrikegames_intro_gbsize0074.jpg" id="76_nyxhh"]
+[ext_resource type="Texture2D" uid="uid://dr6u1x7bshphr" path="res://assets/system/art/shrikegames_intro_gbsize0075.jpg" id="77_0he7o"]
+[ext_resource type="Texture2D" uid="uid://i7tqb6sktrkr" path="res://assets/system/art/shrikegames_intro_gbsize0076.jpg" id="78_vek42"]
+[ext_resource type="Texture2D" uid="uid://cbmntu8dd2rxe" path="res://assets/system/art/shrikegames_intro_gbsize0077.jpg" id="79_43qty"]
+[ext_resource type="Texture2D" uid="uid://gnkaa37mp858" path="res://assets/system/art/shrikegames_intro_gbsize0078.jpg" id="80_p8jsp"]
+[ext_resource type="Texture2D" uid="uid://1qn6a2bnv4up" path="res://assets/system/art/shrikegames_intro_gbsize0079.jpg" id="81_io748"]
+[ext_resource type="Texture2D" uid="uid://boladt54a8jw" path="res://assets/system/art/shrikegames_intro_gbsize0080.jpg" id="82_d4lxs"]
+[ext_resource type="Texture2D" uid="uid://dsmvttea04ov7" path="res://assets/system/art/shrikegames_intro_gbsize0081.jpg" id="83_m7nnf"]
+[ext_resource type="Texture2D" uid="uid://dwmc5jiwqxe1b" path="res://assets/system/art/shrikegames_intro_gbsize0082.jpg" id="84_au575"]
+[ext_resource type="Texture2D" uid="uid://cwq3jkd3tursw" path="res://assets/system/art/shrikegames_intro_gbsize0083.jpg" id="85_2nmrj"]
+[ext_resource type="Texture2D" uid="uid://b15452r77eggb" path="res://assets/system/art/shrikegames_intro_gbsize0084.jpg" id="86_3ye4n"]
+[ext_resource type="Texture2D" uid="uid://rnymcqo0vphv" path="res://assets/system/art/shrikegames_intro_gbsize0085.jpg" id="87_8e2xy"]
+[ext_resource type="Texture2D" uid="uid://bwwaa5iqgltjo" path="res://assets/system/art/shrikegames_intro_gbsize0086.jpg" id="88_q5yvh"]
+[ext_resource type="Texture2D" uid="uid://baqgvxsv6uqcp" path="res://assets/system/art/shrikegames_intro_gbsize0087.jpg" id="89_bhgoo"]
+[ext_resource type="Texture2D" uid="uid://bm5kdj766q606" path="res://assets/system/art/shrikegames_intro_gbsize0088.jpg" id="90_do35x"]
+[ext_resource type="Texture2D" uid="uid://cg882wokgso8o" path="res://assets/system/art/shrikegames_intro_gbsize0089.jpg" id="91_hprf6"]
+[ext_resource type="Texture2D" uid="uid://c1x5bfpn6v4o1" path="res://assets/system/art/shrikegames_intro_gbsize0090.jpg" id="92_we7rx"]
+[ext_resource type="Texture2D" uid="uid://sw0xy25sdgda" path="res://assets/system/art/shrikegames_intro_gbsize0091.jpg" id="93_c3ry6"]
+[ext_resource type="Texture2D" uid="uid://dxp0dqenn6aaf" path="res://assets/system/art/shrikegames_intro_gbsize0092.jpg" id="94_oabe5"]
+[ext_resource type="Texture2D" uid="uid://bd3irb5qdh826" path="res://assets/system/art/shrikegames_intro_gbsize0093.jpg" id="95_ndmdx"]
+[ext_resource type="Texture2D" uid="uid://b1v8f3l0ff7w1" path="res://assets/system/art/shrikegames_intro_gbsize0094.jpg" id="96_mk7o1"]
+[ext_resource type="Texture2D" uid="uid://bg78yh1whww3w" path="res://assets/system/art/shrikegames_intro_gbsize0095.jpg" id="97_r3n57"]
+[ext_resource type="Texture2D" uid="uid://ufn6qymyvq1h" path="res://assets/system/art/shrikegames_intro_gbsize0096.jpg" id="98_xp4y1"]
+[ext_resource type="Texture2D" uid="uid://csosj5iwyhhl" path="res://assets/system/art/shrikegames_intro_gbsize0097.jpg" id="99_3p0td"]
+[ext_resource type="Texture2D" uid="uid://ddfv6feoxqg25" path="res://assets/system/art/shrikegames_intro_gbsize0098.jpg" id="100_682om"]
+[ext_resource type="Texture2D" uid="uid://b8h3gydmcc6ii" path="res://assets/system/art/shrikegames_intro_gbsize0099.jpg" id="101_qaaa7"]
+[ext_resource type="Texture2D" uid="uid://n5q7kowj55tk" path="res://assets/system/art/shrikegames_intro_gbsize0100.jpg" id="102_5bwom"]
+[ext_resource type="Texture2D" uid="uid://cj24r47e1cpa4" path="res://assets/system/art/shrikegames_intro_gbsize0101.jpg" id="103_b0w87"]
+[ext_resource type="Texture2D" uid="uid://dnq3p7b157qf7" path="res://assets/system/art/shrikegames_intro_gbsize0102.jpg" id="104_ucd3p"]
+[ext_resource type="Texture2D" uid="uid://b25b5dvfg6q0h" path="res://assets/system/art/shrikegames_intro_gbsize0103.jpg" id="105_eb25d"]
+[ext_resource type="Texture2D" uid="uid://d4iyrwtq44tjg" path="res://assets/system/art/shrikegames_intro_gbsize0104.jpg" id="106_4abqi"]
+[ext_resource type="Texture2D" uid="uid://dq3yds1wjkx16" path="res://assets/system/art/shrikegames_intro_gbsize0105.jpg" id="107_od1vx"]
+[ext_resource type="Texture2D" uid="uid://d1wuhgfopjqxi" path="res://assets/system/art/shrikegames_intro_gbsize0106.jpg" id="108_4d54c"]
+[ext_resource type="Texture2D" uid="uid://81a400j2l0x8" path="res://assets/system/art/shrikegames_intro_gbsize0107.jpg" id="109_qh6ic"]
+[ext_resource type="Texture2D" uid="uid://bql200p7tip7h" path="res://assets/system/art/shrikegames_intro_gbsize0108.jpg" id="110_e4sxn"]
+[ext_resource type="Texture2D" uid="uid://dismgx6mykagj" path="res://assets/system/art/shrikegames_intro_gbsize0109.jpg" id="111_ohk7h"]
+[ext_resource type="Texture2D" uid="uid://b4vhw82v8pxra" path="res://assets/system/art/shrikegames_intro_gbsize0110.jpg" id="112_h7d2q"]
+[ext_resource type="Texture2D" uid="uid://drcj17qnpss7i" path="res://assets/system/art/shrikegames_intro_gbsize0111.jpg" id="113_lb8yu"]
+[ext_resource type="Texture2D" uid="uid://bofcawyn7a3by" path="res://assets/system/art/shrikegames_intro_gbsize0112.jpg" id="114_bq0if"]
+[ext_resource type="Texture2D" uid="uid://dhwf4gdjupnul" path="res://assets/system/art/shrikegames_intro_gbsize0113.jpg" id="115_flt87"]
+[ext_resource type="Texture2D" uid="uid://d1aib33joxi53" path="res://assets/system/art/shrikegames_intro_gbsize0114.jpg" id="116_qnsfa"]
+[ext_resource type="Texture2D" uid="uid://cyydvhhfiseoa" path="res://assets/system/art/shrikegames_intro_gbsize0115.jpg" id="117_moohf"]
+[ext_resource type="Texture2D" uid="uid://cl6tljetowb85" path="res://assets/system/art/shrikegames_intro_gbsize0116.jpg" id="118_11qnu"]
+[ext_resource type="Texture2D" uid="uid://cpoekui7wiqx1" path="res://assets/system/art/shrikegames_intro_gbsize0117.jpg" id="119_3xsew"]
+[ext_resource type="Texture2D" uid="uid://c7datvvivbxqd" path="res://assets/system/art/shrikegames_intro_gbsize0118.jpg" id="120_7ciyx"]
+[ext_resource type="Texture2D" uid="uid://d2ocry18r4r0m" path="res://assets/system/art/shrikegames_intro_gbsize0119.jpg" id="121_ka21g"]
+[ext_resource type="Texture2D" uid="uid://388tbd2ef2ln" path="res://assets/system/art/shrikegames_intro_gbsize0120.jpg" id="122_cxshx"]
+[ext_resource type="Texture2D" uid="uid://bvkrn3bsulal6" path="res://assets/system/art/shrikegames_intro_gbsize0121.jpg" id="123_l6twy"]
+[ext_resource type="Texture2D" uid="uid://gxijvqyyjppg" path="res://assets/system/art/shrikegames_intro_gbsize0122.jpg" id="124_iffoc"]
+[ext_resource type="Texture2D" uid="uid://c5v8kamt3sl2u" path="res://assets/system/art/shrikegames_intro_gbsize0123.jpg" id="125_ev4k3"]
+[ext_resource type="Texture2D" uid="uid://wmrtyn08aq7t" path="res://assets/system/art/shrikegames_intro_gbsize0124.jpg" id="126_ly7qn"]
+[ext_resource type="Texture2D" uid="uid://hyhth85ehvvg" path="res://assets/system/art/shrikegames_intro_gbsize0125.jpg" id="127_np5s3"]
+[ext_resource type="Texture2D" uid="uid://deitfjvexv0sd" path="res://assets/system/art/shrikegames_intro_gbsize0126.jpg" id="128_6rmth"]
+[ext_resource type="Texture2D" uid="uid://xxt6weg2ljaw" path="res://assets/system/art/shrikegames_intro_gbsize0127.jpg" id="129_tusw1"]
+[ext_resource type="Texture2D" uid="uid://culul3fcmgfef" path="res://assets/system/art/shrikegames_intro_gbsize0128.jpg" id="130_tsxfv"]
+[ext_resource type="Texture2D" uid="uid://c67viv7icfgwj" path="res://assets/system/art/shrikegames_intro_gbsize0129.jpg" id="131_lkdpv"]
+[ext_resource type="Texture2D" uid="uid://dehbun1ymluy3" path="res://assets/system/art/shrikegames_intro_gbsize0130.jpg" id="132_y38v6"]
+[ext_resource type="Texture2D" uid="uid://bvsyjhbsifduu" path="res://assets/system/art/shrikegames_intro_gbsize0131.jpg" id="133_gvaxt"]
+[ext_resource type="Texture2D" uid="uid://dc5kv7eqhsksu" path="res://assets/system/art/shrikegames_intro_gbsize0132.jpg" id="134_jdn2u"]
+[ext_resource type="Texture2D" uid="uid://bi2hjqmwighkp" path="res://assets/system/art/shrikegames_intro_gbsize0133.jpg" id="135_nc0k6"]
+[ext_resource type="Texture2D" uid="uid://o4s2km3um82v" path="res://assets/system/art/shrikegames_intro_gbsize0134.jpg" id="136_4jppv"]
+[ext_resource type="Texture2D" uid="uid://byp2qelii1d48" path="res://assets/system/art/shrikegames_intro_gbsize0135.jpg" id="137_nt4ir"]
+[ext_resource type="Texture2D" uid="uid://b3ajpnm3kwai2" path="res://assets/system/art/shrikegames_intro_gbsize0136.jpg" id="138_k8i4a"]
+[ext_resource type="Texture2D" uid="uid://4pqxnaiop0ti" path="res://assets/system/art/shrikegames_intro_gbsize0137.jpg" id="139_fytym"]
+[ext_resource type="Texture2D" uid="uid://lsu35eroq3yt" path="res://assets/system/art/shrikegames_intro_gbsize0138.jpg" id="140_demqs"]
+[ext_resource type="Texture2D" uid="uid://cov2botisxiil" path="res://assets/system/art/shrikegames_intro_gbsize0139.jpg" id="141_c4ejd"]
+[ext_resource type="Material" uid="uid://6o1uy33vqh3x" path="res://pallet_swap_1.tres" id="142_nuabr"]
+[ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_40jxv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7g6mp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wfdmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v5uhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_igtbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5xhdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c5com")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_amvia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g4ian")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0tngk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b28pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_idr5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qu8vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_be0bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1d6ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kvkxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xa3xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_x82l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hpjat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_btpvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6rkgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jtukn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mx4x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3w0t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yju0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8qfrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5mi6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0gwme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_j5r4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ko3ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_tnfxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yspxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ejos6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1ativ")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_s2lp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ocgnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6qarr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_yjac7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_yp5w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_yuwuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pqivc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_t40yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8elu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rg5aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_whtkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_njlla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p5q6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_drpv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dypfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_drkww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_focsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_b85u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fj8t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_gli38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_r1iis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_r6vv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_cxp8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_51c13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_hj4ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_d7duu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_sqqrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_4l3t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_msdpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_5d61v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_u72b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_2tssy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_gs41q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_wfi2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ci2gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_amhyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_uyi6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_mwbyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_0orri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_am1jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_hoou7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_nyxhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_0he7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_vek42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_43qty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_p8jsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_io748")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_d4lxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_m7nnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_au575")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_2nmrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_3ye4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_8e2xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_q5yvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bhgoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_do35x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_hprf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_we7rx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_c3ry6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_oabe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_ndmdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_mk7o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_r3n57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_xp4y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_3p0td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_682om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_qaaa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_5bwom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_b0w87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ucd3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_eb25d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_4abqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_od1vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_4d54c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_qh6ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_e4sxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_ohk7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_h7d2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_lb8yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_bq0if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_flt87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_qnsfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_moohf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_11qnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_3xsew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_7ciyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_ka21g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_cxshx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_l6twy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_iffoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_ev4k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_ly7qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_np5s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_6rmth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_tusw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_tsxfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_lkdpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_y38v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_gvaxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_jdn2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_nc0k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_4jppv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_nt4ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_k8i4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_fytym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_demqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_c4ejd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Intro" type="Node2D" unique_id=386532816]
+script = ExtResource("1_0ut8l")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=733880445]
+process_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI" unique_id=1005672179]
+position = Vector2(80, 72)
+sprite_frames = SubResource("SpriteFrames_7g6mp")
+autoplay = "default"
+
+[node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=999130770]
+material = ExtResource("142_nuabr")
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1541596330]
+stream = ExtResource("143_40jxv")
+autoplay = true
+bus = &"Music"
+
+[connection signal="animation_finished" from="UI/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
