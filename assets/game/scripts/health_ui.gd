@@ -25,6 +25,7 @@ func _player_hurt():
 	if Global.save_data["hp"] <= 0:
 		Global.save_data["event_name"] = "Hospital"
 		Global.save_data["event_cost"] = 10
+		Global.save_data["hp"] = Global.save_data["max_hp"]
 		Global.save()
 		get_tree().change_scene_to_file(home_scene)
 	else:

@@ -55,14 +55,12 @@ func _create_item(item_id:int, worth:int):
 
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
-	if body and is_instance_of(body, Friend) and body.global_position.y > self.global_position.y+16 and abs(self.linear_velocity.length()) > 0.1 :
+	if body and is_instance_of(body, Friend) and not body.dead and body.global_position.y > self.global_position.y+24 and abs(self.linear_velocity.length()) > 0.1 :
 		body.sprite.play("die")
 		body.dead = true
-		if body:
+		if body and body.arm_container and body.arm_container.get_parent():
 			body.arm_container.get_parent().remove_child(body.arm_container)
-		Global.save_data["max_friends"] -= 1
-		Global.save_data["current_friends"] -= 1
-		Global.friend_died.emit()
+		Global.friend_died.emit(body)
 	if is_instance_of(body, Player) and body.global_position.y > self.global_position.y+16 and abs(self.linear_velocity.length()) > 0.1 :
 		Global.player_hurt.emit()
 	

@@ -19,12 +19,19 @@ var dead:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	drill.cannot_drill.connect(_cannot_drill)
+	drill.turn_around.connect(_turn_around)
 	
 	var audio_stream_player_stream = preload("res://assets/game/audio/sfx_interactive_stream.tres")
 	sfx_player.stream = audio_stream_player_stream
 	sfx_player.play()
 	
 	
+func _turn_around(_tile:MoveableTile):
+	if dead:
+		return
+	drill.stop_drill()
+	self.direction *= -1
+
 func _cannot_drill(_tile:Tile):
 	if dead:
 		return

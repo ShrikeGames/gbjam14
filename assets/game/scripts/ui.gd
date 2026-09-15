@@ -41,9 +41,12 @@ func _cannot_afford():
 func _friend_got_item():
 	friend.play("happy")
 
-func _friend_died():
-	friend.play("sad")
-	_friend_count_changed(Global.save_data["current_friends"],Global.save_data["max_friends"],0)
+func _friend_died(body:Friend):
+	if body.dead:
+		friend.play("sad")
+		Global.save_data["max_friends"] -= 1
+		Global.save_data["current_friends"] -= 1
+		_friend_count_changed(Global.save_data["current_friends"],Global.save_data["max_friends"],0)
 
 
 func _friend_count_changed(friend_count:int, max_friend_count:int, friend_increment_count:int):

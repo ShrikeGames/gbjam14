@@ -3,6 +3,8 @@ extends ColorRect
 @export var player: Player
 @export var depth_palettes: Array[PackedColorArray]
 @export var music_player: AudioStreamPlayer
+@export var day_timer:Timer
+
 var current_index: int = 0
 var special_palette_active: bool = false
 
@@ -30,6 +32,8 @@ func _shop_close():
 func _process(_delta: float) -> void:
 	if special_palette_active:
 		return
+	if day_timer and int(day_timer.time_left) % 15 == 0 and day_timer.time_left > day_timer.wait_time * 0.5:
+		material.set_shader_parameter('multiplier', 0.5 + (0.5 * (day_timer.time_left/day_timer.wait_time)))
 	for i in range(0, len(depth_palettes)):
 		if player.global_position.y >= 8 + ((i * 32) * 16) and player.global_position.y < 8 + (((i + 1) * 32) * 16):
 			update_material(i)

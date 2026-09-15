@@ -57,6 +57,9 @@ func _ready() -> void:
 		
 	Global.save_data["gold"] = clampi(Global.save_data["gold"], 0, 99999)
 	Global.save_data["hp"] = Global.save_data["max_hp"]
+	Global.save_data["event_name"] = ""
+	Global.save_data["event_cost"] = ""
+	Global.save_data["current_friends"] = 0
 	Global.save_data["completed_days"] += 1
 	Global.save()
 	print(Global.save_data)

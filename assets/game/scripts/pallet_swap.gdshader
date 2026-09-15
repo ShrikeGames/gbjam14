@@ -4,6 +4,7 @@ uniform vec4 reference_palette[4] : source_color;
 uniform vec4 palette[4] : source_color;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture,filter_nearest,repeat_disable;
 uniform bool shader_active = true;
+uniform float multiplier = 1.0;
 
 void fragment() {
 	vec4 screen_texture_color = texture(SCREEN_TEXTURE, UV);
@@ -23,7 +24,7 @@ void fragment() {
 			}
 		}
 
-		closest_color.rgb = palette[closest_index].rgb;
+		closest_color.rgb = palette[closest_index].rgb* multiplier;
 	}
 	COLOR = closest_color;
 }

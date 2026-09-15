@@ -1,6 +1,7 @@
 extends Node2D
 class_name FriendDrill
 signal cannot_drill
+signal turn_around
 
 @export var curve:Curve
 
@@ -29,6 +30,10 @@ func stop_drill():
 
 
 func _on_drill_area_body_entered(tile: Node2D) -> void:
+	if is_instance_of(tile, MoveableTile):
+		is_drilling = false
+		turn_around.emit(tile)
+		return
 	if not is_instance_of(tile, Tile):
 		return
 	if is_drilling:
