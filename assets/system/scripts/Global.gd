@@ -10,6 +10,7 @@ signal friend_died
 signal shop_open
 signal shop_close
 signal player_hurt
+signal player_max_health_increase
 signal player_died
 signal family_hurt
 
@@ -30,7 +31,9 @@ var tile_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile9.png")
 ]
 var item_sprites:Array[Resource] = [
-	ResourceLoader.load("res://assets/game/images/item0.png")
+	ResourceLoader.load("res://assets/game/images/item0.png"),
+	ResourceLoader.load("res://assets/game/images/item1.png"),
+	
 ]
 var tile_stats:Dictionary = {
 	0: {
@@ -106,16 +109,17 @@ var DEFAULT_SAVE_DATA:Dictionary = {
 	"event_name": "",
 	"started": false,
 	"skip_intro": false,
-	"gold": 12,
+	"gold": 10,
 	"damage": 1,
 	"current_friends": 0,
 	"max_friends": 2,
-	"hp": 6,
-	"max_hp": 6,
+	"hp": 4,
+	"max_hp": 4,
 	"prices": [
 		1,
 		5,
-		10
+		10,
+		300
 	],
 	"mom": 2,
 	"kid": 2,

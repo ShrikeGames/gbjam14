@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://xkxw2i6uf8ur"]
+
+[ext_resource type="Script" uid="uid://1rgg2j0b3h7w" path="res://assets/game/scripts/story_text.gd" id="1_a3108"]
+
+[node name="StoryText" type="RichTextLabel" unique_id=292830050 node_paths=PackedStringArray("hide_timer")]
+clip_contents = false
+custom_minimum_size = Vector2(160, 128)
+theme_override_constants/line_separation = 4
+text = "A long long time ago..."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("1_a3108")
+hide_timer = NodePath("HideTimer")
+
+[node name="HideTimer" type="Timer" parent="." unique_id=638022617]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]

@@ -97,9 +97,16 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 		_recall_friend(body)
 	if is_instance_of(body, Item):
 		Global.play_audio_clip(sfx_player, "Beep 5")
-		Global.save_data["gold"] += body.worth
+		if body.worth > 0:
+			Global.save_data["gold"] += body.worth
+			Global.gold_changed.emit(Global.save_data["gold"], body.worth)
+		if body.item_id == 1:
+			# heart
+			Global.save_data["max_hp"] += 2
+			Global.save_data["hp"] = Global.save_data["max_hp"]
+			Global.save()
+			Global.player_max_health_increase.emit()
 		portrait.play("happy")
-		Global.gold_changed.emit(Global.save_data["gold"], body.worth)
 		body.get_parent().remove_child(body)
 
 func _on_body_entered(_body: Node) -> void:

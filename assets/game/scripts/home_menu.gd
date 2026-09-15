@@ -9,15 +9,24 @@ extends MainMenu
 @export var other_value:RichTextLabel
 @export var total_value:RichTextLabel
 var game_scene:String = "res://assets/game/scenes/game.tscn"
+var win_scene:String = "res://assets/game/scenes/win.tscn"
 
 func select_option():
 	if selected_id == 0:
+		if Global.save_data["gold"] >= 300:
+			Global.save_data["gold"] -= 300
+			Global.save()
+			get_tree().paused = false
+			get_tree().change_scene_to_file(win_scene)
+		else:
+			Global.play_audio_clip(sfx_player, "Beep 7")
+		
+	if selected_id == 1:
 		Global.save_data["hp"] = Global.save_data["max_hp"]
 		Global.save()
 		get_tree().paused = false
 		get_tree().change_scene_to_file(game_scene)
 	
-
 func _ready() -> void:
 	super._ready()
 	Global.load_data()
@@ -36,7 +45,7 @@ func _ready() -> void:
 	
 	Global.save_data["gold"] -= Global.save_data["rent"]
 	Global.save_data["gold"] -= Global.save_data["food"]
-	Global.save_data["gold"] -= Global.save_data["heat"]
+	# Global.save_data["gold"] -= Global.save_data["heat"]
 	
 	if Global.save_data["event_name"] != "":
 		other_value.text = "-%s"%[Global.save_data["event_cost"]]
@@ -62,4 +71,3 @@ func _ready() -> void:
 	Global.save_data["current_friends"] = 0
 	Global.save_data["completed_days"] += 1
 	Global.save()
-	print(Global.save_data)

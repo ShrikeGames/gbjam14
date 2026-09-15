@@ -4,6 +4,8 @@ Game Jam Information: https://itch.io/jam/gbjam-14
 
 Secondary Theme: OLD GOLD
 
+Playtest Version: https://shrikegames.itch.io/dirtpay?secret=irszjjL4nkHbgykxTtw9JQkepT0
+
 ## Day 1:
 
 # Game Ideas:
@@ -93,21 +95,22 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 
 ## Day 5
 
-Story Ideas:
-
-- A long long time ago... the world ended.
-- With no civilization people to returned to...
-- The Good Old Gold Standard
-- You are Riko, a human tasked with leading Molepeople to mine for gold.
-- You must keep you and your family fed and healthy.
-- Then earn enough gold to pay for a trip to live on Mars.
-
+- Press button to skip ShrikeGames intro video
+- Add gbjam14 splashscreen
+- Fix bugs around friends being killed, counter being wrong, possible null pointer
+- Create more music tracks
+- Test if player dies if hospital bill shows up
 - Create intro cinematic that tells story
+- sprites for intro cinematic
+- add sound effects for specific parts of story
+- change hat of kid, make stripes vertical
+- Heart containers can now be found underground and give max hp to you and friends
+- friends now have half your max hp
+- friends now get pushed out of the way if they survive a boulder falling on them
+
+
 - Add first enemy
 - Depth title pop-up when goes being depth palettes?
-- City from intro sprite
+- Closing cinematic for winning
 - Create options menu
-- Fix bugs around friends being killed, counter being wrong, possible null pointer
-- Press button to skip ShrikeGames intro video
-- Create more music tracks?
-- Test if player dies if hospital bill shows up
+- Consider having map persistant between days

@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://6pixv2ut7k7k" path="res://assets/game/scripts/home_menu.gd" id="8_s4ts7"]
 [ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="10_lqrdg"]
 [ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="11_4pew8"]
-[ext_resource type="AudioStream" uid="uid://3jo4jfvh42fl" path="res://assets/game/audio/music_interactive_stream.tres" id="14_s4ts7"]
+[ext_resource type="AudioStream" uid="uid://3vojb01gmh5a" path="res://assets/game/audio/music/music0.mp3" id="14_s4ts7"]
 [ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="142_1khxd"]
 [ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_mxr11"]
 
@@ -142,7 +142,8 @@ heat_value = NodePath("Rows/Heat/Value")
 other_label = NodePath("Rows/Other/Label")
 other_value = NodePath("Rows/Other/Value")
 total_value = NodePath("Rows/Total/Value")
-menu_items = [NodePath("../Continue")]
+selected_id = 1
+menu_items = [NodePath("../Escape"), NodePath("../Continue")]
 sfx_player = NodePath("MenuSFXPlayer")
 
 [node name="Rows" type="VBoxContainer" parent="UI/HomeMenu" unique_id=867118602]
@@ -235,6 +236,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Heat" type="GridContainer" parent="UI/HomeMenu/Rows" unique_id=981163414]
+visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
@@ -244,7 +246,6 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Heat"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -269,7 +270,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Birthday"
+text = "Hospital"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -321,12 +322,18 @@ vertical_alignment = 1
 stream = ExtResource("11_4pew8")
 bus = &"SFX"
 
+[node name="Escape" parent="UI" unique_id=2068209926 instance=ExtResource("10_lqrdg")]
+offset_top = 112.0
+offset_bottom = 128.0
+menu_text = "Escape $300"
+
 [node name="Continue" parent="UI" unique_id=596866353 instance=ExtResource("10_lqrdg")]
 offset_top = 128.0
 offset_bottom = 144.0
 menu_text = "Continue"
 
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=999130770]
+visible = false
 material = SubResource("ShaderMaterial_wfdmr")
 custom_minimum_size = Vector2(160, 144)
 offset_right = 40.0

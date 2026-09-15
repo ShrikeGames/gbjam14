@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bje58ixhdolj8"]
 
 [ext_resource type="Script" uid="uid://dkodmrgt6fpg6" path="res://assets/game/scripts/intro.gd" id="1_0ut8l"]
+[ext_resource type="Texture2D" uid="uid://clli2hut8t2ww" path="res://assets/game/images/gbjam14_splash.png" id="2_mbjby"]
 [ext_resource type="Texture2D" uid="uid://b81u60ah50r3e" path="res://assets/system/art/shrikegames_intro_gbsize0000.jpg" id="2_wfdmr"]
 [ext_resource type="Texture2D" uid="uid://bbjk7ghia3oeb" path="res://assets/system/art/shrikegames_intro_gbsize0001.jpg" id="3_mbjby"]
 [ext_resource type="Texture2D" uid="uid://bwtsgfgt2rpm1" path="res://assets/system/art/shrikegames_intro_gbsize0002.jpg" id="4_v5uhn"]
@@ -147,6 +148,105 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g6mp"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mbjby")
+}, {
 "duration": 1.0,
 "texture": ExtResource("2_wfdmr")
 }, {
@@ -559,13 +659,13 @@ animations = [{
 "texture": ExtResource("138_k8i4a")
 }, {
 "duration": 1.0,
+"texture": ExtResource("141_c4ejd")
+}, {
+"duration": 1.0,
 "texture": ExtResource("139_fytym")
 }, {
 "duration": 1.0,
 "texture": ExtResource("140_demqs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("141_c4ejd")
 }],
 "loop": false,
 "name": &"default",
@@ -574,9 +674,10 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfdmr"]
 shader = ExtResource("142_40jxv")
-shader_parameter/reference_palette = PackedColorArray(0.011764706, 0.011764706, 0.011764706, 1, 0.12156863, 0.12156863, 0.12156863, 1, 0.4, 0.4, 0.4, 1, 1, 1, 1, 1)
-shader_parameter/palette = PackedColorArray(0.01, 0.01, 0.01, 1, 0.3180199, 0.31801975, 0.31801972, 1, 0.9079417, 0.9079417, 0.90794164, 1, 1, 1, 1, 1)
+shader_parameter/reference_palette = PackedColorArray(0, 0, 0, 1, 0.32156864, 0.32156864, 0.32156864, 1, 0.64705884, 0.64705884, 0.64705884, 1, 1, 1, 1, 1)
+shader_parameter/palette = PackedColorArray(0.011764706, 0.011764706, 0.011764706, 1, 0.32156864, 0.32156864, 0.32156864, 1, 0.64705884, 0.64705884, 0.64705884, 1, 1, 1, 1, 1)
 shader_parameter/shader_active = true
+shader_parameter/multiplier = 1.0
 
 [node name="Intro" type="Node2D" unique_id=386532816]
 script = ExtResource("1_0ut8l")

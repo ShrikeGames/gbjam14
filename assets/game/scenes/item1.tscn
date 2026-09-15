@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://nvmtnfiwj5j8"]
+
+[ext_resource type="Script" uid="uid://bxu56kx2s61g" path="res://assets/game/scripts/item.gd" id="1_r0r3e"]
+[ext_resource type="Texture2D" uid="uid://bsvu62sjg61q5" path="res://assets/game/images/item1.png" id="2_r0r3e"]
+[ext_resource type="PackedScene" uid="uid://ky6uk51qfwh8" path="res://assets/game/scenes/sparkle.tscn" id="3_5vwje"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f5p3e"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sfe6"]
+radius = 7.0
+
+[node name="Item" type="RigidBody2D" unique_id=1602027267 node_paths=PackedStringArray("sprite")]
+collision_layer = 8
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_f5p3e")
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("1_r0r3e")
+item_id = 1
+worth = 0
+sprite = NodePath("Item")
+
+[node name="Item" type="Sprite2D" parent="." unique_id=1636030869]
+texture = ExtResource("2_r0r3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853122623]
+shape = SubResource("CircleShape2D_7sfe6")
+
+[node name="Sparkle" parent="." unique_id=1829852087 instance=ExtResource("3_5vwje")]
+position = Vector2(7, 5)
+
+[node name="Sparkle2" parent="." unique_id=1238048097 instance=ExtResource("3_5vwje")]
+position = Vector2(-4, -3)

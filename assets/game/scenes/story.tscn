@@ -1,0 +1,368 @@
+[gd_scene format=3 uid="uid://d1lv6eaoimvte"]
+
+[ext_resource type="Script" uid="uid://c6dhcv2p1kdsr" path="res://assets/game/scripts/story_manager.gd" id="1_pw4bm"]
+[ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="2_pw4bm"]
+[ext_resource type="PackedScene" uid="uid://xkxw2i6uf8ur" path="res://assets/game/scenes/story_text.tscn" id="4_pw4bm"]
+[ext_resource type="Texture2D" uid="uid://c6xn44437crka" path="res://assets/game/images/art/portraits/player_idle.png" id="4_wglsr"]
+[ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="5_epcoj"]
+[ext_resource type="Texture2D" uid="uid://ihjm1p5jh2y0" path="res://assets/game/images/art/portraits/player_happy.png" id="5_wglsr"]
+[ext_resource type="Texture2D" uid="uid://b8nra2ddronod" path="res://assets/game/images/item0.png" id="6_epcoj"]
+[ext_resource type="PackedScene" uid="uid://ky6uk51qfwh8" path="res://assets/game/scenes/sparkle.tscn" id="7_tcrtc"]
+[ext_resource type="Texture2D" uid="uid://cmbuofioxdt2s" path="res://assets/game/images/art/portraits/family/mom_happy.png" id="8_1onr8"]
+[ext_resource type="Texture2D" uid="uid://dtnmo6coodmpc" path="res://assets/game/images/art/portraits/family/kid_happy.png" id="9_xjjp2"]
+[ext_resource type="Texture2D" uid="uid://bd2gc0o841pb0" path="res://assets/game/images/art/portraits/family/pet_happy.png" id="10_1f4gd"]
+[ext_resource type="Texture2D" uid="uid://bw3op2kubsjw3" path="res://assets/game/images/art/portraits/family/mom_sad.png" id="11_arg2f"]
+[ext_resource type="Texture2D" uid="uid://bwujg8cqy640a" path="res://assets/game/images/art/portraits/family/kid_sad.png" id="12_me04q"]
+[ext_resource type="Texture2D" uid="uid://ccobbvcwbbsyr" path="res://assets/game/images/art/portraits/family/pet_sad.png" id="13_2qvdb"]
+[ext_resource type="Texture2D" uid="uid://icl8ma66eroq" path="res://assets/game/images/art/portraits/friend_happy.png" id="14_me04q"]
+[ext_resource type="Texture2D" uid="uid://cawf6v8cynegt" path="res://assets/game/images/art/portraits/friend_idle.png" id="15_2qvdb"]
+[ext_resource type="Texture2D" uid="uid://cv0jaf1sgm183" path="res://assets/game/images/art/friend_dead1.png" id="16_nbgei"]
+[ext_resource type="AudioStream" uid="uid://dsveft5ewq64s" path="res://assets/game/audio/music/music4.mp3" id="18_nbgei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcrtc"]
+shader = ExtResource("5_epcoj")
+shader_parameter/reference_palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/shader_active = true
+shader_parameter/multiplier = 1.0
+
+[node name="Story" type="Node2D" unique_id=1567427245 node_paths=PackedStringArray("stories")]
+script = ExtResource("1_pw4bm")
+stories = NodePath("UI/Story/Rows")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1729272373]
+process_mode = 3
+
+[node name="Story" type="CenterContainer" parent="UI" unique_id=1785328078]
+process_mode = 3
+offset_right = 160.0
+offset_bottom = 78.0
+theme = ExtResource("2_pw4bm")
+
+[node name="Rows" type="VBoxContainer" parent="UI/Story" unique_id=604744187]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StoryText" parent="UI/Story/Rows" unique_id=292830050 instance=ExtResource("4_pw4bm")]
+visible = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="StoryText2" parent="UI/Story/Rows" unique_id=428575255 instance=ExtResource("4_pw4bm")]
+visible = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "The World Ended"
+vertical_alignment = 1
+
+[node name="StoryText5" parent="UI/Story/Rows" unique_id=112222815 instance=ExtResource("4_pw4bm")]
+visible = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "All of the old currencies are now worthless.
+We only care about..."
+vertical_alignment = 1
+
+[node name="StoryText6" parent="UI/Story/Rows" unique_id=314874512 instance=ExtResource("4_pw4bm")]
+visible = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "The Good Old Gold Standard"
+vertical_alignment = 1
+
+[node name="StoryText3" parent="UI/Story/Rows" unique_id=258348961 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "You Are Rico"
+vertical_alignment = 2
+
+[node name="PlayerIdle" type="Sprite2D" parent="UI/Story/Rows/StoryText3" unique_id=1156716280]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("4_wglsr")
+
+[node name="StoryText4" parent="UI/Story/Rows" unique_id=223362910 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "You are in charge of
+leading excavations
+to mine for ..."
+vertical_alignment = 2
+
+[node name="PlayerHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText4" unique_id=1931161159]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("5_wglsr")
+
+[node name="StoryText7" parent="UI/Story/Rows" unique_id=1525689262 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "GOOD OLD GOLD"
+vertical_alignment = 2
+
+[node name="PlayerHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText7" unique_id=1010793868]
+z_as_relative = false
+position = Vector2(78.5, 70.5)
+scale = Vector2(8.1875, 8.1875)
+texture = ExtResource("6_epcoj")
+
+[node name="Sparkle" parent="UI/Story/Rows/StoryText7" unique_id=1829852087 instance=ExtResource("7_tcrtc")]
+position = Vector2(27, 81)
+
+[node name="Sparkle2" parent="UI/Story/Rows/StoryText7" unique_id=254850005 instance=ExtResource("7_tcrtc")]
+position = Vector2(133, 59)
+
+[node name="Sparkle3" parent="UI/Story/Rows/StoryText7" unique_id=549147160 instance=ExtResource("7_tcrtc")]
+position = Vector2(95, 98)
+
+[node name="StoryText8" parent="UI/Story/Rows" unique_id=2026436638 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "You must care for your family"
+
+[node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText8" unique_id=281815806]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("8_1onr8")
+
+[node name="KidHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText8" unique_id=366546451]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("9_xjjp2")
+
+[node name="PetHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText8" unique_id=915505923]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("10_1f4gd")
+
+[node name="StoryText9" parent="UI/Story/Rows" unique_id=1819349446 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "They require food, shelter, and care"
+
+[node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText9" unique_id=1906039442]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("8_1onr8")
+
+[node name="KidHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText9" unique_id=2134545421]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("9_xjjp2")
+
+[node name="PetHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText9" unique_id=623409879]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("10_1f4gd")
+
+[node name="StoryText10" parent="UI/Story/Rows" unique_id=176312133 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "If you do not pay the bills they will suffer..."
+
+[node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText10" unique_id=1469340464]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("11_arg2f")
+
+[node name="KidHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText10" unique_id=298458996]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("12_me04q")
+
+[node name="PetHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText10" unique_id=2139959631]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("13_2qvdb")
+
+[node name="StoryText11" parent="UI/Story/Rows" unique_id=1484011287 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "...and die"
+vertical_alignment = 1
+
+[node name="FriendDead1" type="Sprite2D" parent="UI/Story/Rows/StoryText11" unique_id=733847369]
+position = Vector2(28, 106)
+scale = Vector2(4.5625, 4.5625)
+texture = ExtResource("16_nbgei")
+
+[node name="FriendDead2" type="Sprite2D" parent="UI/Story/Rows/StoryText11" unique_id=1322848696]
+position = Vector2(118, 97.00001)
+scale = Vector2(5.720703, 5.720703)
+texture = ExtResource("16_nbgei")
+
+[node name="FriendDead3" type="Sprite2D" parent="UI/Story/Rows/StoryText11" unique_id=1687288119]
+position = Vector2(70, 115.00001)
+scale = Vector2(3.4853518, 3.4853518)
+texture = ExtResource("16_nbgei")
+
+[node name="StoryText12" parent="UI/Story/Rows" unique_id=1194493654 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "You do have help though..."
+vertical_alignment = 1
+
+[node name="StoryText13" parent="UI/Story/Rows" unique_id=1839311495 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "Hire mole people to help!"
+vertical_alignment = 2
+
+[node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText13" unique_id=1718787476]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("14_me04q")
+
+[node name="StoryText14" parent="UI/Story/Rows" unique_id=282983284 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "But it is dangerous, so keep them safe!"
+vertical_alignment = 2
+
+[node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText14" unique_id=1253450348]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("15_2qvdb")
+
+[node name="StoryText15" parent="UI/Story/Rows" unique_id=477299662 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "Or they will die..."
+vertical_alignment = 1
+
+[node name="FriendDead1" type="Sprite2D" parent="UI/Story/Rows/StoryText15" unique_id=317693135]
+position = Vector2(74.99999, 25)
+scale = Vector2(4.5625, 4.5625)
+texture = ExtResource("16_nbgei")
+
+[node name="StoryText16" parent="UI/Story/Rows" unique_id=2102114640 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "If you save up enough Gold..."
+
+[node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1870642265]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("5_wglsr")
+
+[node name="Gold" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1469992093]
+z_as_relative = false
+position = Vector2(47.8605, 129.8605)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="Sparkle" parent="UI/Story/Rows/StoryText16" unique_id=1055080797 instance=ExtResource("7_tcrtc")]
+position = Vector2(45, 111)
+scale = Vector2(2.103, 2.103)
+
+[node name="Sparkle2" parent="UI/Story/Rows/StoryText16" unique_id=1494920824 instance=ExtResource("7_tcrtc")]
+position = Vector2(133, 126)
+scale = Vector2(2.103, 2.103)
+
+[node name="Sparkle3" parent="UI/Story/Rows/StoryText16" unique_id=1347884211 instance=ExtResource("7_tcrtc")]
+position = Vector2(39, 137)
+scale = Vector2(2.103, 2.103)
+
+[node name="Gold6" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1233933552]
+z_as_relative = false
+position = Vector2(102, 120)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="Gold5" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1436656038]
+z_as_relative = false
+position = Vector2(61, 120)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="Gold2" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=428222819]
+z_as_relative = false
+position = Vector2(64, 130)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="Gold3" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=332392510]
+z_as_relative = false
+position = Vector2(88, 131)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="Gold4" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1019132616]
+z_as_relative = false
+position = Vector2(112, 129)
+scale = Vector2(2.103, 2.103)
+texture = ExtResource("6_epcoj")
+
+[node name="StoryText17" parent="UI/Story/Rows" unique_id=220516142 instance=ExtResource("4_pw4bm")]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+text = "You and your family can escape to live on Mars!"
+
+[node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText17" unique_id=75606217]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("8_1onr8")
+
+[node name="KidHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText17" unique_id=1421017672]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("9_xjjp2")
+
+[node name="PetHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText17" unique_id=502844078]
+z_as_relative = false
+position = Vector2(80, 72)
+texture = ExtResource("10_1f4gd")
+
+[node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=2077552066]
+material = SubResource("ShaderMaterial_tcrtc")
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2055024536]
+process_mode = 3
+stream = ExtResource("18_nbgei")
+autoplay = true
+bus = &"Music"

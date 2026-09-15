@@ -43,5 +43,5 @@ func update_material(index: int):
 	if index == current_index:
 		return
 	current_index = index
-	Global.play_audio_clip(music_player, "Music %d" % [index + 1])
+	Global.play_audio_clip(music_player, "Music %d" % [index])
 	material.set_shader_parameter('palette', depth_palettes[index])

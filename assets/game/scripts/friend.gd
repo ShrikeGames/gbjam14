@@ -13,11 +13,12 @@ var worth:int = 0
 @export var sprite:AnimatedSprite2D
 @export var arm:LegSegment
 @export var arm_container:Node2D
-
+var hp:int
 
 var dead:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	self.hp = int(Global.save_data["max_hp"] / 2.0)
 	drill.cannot_drill.connect(_cannot_drill)
 	drill.turn_around.connect(_turn_around)
 	
@@ -74,7 +75,10 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 		return
 	if is_instance_of(body, Item):
 		Global.friend_got_item.emit()
-		worth += body.worth
+		if body.worth > 0:
+			worth += body.worth
+		if body.item_id == 1:
+			self.hp = int(Global.save_data["max_hp"] / 2.0) + 2
 		Global.play_audio_clip(sfx_player, "Beep 3")
 		body.get_parent().remove_child(body)
 
