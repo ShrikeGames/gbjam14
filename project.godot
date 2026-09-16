@@ -10,11 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Dirt Pay"
+config/name="Riko of the End"
+config/name_localized={
+"ja_JP": "終わりのリコ"
+}
 run/main_scene="uid://bje58ixhdolj8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/bg_color=Color(0.7607843, 0.7882353, 0.9882353, 1)
-boot_splash/image="uid://ccfc88jbufwy7"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://dxc4bl5n7f7nj"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -88,6 +91,10 @@ START={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/locale_filter_mode=0
 
 [physics]
 
