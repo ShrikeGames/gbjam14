@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Global.save_data["hp"] <= 0:
-		Global.save_data["event_name"] = "Hospital"
+		Global.save_data["event_name"] = "EVENT_HOSPITAL"
 		Global.save_data["event_cost"] = 10
 		Global.save_data["hp"] = Global.save_data["max_hp"]
 		Global.save()

@@ -54,22 +54,21 @@ vertical_alignment = 1
 visible = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "The World Ended"
+text = "STORY_02"
 vertical_alignment = 1
 
 [node name="StoryText5" parent="UI/Story/Rows" unique_id=112222815 instance=ExtResource("4_pw4bm")]
 visible = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "All of the old currencies are now worthless.
-We only care about..."
+text = "STORY_03"
 vertical_alignment = 1
 
 [node name="StoryText6" parent="UI/Story/Rows" unique_id=314874512 instance=ExtResource("4_pw4bm")]
 visible = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "The Good Old Gold Standard"
+text = "STORY_04"
 vertical_alignment = 1
 
 [node name="StoryText3" parent="UI/Story/Rows" unique_id=258348961 instance=ExtResource("4_pw4bm")]
@@ -78,7 +77,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "You Are Riko"
+text = "STORY_05"
 vertical_alignment = 2
 
 [node name="PlayerIdle" type="Sprite2D" parent="UI/Story/Rows/StoryText3" unique_id=1156716280]
@@ -92,9 +91,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "You are in charge of
-leading excavations
-to mine for ..."
+text = "STORY_06"
 vertical_alignment = 2
 
 [node name="PlayerHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText4" unique_id=1931161159]
@@ -108,7 +105,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "GOOD OLD GOLD"
+text = "STORY_07"
 vertical_alignment = 2
 
 [node name="PlayerHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText7" unique_id=1010793868]
@@ -132,7 +129,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "You must care for your family"
+text = "STORY_08"
 
 [node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText8" unique_id=281815806]
 z_as_relative = false
@@ -155,7 +152,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "They require food, shelter, and care"
+text = "STORY_09"
 
 [node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText9" unique_id=1906039442]
 z_as_relative = false
@@ -178,7 +175,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "If you do not pay the bills they will suffer..."
+text = "STORY_10"
 
 [node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText10" unique_id=1469340464]
 z_as_relative = false
@@ -201,7 +198,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "...and die"
+text = "STORY_11"
 vertical_alignment = 1
 
 [node name="FriendDead1" type="Sprite2D" parent="UI/Story/Rows/StoryText11" unique_id=733847369]
@@ -225,7 +222,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "You do have help though..."
+text = "STORY_12"
 vertical_alignment = 1
 
 [node name="StoryText13" parent="UI/Story/Rows" unique_id=1839311495 instance=ExtResource("4_pw4bm")]
@@ -234,7 +231,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "Hire mole people to help!"
+text = "STORY_13"
 vertical_alignment = 2
 
 [node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText13" unique_id=1718787476]
@@ -248,7 +245,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "But it is dangerous, so keep them safe!"
+text = "STORY_14"
 vertical_alignment = 2
 
 [node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText14" unique_id=1253450348]
@@ -262,7 +259,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "Or they will die..."
+text = "STORY_15"
 vertical_alignment = 1
 
 [node name="FriendDead1" type="Sprite2D" parent="UI/Story/Rows/StoryText15" unique_id=317693135]
@@ -276,7 +273,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "If you save up enough Gold..."
+text = "STORY_16"
 
 [node name="FriendHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText16" unique_id=1870642265]
 z_as_relative = false
@@ -337,7 +334,7 @@ z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
-text = "You and your family can escape to live on Mars!"
+text = "STORY_17"
 
 [node name="MomHappy" type="Sprite2D" parent="UI/Story/Rows/StoryText17" unique_id=75606217]
 z_as_relative = false

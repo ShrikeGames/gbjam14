@@ -1,0 +1,48 @@
+keys,en,ja
+STORY_01,"A long long time ago...","昔々"
+STORY_02,"The World Ended","世界は終わりました"
+STORY_03,"All of the old currencies are now worthless.
+We only care about...","All of the old currencies are now worthless.
+We only care about..."
+STORY_04,"The Good Old Gold Standard","The Good Old Gold Standard"
+STORY_05,"You Are Riko","You Are Riko"
+STORY_06,"You are in charge of
+leading excavations
+to mine for ...","You are in charge of
+leading excavations
+to mine for ..."
+STORY_07,"GOOD OLD GOLD","GOOD OLD GOLD"
+STORY_08,"You must care for your family","You must care for your family"
+STORY_09,"They require food, shelter, and care","They require food, shelter, and care"
+STORY_10,"If you do not pay the bills they will suffer...","If you do not pay the bills they will suffer..."
+STORY_11,"...and die","...and die"
+STORY_12,"You do have help though...","You do have help though..."
+STORY_13,"Hire mole people to help!","Hire mole people to help!"
+STORY_14,"But it is dangerous, so keep them safe!","But it is dangerous, so keep them safe!"
+STORY_15,"Or they will die...","Or they will die..."
+STORY_16,"If you save up enough Gold...","If you save up enough Gold..."
+STORY_17,"You and your family can escape to live on Mars!","You and your family can escape to live on Mars!"
+HOME_SAVINGS,"Savings","Savings"
+HOME_RENT,"Rent","Rent"
+HOME_FOOD,"Food","Food"
+HOME_HEAT,"Heat","Heat"
+HOME_REMAINING,"Remaining","Remaining"
+EVENT_HOSPITAL,"Hospital","Hospital"
+MENU_TITLE,"Menu","Menu"
+SHOP_TITLE,"Shop","Shop"
+SHOP_SIGN,"Shop","Shop"
+MENU_CONTINUE,"Continue","Continue"
+MENU_NEW_GAME,"New Game","New Game"
+MENU_OPTIONS,"Options","Options"
+MENU_RECALL,"Recall","Recall"
+MENU_HIRE,"Hire","Hire"
+MENU_DRILL,"Drill","Drill"
+MENU_CLOSE,"Close","Close"
+MENU_ESCAPE,"Escape","Escape"
+MENU_ESCAPE_HOME,"Escape $300","Escape $300"
+MENU_PRICE_SUFFIX," $%d"," $%d"
+UI_DAY,"Day %s","Day %s"
+UI_GOLD,"Gold:%05d","Gold:%05d"
+WIN_MESSAGE,"You Win!
+You escaped!","You Win!
+You escaped!"

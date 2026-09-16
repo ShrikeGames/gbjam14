@@ -36,8 +36,7 @@ theme_override_constants/separation = 0
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "You Win!
-You escaped!"
+text = "WIN_MESSAGE"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -54,11 +53,11 @@ vertical_alignment = 1
 [node name="NewGame" parent="UI/Win/Rows" unique_id=596866353 instance=ExtResource("3_aqq1r")]
 visible = false
 layout_mode = 2
-menu_text = "New Game"
+menu_text = "MENU_NEW_GAME"
 
 [node name="NewGame2" parent="UI/Win/Rows" unique_id=1364432980 instance=ExtResource("3_aqq1r")]
 layout_mode = 2
-menu_text = "New Game"
+menu_text = "MENU_NEW_GAME"
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/Win" unique_id=60794461]
 stream = ExtResource("4_b5gpp")

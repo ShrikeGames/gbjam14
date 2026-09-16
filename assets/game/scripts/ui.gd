@@ -21,7 +21,7 @@ func _ready() -> void:
 	Global.shop_open.connect(_shop_open)
 	Global.shop_close.connect(_shop_close)
 	Global.player_hurt.connect(_player_hurt)
-	day.text = "Day %s"%[int(Global.save_data["day"])]
+	day.text = tr("UI_DAY")%[int(Global.save_data["day"])]
 	_gold_changed(Global.save_data["gold"],0)
 	_friend_count_changed(Global.save_data["current_friends"],Global.save_data["max_friends"],0)
 	
@@ -66,7 +66,7 @@ func _gold_changed(gold_count:int, gold_increment_count:int):
 		gold_increment_text.text = "%s"%[gold_increment_count]
 		shopkeeper.play("happy")
 		player.portrait.play("happy")
-	gold_text.text = "Gold:%05d"%[gold_count]
+	gold_text.text = tr("UI_GOLD")%[gold_count]
 	Global.save()
 
 

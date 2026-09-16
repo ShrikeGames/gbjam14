@@ -170,7 +170,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Savings"
+text = "HOME_SAVINGS"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -195,7 +195,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Rent"
+text = "HOME_RENT"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -220,7 +220,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Food"
+text = "HOME_FOOD"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -270,7 +270,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Hospital"
+text = "EVENT_HOSPITAL"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
@@ -304,7 +304,7 @@ columns = 2
 clip_contents = false
 custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
-text = "Remaining"
+text = "HOME_REMAINING"
 scroll_active = false
 vertical_alignment = 1
 
@@ -325,12 +325,12 @@ bus = &"SFX"
 [node name="Escape" parent="UI" unique_id=2068209926 instance=ExtResource("10_lqrdg")]
 offset_top = 112.0
 offset_bottom = 128.0
-menu_text = "Escape $300"
+menu_text = "MENU_ESCAPE_HOME"
 
 [node name="Continue" parent="UI" unique_id=596866353 instance=ExtResource("10_lqrdg")]
 offset_top = 128.0
 offset_bottom = 144.0
-menu_text = "Continue"
+menu_text = "MENU_CONTINUE"
 
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=999130770]
 visible = false

@@ -6,7 +6,7 @@
 clip_contents = false
 custom_minimum_size = Vector2(160, 128)
 theme_override_constants/line_separation = 4
-text = "A long long time ago..."
+text = "STORY_01"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

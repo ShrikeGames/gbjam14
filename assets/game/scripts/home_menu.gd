@@ -36,12 +36,12 @@ func _ready() -> void:
 		Global.save_data["hp"] = Global.save_data["max_hp"]
 		Global.save()
 		return
-	day.text = "Day %s"%[int(Global.save_data["day"])]
+	day.text = tr("UI_DAY")%[int(Global.save_data["day"])]
 	gold_value.text = "%05d"%[int(Global.save_data["gold"])]
 	rent_value.text = "-%02d"%[Global.save_data["rent"]]
 	food_value.text = "-%02d"%[Global.save_data["food"]]
 	heat_value.text = "-%02d"%[Global.save_data["heat"]]
-	other_label.text = "%s"%[Global.save_data["event_name"]]
+	other_label.text = tr(Global.save_data["event_name"])
 	
 	Global.save_data["gold"] -= Global.save_data["rent"]
 	Global.save_data["gold"] -= Global.save_data["food"]

@@ -16,6 +16,10 @@ signal family_hurt
 
 var enable_rotation:bool = true
 
+var theme:Theme = preload("res://assets/system/ui/theme.tres")
+var en_font:FontFile = preload("res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+var ja_font:FontFile = preload("res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")
+
 var save_file_location: String = "user://save_data_v1.json"
 
 var tile_sprites:Array[Resource] = [
@@ -100,6 +104,7 @@ func play_audio_clip(audio_player, clip_name:String):
 
 
 var DEFAULT_SAVE_DATA:Dictionary = {
+	"language": "automatic",
 	"day": 1,
 	"completed_days": 0,
 	"rent": 5,
@@ -151,6 +156,29 @@ func load_data() -> void:
 		saved_json["current_friends"] = 0
 		save_data = saved_json
 	
+func apply_locale_font() -> void:
+	var is_ja:bool = TranslationServer.get_locale().begins_with("ja")
+	var font_size:int = 8
+	if is_ja:
+		theme.default_font = ja_font
+		font_size = 16
+	
+	theme.default_font_size = font_size
+	for size_name in [
+			"normal_font_size",
+			"bold_font_size",
+			"italics_font_size",
+			"bold_italics_font_size",
+			"mono_font_size",
+		]:
+		theme.set_font_size(size_name, "RichTextLabel", font_size)
+
 func _ready() -> void:
 	load_data()
-	
+	var language = Global.save_data["language"]
+	if language == "automatic":
+		var preferred_language = OS.get_locale_language()
+		TranslationServer.set_locale(preferred_language)
+	else:
+		TranslationServer.set_locale(language)
+	apply_locale_font()

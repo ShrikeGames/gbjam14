@@ -68,6 +68,7 @@ RichTextLabel/font_sizes/bold_italics_font_size = 8
 RichTextLabel/font_sizes/italics_font_size = 8
 RichTextLabel/font_sizes/mono_font_size = 8
 RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/fonts/normal_font = ExtResource("1_l6n1o")
 RichTextLabel/icons/horizontal_rule = SubResource("ImageTexture_gjgi2")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_1j4jd")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_srf3u")

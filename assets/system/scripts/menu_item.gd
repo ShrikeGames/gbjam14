@@ -12,14 +12,14 @@ func _ready() -> void:
 func _get_price():
 	if shop_id < 0:
 		return ""
-	return " $%d"%[Global.save_data["prices"][shop_id]]
+	return tr("MENU_PRICE_SUFFIX")%[Global.save_data["prices"][shop_id]]
 
 func update():
-	menu_option.text = menu_text + _get_price()
+	menu_option.text = tr(menu_text) + _get_price()
 
 func select():
 	selected_indicator.visible = true
 	
 func deselect():
 	selected_indicator.visible = false
-	menu_option.text = menu_text + _get_price()
+	menu_option.text = tr(menu_text) + _get_price()

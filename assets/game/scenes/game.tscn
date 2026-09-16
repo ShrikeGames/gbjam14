@@ -171,7 +171,7 @@ offset_right = 104.0
 offset_bottom = 42.0
 size_flags_horizontal = 3
 theme = ExtResource("4_aif40")
-text = "Shop"
+text = "SHOP_SIGN"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -235,7 +235,7 @@ theme_override_constants/separation = 0
 clip_contents = false
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "Menu"
+text = "MENU_TITLE"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -243,15 +243,15 @@ vertical_alignment = 1
 
 [node name="Continue" parent="UI/MainMenu/Rows" unique_id=596866353 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Continue"
+menu_text = "MENU_CONTINUE"
 
 [node name="NewGame" parent="UI/MainMenu/Rows" unique_id=1893686181 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "New Game"
+menu_text = "MENU_NEW_GAME"
 
 [node name="Options" parent="UI/MainMenu/Rows" unique_id=2139197802 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Options"
+menu_text = "MENU_OPTIONS"
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/MainMenu" unique_id=874919071]
 stream = ExtResource("9_wyj15")
@@ -277,7 +277,7 @@ theme_override_constants/separation = 0
 clip_contents = false
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "Shop"
+text = "SHOP_TITLE"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -285,27 +285,27 @@ vertical_alignment = 1
 
 [node name="Recall" parent="UI/ShopMenu/Rows" unique_id=1137546451 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Recall"
+menu_text = "MENU_RECALL"
 shop_id = 0
 
 [node name="Friend" parent="UI/ShopMenu/Rows" unique_id=1896859361 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Hire"
+menu_text = "MENU_HIRE"
 shop_id = 1
 
 [node name="Drill" parent="UI/ShopMenu/Rows" unique_id=282668395 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Drill"
+menu_text = "MENU_DRILL"
 shop_id = 2
 
 [node name="Close" parent="UI/ShopMenu/Rows" unique_id=2071106376 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "Close"
+menu_text = "MENU_CLOSE"
 
 [node name="Escape" parent="UI/ShopMenu/Rows" unique_id=1548917655 instance=ExtResource("8_hihoh")]
 visible = false
 layout_mode = 2
-menu_text = "Escape"
+menu_text = "MENU_ESCAPE"
 shop_id = 3
 
 [node name="ShopkeeperPortrait" type="AnimatedSprite2D" parent="UI/ShopMenu" unique_id=1321793139]
