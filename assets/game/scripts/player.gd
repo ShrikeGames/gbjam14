@@ -88,9 +88,8 @@ func _recall_friend(friend: Friend):
 		Global.save_data["total_gold"] += friend.worth
 		Global.gold_changed.emit(Global.save_data["gold"], friend.worth)
 	if friend.hearts_count > 0:
-		Global.save_data["max_hp"] = min(Global.save_data["max_hp"]+2*(friend.hearts_count), 14)
+		Global.save_data["max_hp"] = min(Global.save_data["max_hp"] + 2 * (friend.hearts_count), 14)
 		Global.save_data["hp"] = Global.save_data["max_hp"]
-		Global.save()
 		Global.player_max_health_increase.emit()
 	
 	friend.get_parent().remove_child(friend)
@@ -110,9 +109,8 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 			Global.gold_changed.emit(Global.save_data["gold"], body.worth)
 		if body.item_id == 1:
 			# heart
-			Global.save_data["max_hp"] = min(Global.save_data["max_hp"]+2, 14)
+			Global.save_data["max_hp"] = min(Global.save_data["max_hp"] + 2, 14)
 			Global.save_data["hp"] = Global.save_data["max_hp"]
-			Global.save()
 			Global.player_max_health_increase.emit()
 		portrait.play("happy")
 		body.get_parent().remove_child(body)
