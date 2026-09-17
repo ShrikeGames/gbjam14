@@ -1,18 +1,20 @@
 extends Node2D
 
 
-@export var map_width:int = 100
-@export var map_height:int = 180
+@export var map_width:int = 64
+@export var map_height:int = 112
 @export var tile_width:int = 16
 @export var tile_height:int = 16
+@export var zone_height:float = 16.0
 var tiles_by_depth:Array[Array]=[
 	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,2,3,5],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,4,3,0,0,0,0,5],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,0,0,2,4,4,3,3,0,0,0,5],
-	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,4,4,2,3,0,0,0,1,1,5],
-	[1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,1,4,4,4,4,0,0,0,5],
-	[1,3,4,2,5],
-	[1,3,4,2,5]
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,4,3,0,0,0,0,0,0,5,6],
+	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,0,0,2,4,4,3,3,0,0,0,0,0,5,6,7],
+	[1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,2,3,0,0,0,1,1,5,6,7],
+	[1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,1,4,4,4,4,0,0,0,5,6,7],
+	[1,3,4,2,5,0,6,7],
+	[1,3,4,2,5,0,6,7],
+	[1,3,4,2,5,0,6,7]
 ]
 
 # 0 empty
@@ -24,7 +26,7 @@ var tiles_by_depth:Array[Array]=[
 # 9 is indestructable
 # 
 
-var heart_items_added:Array[int] = [0,0,0,0,0,0,0]
+var heart_items_added:Array[int] = [0,0,0,0,0,0,0,0]
 
 func _ready() -> void:
 	var tile_type:int = 0
@@ -36,19 +38,19 @@ func _ready() -> void:
 				_create_tile(x*tile_width, y*tile_height, tile_type)
 				continue
 				
-			if y > 6 and randf()<=0.001*x and heart_items_added[int(y/32.0)] < 1:
+			if y > 6 and randf()<=0.001*x and heart_items_added[int(y/zone_height)] < 1:
 				var heart_item:Item = Global.item.instantiate()
 				heart_item.item_id = 1
 				heart_item.position = Vector2(x*tile_width, y*tile_height)
 				self.add_child(heart_item)
-				heart_items_added[int(y/32.0)] += 1
+				heart_items_added[int(y/zone_height)] += 1
 				continue
 			
 			if y == 0 or x == 0 or y == map_height-1 or x ==  map_width -1:
 				tile_type = 9
 				_create_tile(x*tile_width, y*tile_height, tile_type)
 			elif y > 5:
-				var tiles:Array = tiles_by_depth[int(y/32.0)]
+				var tiles:Array = tiles_by_depth[int(y/zone_height)]
 				tile_type = tiles.pick_random()
 				if tile_type != 0:
 					_create_tile(x*tile_width, y*tile_height, tile_type)
@@ -57,6 +59,11 @@ func _ready() -> void:
 func _create_tile(x:int, y:int, tile_type:int) -> void:
 	if tile_type == 5:
 		var tile:MoveableTile = Global.moveable_tile.instantiate()
+		tile.position = Vector2(x,y)
+		tile.tile_id = tile_type
+		self.add_child(tile)
+	elif tile_type == 6:
+		var tile:MoveableTile = Global.enemy0.instantiate()
 		tile.position = Vector2(x,y)
 		tile.tile_id = tile_type
 		self.add_child(tile)

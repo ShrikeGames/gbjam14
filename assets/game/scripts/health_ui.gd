@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 		Global.save_data["event_name"] = "EVENT_HOSPITAL"
 		Global.save_data["event_cost"] = 10
 		Global.save_data["hp"] = Global.save_data["max_hp"]
-		Global.save()
+		Global.save_data["day"] += 1
 		get_tree().change_scene_to_file(home_scene)
 	
 func update():

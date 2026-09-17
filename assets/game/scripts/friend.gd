@@ -14,6 +14,7 @@ var worth:int = 0
 @export var arm:LegSegment
 @export var arm_container:Node2D
 var hp:int
+var hearts_count:int = 0
 
 var dead:bool = false
 # Called when the node enters the scene tree for the first time.
@@ -78,7 +79,8 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 		if body.worth > 0:
 			worth += body.worth
 		if body.item_id == 1:
-			self.hp = int(Global.save_data["max_hp"] / 2.0) + 2
+			self.hearts_count += 1
+			self.hp = int(Global.save_data["max_hp"] / 2.0)
 		Global.play_audio_clip(sfx_player, "Beep 3")
 		body.get_parent().remove_child(body)
 

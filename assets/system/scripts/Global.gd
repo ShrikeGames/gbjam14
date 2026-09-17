@@ -83,6 +83,20 @@ var tile_stats:Dictionary = {
 		"drop_item": -1,
 		"worth": 0,
 	},
+	6: {
+		"is_drillable": true,
+		"hp": 1,
+		"hardness": 0,
+		"drop_item": -1,
+		"worth": 0,
+	},
+	7: {
+		"is_drillable": true,
+		"hp": 10,
+		"hardness": 4,
+		"drop_item": -1,
+		"worth": 0,
+	},
 	9: {
 		"is_drillable": false,
 		"hp": 99,
@@ -93,6 +107,7 @@ var tile_stats:Dictionary = {
 }
 var tile = load("res://assets/game/scenes/tile.tscn")
 var moveable_tile = load("res://assets/game/scenes/moveabletile.tscn")
+var enemy0 = load("res://assets/game/scenes/enemy0.tscn")
 var friend = load("res://assets/game/scenes/friend.tscn")
 var item = load("res://assets/game/scenes/item.tscn")
 var heart = load("res://assets/game/scenes/heart.tscn")
@@ -115,6 +130,7 @@ var DEFAULT_SAVE_DATA:Dictionary = {
 	"started": false,
 	"skip_intro": false,
 	"gold": 10,
+	"total_gold": 0,
 	"damage": 1,
 	"current_friends": 0,
 	"max_friends": 2,

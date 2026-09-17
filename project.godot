@@ -95,8 +95,7 @@ START={
 [internationalization]
 
 locale/translation_remaps={
-"res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf": PackedStringArray("res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf:en", "res://assets/system/fonts/Shippori_Antique_B1/ShipporiAntiqueB1-Regular.ttf:ja_JP"),
-"res://assets/system/fonts/Shippori_Antique_B1/ShipporiAntiqueB1-Regular.ttf": PackedStringArray()
+"res://assets/game/images/cover_art_small.png": PackedStringArray("res://assets/game/images/cover_art_small.png:en", "res://assets/game/images/cover_art_small_jp.png:ja_JP")
 }
 locale/translations=PackedStringArray("res://assets/system/localization/strings.en.translation", "res://assets/system/localization/strings.ja.translation")
 locale/locale_filter_mode=0

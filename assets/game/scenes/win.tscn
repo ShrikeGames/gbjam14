@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://2uro0wr118rh"]
 
 [ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="1_5pnvm"]
-[ext_resource type="Script" uid="uid://blfyka1gcotly" path="res://assets/system/scripts/main_menu.gd" id="2_5pnvm"]
-[ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="3_aqq1r"]
+[ext_resource type="Script" uid="uid://ljcwtsendvif" path="res://assets/game/scripts/win_screen.gd" id="2_aw1ln"]
 [ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="4_b5gpp"]
 [ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="142_43wtt"]
 [ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_8ufc5"]
@@ -18,23 +17,30 @@ shader_parameter/multiplier = 1.0
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=733880445]
 process_mode = 3
+auto_translate_mode = 1
 
-[node name="Win" type="CenterContainer" parent="UI" unique_id=288620416 node_paths=PackedStringArray("menu_items", "sfx_player")]
+[node name="Win" type="CenterContainer" parent="UI" unique_id=288620416 node_paths=PackedStringArray("gold_total", "mom_status", "kid_status", "pet_status", "days_count", "total_score_value", "ranking", "ranking_description")]
 process_mode = 3
 offset_right = 160.0
 offset_bottom = 128.0
 theme = ExtResource("1_5pnvm")
-script = ExtResource("2_5pnvm")
-menu_items = [NodePath("Rows/NewGame"), NodePath("Rows/NewGame2")]
-sfx_player = NodePath("MenuSFXPlayer")
+script = ExtResource("2_aw1ln")
+gold_total = NodePath("Rows2/GoldTotal/Value")
+mom_status = NodePath("Rows2/Mom/Value")
+kid_status = NodePath("Rows2/Kid/Value")
+pet_status = NodePath("Rows2/Pet/Value")
+days_count = NodePath("Rows2/Days/Value")
+total_score_value = NodePath("Rows2/TotalScore/Value")
+ranking = NodePath("Rows2/Ranking")
+ranking_description = NodePath("Rows2/RankingDescription")
 
-[node name="Rows" type="VBoxContainer" parent="UI/Win" unique_id=1628587155]
+[node name="Rows2" type="VBoxContainer" parent="UI/Win" unique_id=449531452]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="RichTextLabel" parent="UI/Win/Rows" unique_id=8573070]
+[node name="Day" type="RichTextLabel" parent="UI/Win/Rows2" unique_id=2017551231]
 clip_contents = false
-custom_minimum_size = Vector2(76, 16)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "WIN_MESSAGE"
 fit_content = true
@@ -42,22 +48,181 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="UI/Win/Rows" unique_id=1844390991]
-clip_contents = false
-custom_minimum_size = Vector2(76, 16)
+[node name="GoldTotal" type="GridContainer" parent="UI/Win/Rows2" unique_id=491685093]
 layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/GoldTotal" unique_id=1292894838]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_TOTAL_GOLD"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="NewGame" parent="UI/Win/Rows" unique_id=596866353 instance=ExtResource("3_aqq1r")]
-visible = false
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/GoldTotal" unique_id=1720638462]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
 layout_mode = 2
-menu_text = "MENU_NEW_GAME"
+text = "00000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="NewGame2" parent="UI/Win/Rows" unique_id=1364432980 instance=ExtResource("3_aqq1r")]
+[node name="Mom" type="GridContainer" parent="UI/Win/Rows2" unique_id=255420202]
 layout_mode = 2
-menu_text = "MENU_NEW_GAME"
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/Mom" unique_id=874793143]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_MOM"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/Mom" unique_id=1769421117]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
+layout_mode = 2
+text = "WIN_STATUS_ALIVE"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Kid" type="GridContainer" parent="UI/Win/Rows2" unique_id=1649401435]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/Kid" unique_id=1932249795]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_KID"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/Kid" unique_id=629195200]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
+layout_mode = 2
+text = "WIN_STATUS_ALIVE"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Pet" type="GridContainer" parent="UI/Win/Rows2" unique_id=271170357]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/Pet" unique_id=967034913]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_PET"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/Pet" unique_id=1538083829]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
+layout_mode = 2
+text = "WIN_STATUS_ALIVE"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Days" type="GridContainer" parent="UI/Win/Rows2" unique_id=1841124090]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/Days" unique_id=449260763]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_DAYS_TAKEN"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/Days" unique_id=1690779515]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
+layout_mode = 2
+text = "7"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalScore" type="GridContainer" parent="UI/Win/Rows2" unique_id=414544200]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/Win/Rows2/TotalScore" unique_id=1534533935]
+clip_contents = false
+custom_minimum_size = Vector2(92, 16)
+layout_mode = 2
+text = "WIN_TOTAL_SCORE"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="UI/Win/Rows2/TotalScore" unique_id=333186200]
+clip_contents = false
+custom_minimum_size = Vector2(60, 16)
+layout_mode = 2
+text = "1800"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Ranking" type="RichTextLabel" parent="UI/Win/Rows2" unique_id=2038300801]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "S"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RankingDescription" type="RichTextLabel" parent="UI/Win/Rows2" unique_id=913746415]
+clip_contents = false
+custom_minimum_size = Vector2(76, 16)
+layout_mode = 2
+text = "WIN_RANKING_DESCRIPTION_S"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total" type="GridContainer" parent="UI/Win/Rows2" unique_id=1356628984]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/Win" unique_id=60794461]
 stream = ExtResource("4_b5gpp")

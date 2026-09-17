@@ -36,9 +36,13 @@ collision_layer = 1027
 collision_mask = 1027
 physics_material_override = ExtResource("1_jqfvt")
 can_sleep = false
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 16
 script = ExtResource("2_jqfvt")
 sprite = NodePath("Tile")
 cracks = NodePath("Cracks")
+move_speed = 0.0
 
 [node name="Tile" type="Sprite2D" parent="." unique_id=737383589]
 position = Vector2(8, 8)

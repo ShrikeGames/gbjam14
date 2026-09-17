@@ -28,7 +28,7 @@ func select_option():
 			Global.save_data["gold"] -= price
 			Global.gold_changed.emit(Global.save_data["gold"], -price)
 		elif selected_id == 2:
-			Global.save_data["prices"][selected_id] *= 2
+			Global.save_data["prices"][selected_id] = int(Global.save_data["prices"][selected_id] * 1.5)
 			Global.save_data["damage"] += 2
 			Global.save_data["gold"] -= price
 			Global.gold_changed.emit(Global.save_data["gold"], -price)

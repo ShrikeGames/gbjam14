@@ -85,7 +85,14 @@ func _recall_friend(friend: Friend):
 	if friend.worth > 0:
 		Global.play_audio_clip(sfx_player, "Beep 8")
 		Global.save_data["gold"] += friend.worth
+		Global.save_data["total_gold"] += friend.worth
 		Global.gold_changed.emit(Global.save_data["gold"], friend.worth)
+	if friend.hearts_count > 0:
+		Global.save_data["max_hp"] = min(Global.save_data["max_hp"]+2*(friend.hearts_count), 14)
+		Global.save_data["hp"] = Global.save_data["max_hp"]
+		Global.save()
+		Global.player_max_health_increase.emit()
+	
 	friend.get_parent().remove_child(friend)
 	Global.save_data["current_friends"] -= 1
 	friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], 1)
@@ -99,10 +106,11 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 		Global.play_audio_clip(sfx_player, "Beep 5")
 		if body.worth > 0:
 			Global.save_data["gold"] += body.worth
+			Global.save_data["total_gold"] += body.worth
 			Global.gold_changed.emit(Global.save_data["gold"], body.worth)
 		if body.item_id == 1:
 			# heart
-			Global.save_data["max_hp"] += 2
+			Global.save_data["max_hp"] = min(Global.save_data["max_hp"]+2, 14)
 			Global.save_data["hp"] = Global.save_data["max_hp"]
 			Global.save()
 			Global.player_max_health_increase.emit()

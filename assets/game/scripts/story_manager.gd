@@ -30,6 +30,10 @@ var story_index:int = 0
 
 @export var stories:VBoxContainer
 var current_story:StoryText
+
+func _ready() -> void:
+	get_tree().paused = false
+
 func _process(_delta: float) -> void:
 	if Global.save_data["skip_intro"]:
 		get_tree().change_scene_to_file(home_scene)

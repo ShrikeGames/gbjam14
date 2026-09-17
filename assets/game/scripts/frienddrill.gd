@@ -30,11 +30,11 @@ func stop_drill():
 
 
 func _on_drill_area_body_entered(tile: Node2D) -> void:
-	if is_instance_of(tile, MoveableTile):
+	if not is_instance_of(tile, Tile) and not is_instance_of(tile, MoveableTile):
+		return
+	if is_instance_of(tile, MoveableTile) and not tile.is_drillable():
 		is_drilling = false
 		turn_around.emit(tile)
-		return
-	if not is_instance_of(tile, Tile):
 		return
 	if is_drilling:
 		if tile.is_drillable():

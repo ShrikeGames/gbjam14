@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://3hgu6ndfcgew"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://baohhstqu5ln8" path="res://assets/game/materials/physics.tres" id="1_3b81g"]
+[ext_resource type="Script" uid="uid://b6c1ussa78kua" path="res://assets/game/scripts/moveabletile.gd" id="2_4t4fr"]
+[ext_resource type="Texture2D" uid="uid://cp6re2edjodon" path="res://assets/game/images/enemy0_attack0.png" id="3_e3km7"]
+[ext_resource type="Texture2D" uid="uid://bnqmn7qbvj2y7" path="res://assets/game/images/cracks3.png" id="4_r2s83"]
+[ext_resource type="Texture2D" uid="uid://drikcq33kso7m" path="res://assets/game/images/enemy0_attack1.png" id="4_wn2gw"]
+[ext_resource type="Texture2D" uid="uid://b4b5sov2agw6d" path="res://assets/game/images/cracks2.png" id="5_1thjl"]
+[ext_resource type="Texture2D" uid="uid://cko16xv4a01pe" path="res://assets/game/images/enemy0_attack2.png" id="5_67ity"]
+[ext_resource type="Texture2D" uid="uid://bednyr2ws0w7d" path="res://assets/game/images/cracks1.png" id="6_1lljm"]
+[ext_resource type="Texture2D" uid="uid://btxwxqx8ahqs8" path="res://assets/game/images/enemy01.png" id="6_cmykd"]
+[ext_resource type="Texture2D" uid="uid://b6lrfbjynosv7" path="res://assets/game/images/cracks0.png" id="7_lvly7"]
+[ext_resource type="Texture2D" uid="uid://dffgoj5d223lq" path="res://assets/game/images/enemy0_dead0.png" id="7_yv4qo"]
+[ext_resource type="Texture2D" uid="uid://d18olioj872nx" path="res://assets/game/images/enemy0_dead1.png" id="8_rll8m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2e36q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e3km7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wn2gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_67ity")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cmykd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yv4qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rll8m")
+}],
+"loop": false,
+"name": &"die",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3km7"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwxdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r2s83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1thjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1lljm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lvly7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6c1c"]
+size = Vector2(18.5, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lljm"]
+size = Vector2(16, 9)
+
+[node name="Enemy" type="RigidBody2D" unique_id=1050630474 node_paths=PackedStringArray("animated_sprite", "cracks")]
+collision_layer = 1027
+collision_mask = 1027
+physics_material_override = ExtResource("1_3b81g")
+can_sleep = false
+lock_rotation = true
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("2_4t4fr")
+tile_id = 6
+animated_sprite = NodePath("Sprite")
+hp = 1.0
+max_hp = 1.0
+cracks = NodePath("Cracks")
+lift_speed = 128.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=256388690]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_2e36q")
+autoplay = "default"
+
+[node name="TileCollider" type="CollisionShape2D" parent="." unique_id=452210262]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_e3km7")
+
+[node name="Cracks" type="AnimatedSprite2D" parent="." unique_id=1639250001]
+visible = false
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_kwxdl")
+frame = 2
+frame_progress = 0.31804484
+
+[node name="KillArea" type="Area2D" parent="." unique_id=371345833]
+collision_layer = 3
+collision_mask = 260
+
+[node name="TileCollider" type="CollisionShape2D" parent="KillArea" unique_id=353279900]
+position = Vector2(7.75, 9)
+shape = SubResource("RectangleShape2D_p6c1c")
+
+[node name="TurnAroundArea" type="Area2D" parent="." unique_id=1176625893]
+collision_layer = 0
+collision_mask = 1027
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurnAroundArea" unique_id=1286602959]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_1lljm")
+
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
+[connection signal="body_entered" from="TurnAroundArea" to="." method="_on_turn_around_area_body_entered"]

@@ -110,9 +110,26 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 - set-up the project to be able to support other languages (manually translating since MTL isn't allowed for the jam)
 
 ## Day 6
-- Finish translating to japanese manually
-- Add first enemy
+
+- Messed with translating a little but basically nothing (I needed a break and to do other stuff)
+- Came up with new title for game (Riko of the End)
+
+## Day 7
+- [Done] Adjust layer/zone sizes and overall map size
+- [Done] Set max hp limit
+- [Done] Make boulders drillable with high enough level drill
+- [Done] Win screen update:
+  - Show what family members are still alive
+  - how many days it took
+  - give S,A,B,C,D rankings
+- [Done] Title Screen
+- [Partial] Finish the "box" art
+- [Done] Add two enemies (and make them drillable too at differing upgrade levels)
+- [Done] Friend can pick up hearts and deliver them to you
+- If killed one day 1 it does not show the home scene and skips it
 - Depth title pop-up when goes being depth palettes?
-- Closing cinematic for winning
-- Create options menu wit skip intro toggle, language toggle, fullscreen button, volume controls
+  - slide in from the top center of the screen
+- Have the daily costs increase rather than be static
+- Create options menu with skip intro toggle, language toggle, fullscreen button, volume controls
 - Consider having map persistant between days
+- Maybe possibly try and finish translating text manually into Japanese
