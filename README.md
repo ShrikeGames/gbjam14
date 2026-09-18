@@ -126,10 +126,28 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 - [Partial] Finish the "box" art
 - [Done] Add two enemies (and make them drillable too at differing upgrade levels)
 - [Done] Friend can pick up hearts and deliver them to you
-- If killed one day 1 it does not show the home scene and skips it
+- [Done] Fixed issue where If killed one day 1 it does not show the home scene and skips it
+
+
+## Day 8 Plan
+
 - Depth title pop-up when goes being depth palettes?
   - slide in from the top center of the screen
 - Have the daily costs increase rather than be static
 - Create options menu with skip intro toggle, language toggle, fullscreen button, volume controls
+- Tons of SFX needed for everything
+- Other polish
+- Increase collision size of friends
 - Consider having map persistant between days
 - Maybe possibly try and finish translating text manually into Japanese
+
+
+## Day 9 Plan
+
+- Playtesting and making everything as smooth as possible
+- Itch.io page GIFs/screenshots, description, etc
+- Tutorial in-game? (probably not)
+
+## Day 10 Plan
+
+- ?
