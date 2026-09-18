@@ -1,61 +1,75 @@
 keys,en,ja
-STORY_01,A long long time ago...,昔々
-STORY_02,The World Ended,世界は終わりました
+STORY_01,A long long time ago...,昔々…
+STORY_02,The World Ended,世界は終わった
 STORY_03,"All of the old currencies are now worthless.
-We only care about...","旧通貨は下らないとなっている
-だから..."
-STORY_04,The Good Old Gold Standard,The Good Old Gold Standard
-STORY_05,You Are Riko,You Are Riko
+We only care about...","古いお金は
+もう紙くず
+大事なのは
+ただ一つ…"
+STORY_04,The Good Old Gold Standard,"懐かしの
+金本位制"
+STORY_05,You Are Riko,君はリコ
 STORY_06,"You are in charge of
 leading excavations
-to mine for ...","You are in charge of
-leading excavations
-to mine for ..."
-STORY_07,GOOD OLD GOLD,GOOD OLD GOLD
-STORY_08,You must care for your family,You must care for your family
-STORY_09,"They require food, shelter, and care","They require food, shelter, and care"
-STORY_10,If you do not pay the bills they will suffer...,If you do not pay the bills they will suffer...
-STORY_11,...and die,...and die
-STORY_12,You do have help though...,You do have help though...
-STORY_13,Hire mole people to help!,Hire mole people to help!
-STORY_14,"But it is dangerous, so keep them safe!","But it is dangerous, so keep them safe!"
-STORY_15,Or they will die...,Or they will die...
-STORY_16,If you save up enough Gold...,If you save up enough Gold...
-STORY_17,You and your family can escape to live on Mars!,You and your family can escape to live on Mars!
-HOME_SAVINGS,Savings,Savings
-HOME_RENT,Rent,Rent
-HOME_FOOD,Food,Food
+to mine for ...","採掘隊の隊長だ
+掘るのは…"
+STORY_07,GOOD OLD GOLD,そう、金だ!
+STORY_08,You must care for your family,"君は家族を
+養うのだ"
+STORY_09,"They require food, shelter, and care","食べ物と
+住む家と
+世話が要る"
+STORY_10,If you do not pay the bills they will suffer...,"お金を払わないと
+家族は苦しむ"
+STORY_11,...and die,…そして死ぬ
+STORY_12,You do have help though...,"でも助けは
+あるぞ…"
+STORY_13,Hire mole people to help!,"モグラ人間を
+雇おう!"
+STORY_14,"But it is dangerous, so keep them safe!","でも危険だ
+守ってやれ!"
+STORY_15,Or they will die...,死んでしまうぞ…
+STORY_16,If you save up enough Gold...,金を貯めれば…
+STORY_17,You and your family can escape to live on Mars!,"家族と一緒に
+火星へ脱出だ!"
+HOME_SAVINGS,Savings,積み金
+HOME_RENT,Rent,部屋代
+HOME_FOOD,Food,食べ物
 HOME_HEAT,Heat,Heat
-HOME_REMAINING,Remaining,Remaining
-EVENT_HOSPITAL,Hospital,Hospital
-MENU_TITLE,Menu,Menu
-SHOP_TITLE,Shop,Shop
-SHOP_SIGN,Shop,Shop
-MENU_CONTINUE,Continue,コンティニュー
-MENU_NEW_GAME,New Game,New Game
-MENU_OPTIONS,Options,Options
-MENU_RECALL,Recall,Recall
-MENU_HIRE,Hire,Hire
+HOME_REMAINING,Remaining,残額
+EVENT_HOSPITAL,Hospital,病院
+MENU_TITLE,Menu,メニュー
+SHOP_TITLE,Shop,ショップ
+SHOP_SIGN,Shop,ショップ
+MENU_CONTINUE,Continue,続きから始める
+MENU_NEW_GAME,New Game,最初から始める
+MENU_OPTIONS,Options,初期設定
+MENU_BACK,BACK,BACK
+MENU_LANGUAGE,Language,言語
+MENU_RECALL,Recall,取り出す
+MENU_HIRE,Hire,雇う
 MENU_DRILL,Drill,ドリル
 MENU_CLOSE,Close,閉めて
 MENU_ESCAPE,Escape,逃亡する
 MENU_ESCAPE_HOME,Escape $300,Escape 300金
 MENU_PRICE_SUFFIX, $%d, $%d
+MENU_SKIP_INTRO,Skip Intro,Skip Intro
+MENU_VOLUME,Volume,音量
 UI_DAY,Day %s,%s日
 UI_GOLD,Gold:%05d,金:%05d
-WIN_TOTAL_GOLD,Total Gold,Total Gold
-WIN_MOM,Mom,Mom
-WIN_KID,Kid,Kid
-WIN_PET,Pet,Pet
-WIN_DAYS_TAKEN,Days Taken,Days Taken
+WIN_TOTAL_GOLD,Total Gold,金の合計
+WIN_MOM,Mom,ママ
+WIN_KID,Kid,子供
+WIN_PET,Pet,ペット
+WIN_DAYS_TAKEN,Days Taken,日の合計
 WIN_RANKING_DESCRIPTION_S,God Gamer,God Gamer
 WIN_RANKING_DESCRIPTION_A,Excellent,Excellent
 WIN_RANKING_DESCRIPTION_B,Very Good!,Very Good!
 WIN_RANKING_DESCRIPTION_C,Not Bad,Not Bad
 WIN_RANKING_DESCRIPTION_D,A little slow!,A little slow!
-WIN_STATUS_ALIVE,Alive,Alive
-WIN_STATUS_SICK,Sick,Sick
-WIN_STATUS_DEAD,Dead,Dead
-WIN_MESSAGE,"You escaped!","You escaped!"
-WIN_TOTAL_SCORE,"Total Score","Total Score"
-GAME_TITLE,"Riko of the End","終わりのリコ"
+WIN_STATUS_ALIVE,Alive,健在
+WIN_STATUS_SICK,Sick,病める
+WIN_STATUS_DEAD,Dead,死
+WIN_MESSAGE,You escaped!,火星へ脱出だ!
+WIN_TOTAL_SCORE,Total Score,スコアの合計
+GAME_TITLE,Riko of the End,終わりのリコ

@@ -32,27 +32,32 @@ func _shop_close():
 	player.portrait.play("default")
 
 func _player_hurt():
+	Global.play_audio_clip(player.sfx_player, "Player Hurt")
 	player.portrait.play("sad")
 
 func _cannot_afford():
 	shopkeeper.play("sad")
 	player.portrait.play("sad")
+	Global.play_audio_clip(player.sfx_player, "Player Hurt")
 
 func _friend_got_item():
 	friend.play("happy")
+	Global.play_audio_clip(player.sfx_player, "Friend Happy")
 
 func _friend_died(body: Friend):
 	if body.dead:
 		friend.play("sad")
+		Global.play_audio_clip(player.sfx_player, "Friend Die")
 		Global.save_data["max_friends"] -= 1
 		Global.save_data["current_friends"] -= 1
 		_friend_count_changed(Global.save_data["current_friends"], Global.save_data["max_friends"], 0)
-
+		
 
 func _friend_count_changed(friend_count: int, max_friend_count: int, friend_increment_count: int):
 	if friend_increment_count > 0:
 		friend_increment_text.text = "+%s" % [friend_increment_count]
 		player.portrait.play("happy")
+		Global.play_audio_clip(player.sfx_player, "Player Happy")
 	else:
 		friend_increment_text.text = "%s" % [friend_increment_count]
 	
@@ -65,6 +70,7 @@ func _gold_changed(gold_count: int, gold_increment_count: int):
 		gold_increment_text.text = "%s" % [gold_increment_count]
 		shopkeeper.play("happy")
 		player.portrait.play("happy")
+		Global.play_audio_clip(player.sfx_player, "Player Happy")
 	gold_text.text = tr("UI_GOLD") % [gold_count]
 
 

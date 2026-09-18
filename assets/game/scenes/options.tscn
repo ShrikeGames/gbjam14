@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bba1ily1dksrn"]
+
+[ext_resource type="Theme" uid="uid://byxb71iyovihy" path="res://assets/system/ui/theme.tres" id="1_bryba"]
+[ext_resource type="Script" uid="uid://cisqs1jq62mnf" path="res://assets/game/scripts/options_menu.gd" id="2_bryba"]
+[ext_resource type="Texture2D" uid="uid://beemixqv2wl0y" path="res://assets/game/images/cover_art_small.png" id="3_fwmy4"]
+[ext_resource type="PackedScene" uid="uid://bhp0kju8n8dip" path="res://assets/system/scenes/menu_item.tscn" id="4_fykjk"]
+[ext_resource type="PackedScene" uid="uid://dnmbskrcd14wa" path="res://assets/system/scenes/options_menu_item.tscn" id="4_t1hp8"]
+[ext_resource type="Texture2D" uid="uid://dka374rbbu6it" path="res://assets/system/ui/options_toggle_box_unchecked.png" id="5_fykjk"]
+[ext_resource type="AudioStream" uid="uid://cadp15jvpjsmy" path="res://assets/game/audio/sfx_interactive_stream.tres" id="5_q18i4"]
+[ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="6_nibnh"]
+[ext_resource type="Texture2D" uid="uid://d2yr6k5s4fogw" path="res://assets/system/ui/options_toggle_box_checked.png" id="6_q18i4"]
+[ext_resource type="Texture2D" uid="uid://chwrmxs3iatoy" path="res://assets/system/ui/options_slider0.png" id="7_otu6w"]
+[ext_resource type="Texture2D" uid="uid://cns7av3f54n3t" path="res://assets/system/ui/options_slider1.png" id="8_fd6ek"]
+[ext_resource type="AudioStream" uid="uid://dsveft5ewq64s" path="res://assets/game/audio/music/music4.mp3" id="8_t1hp8"]
+[ext_resource type="Texture2D" uid="uid://bdcedrmxhpats" path="res://assets/system/ui/options_slider2.png" id="9_kiowt"]
+[ext_resource type="Texture2D" uid="uid://dex1op40ukhi7" path="res://assets/system/ui/options_slider3.png" id="10_k1017"]
+[ext_resource type="Texture2D" uid="uid://d2pv8idjm7i2k" path="res://assets/system/ui/options_slider4.png" id="11_m7ddq"]
+[ext_resource type="Texture2D" uid="uid://ccyem31we4aun" path="res://assets/system/ui/options_slider5.png" id="12_yw5ak"]
+[ext_resource type="Texture2D" uid="uid://dql28lxfkmx8b" path="res://assets/system/ui/options_slider6.png" id="13_t814w"]
+[ext_resource type="Texture2D" uid="uid://c44855xh35q26" path="res://assets/system/ui/options_slider7.png" id="14_7oqtu"]
+[ext_resource type="Texture2D" uid="uid://dwh0g4ktpr5v7" path="res://assets/system/ui/options_slider8.png" id="15_4vuxy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nibnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fykjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q18i4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4esx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_otu6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fd6ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kiowt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k1017")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m7ddq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yw5ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t814w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7oqtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4vuxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjrpg"]
+shader = ExtResource("6_nibnh")
+shader_parameter/reference_palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/shader_active = true
+shader_parameter/multiplier = 1.0
+
+[node name="Options" type="Node2D" unique_id=386532816]
+process_mode = 3
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=733880445]
+process_mode = 3
+
+[node name="OptionsMenu" type="CenterContainer" parent="UI" unique_id=1992986449 node_paths=PackedStringArray("option_menu_items", "menu_items", "sfx_player")]
+process_mode = 3
+custom_minimum_size = Vector2(160, 0)
+offset_right = 160.0
+offset_bottom = 144.0
+theme = ExtResource("1_bryba")
+script = ExtResource("2_bryba")
+option_menu_items = [NodePath("Rows/LanguageToggle"), NodePath("Rows/SkipIntro"), NodePath("Rows/Volume")]
+menu_items = [NodePath("Rows/LanguageToggle"), NodePath("Rows/SkipIntro"), NodePath("Rows/Volume"), NodePath("Rows/Back")]
+sfx_player = NodePath("MenuSFXPlayer")
+
+[node name="Rows" type="VBoxContainer" parent="UI/OptionsMenu" unique_id=1202953528]
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CoverArtSmall" type="Sprite2D" parent="UI/OptionsMenu/Rows" unique_id=1297845931]
+position = Vector2(80, 72)
+texture = ExtResource("3_fwmy4")
+
+[node name="LanguageToggle" parent="UI/OptionsMenu/Rows" unique_id=596866353 instance=ExtResource("4_t1hp8")]
+layout_mode = 2
+menu_text = "MENU_LANGUAGE"
+
+[node name="SkipIntro" parent="UI/OptionsMenu/Rows" unique_id=147887856 instance=ExtResource("4_t1hp8")]
+layout_mode = 2
+sprite_frames = SubResource("SpriteFrames_nibnh")
+menu_text = "MENU_SKIP_INTRO"
+
+[node name="Volume" parent="UI/OptionsMenu/Rows" unique_id=76554490 instance=ExtResource("4_t1hp8")]
+layout_mode = 2
+sprite_frames = SubResource("SpriteFrames_d4esx")
+menu_text = "MENU_VOLUME"
+
+[node name="Back" parent="UI/OptionsMenu/Rows" unique_id=2010120158 instance=ExtResource("4_fykjk")]
+layout_mode = 2
+menu_text = "MENU_BACK"
+
+[node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/OptionsMenu" unique_id=1591074752]
+stream = ExtResource("5_q18i4")
+bus = &"SFX"
+
+[node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=874323362]
+material = SubResource("ShaderMaterial_mjrpg")
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7607843, 0.7882353, 0.9882353, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1541596330]
+stream = ExtResource("8_t1hp8")
+autoplay = true
+bus = &"Music"

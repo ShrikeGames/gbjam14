@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cv0jaf1sgm183" path="res://assets/game/images/art/friend_dead1.png" id="8_h2f56"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tyc6d"]
-radius = 7.0
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qv1gp"]
 radius = 4.1231055
@@ -71,7 +71,7 @@ arm = NodePath("Right/FriendArmSegment")
 arm_container = NodePath("Right")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279318758]
-position = Vector2(0, -7)
+position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_tyc6d")
 
 [node name="CollectArea" type="Area2D" parent="." unique_id=1915065442]

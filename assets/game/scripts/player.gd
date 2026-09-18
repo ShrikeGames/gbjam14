@@ -82,6 +82,7 @@ func _recall_friend(friend: Friend):
 	if friend.dead:
 		return
 	portrait.play("happy")
+	Global.play_audio_clip(sfx_player, "Player Happy")
 	if friend.worth > 0:
 		Global.play_audio_clip(sfx_player, "Beep 8")
 		Global.save_data["gold"] += friend.worth
@@ -113,6 +114,7 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 			Global.save_data["hp"] = Global.save_data["max_hp"]
 			Global.player_max_health_increase.emit()
 		portrait.play("happy")
+		Global.play_audio_clip(sfx_player, "Player Happy")
 		body.get_parent().remove_child(body)
 
 func _on_body_entered(_body: Node) -> void:

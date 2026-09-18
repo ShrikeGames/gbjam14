@@ -32,7 +32,7 @@ menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Row
 sfx_player = NodePath("MenuSFXPlayer")
 
 [node name="Rows" type="VBoxContainer" parent="UI/TitleMenu" unique_id=1202953528]
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(160, 144)
 layout_mode = 2
 theme_override_constants/separation = 0
 

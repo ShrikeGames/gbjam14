@@ -19,6 +19,7 @@ func update():
 
 func select():
 	selected_indicator.visible = true
+	menu_option.text = tr(menu_text) + _get_price()
 	
 func deselect():
 	selected_indicator.visible = false

@@ -127,17 +127,19 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 - [Done] Add two enemies (and make them drillable too at differing upgrade levels)
 - [Done] Friend can pick up hearts and deliver them to you
 - [Done] Fixed issue where If killed one day 1 it does not show the home scene and skips it
-
+- [Done] Have the daily costs increase rather than be static
 
 ## Day 8 Plan
 
+- [Done] Make sure if entire family dies game doesn't break
+- [Done] save data at the START of the home screen not the end
+- [Done] Create options menu with skip intro toggle, language toggle, volume controls
+- [Done] Increase collision size of friends
+- [Done] Add some sound effects for happy/sad
+- Tons of SFX needed for everything
 - Depth title pop-up when goes being depth palettes?
   - slide in from the top center of the screen
-- Have the daily costs increase rather than be static
-- Create options menu with skip intro toggle, language toggle, fullscreen button, volume controls
-- Tons of SFX needed for everything
 - Other polish
-- Increase collision size of friends
 - Consider having map persistant between days
 - Maybe possibly try and finish translating text manually into Japanese
 

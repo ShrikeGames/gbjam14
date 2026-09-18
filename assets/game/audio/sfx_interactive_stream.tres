@@ -17,15 +17,21 @@
 [ext_resource type="AudioStream" uid="uid://chph8fj22ivm4" path="res://assets/game/audio/sfx/jazz8.mp3" id="15_cr8lp"]
 [ext_resource type="AudioStream" uid="uid://dubgf8125812q" path="res://assets/game/audio/silence.mp3" id="16_nq31i"]
 [ext_resource type="AudioStream" uid="uid://d323urmlq67he" path="res://assets/game/audio/sfx/beep3.mp3" id="17_5uq8s"]
+[ext_resource type="AudioStream" uid="uid://bnkar2oldspxk" path="res://assets/game/audio/sfx/enemy0_die.mp3" id="17_uu4ei"]
+[ext_resource type="AudioStream" uid="uid://i20piy2dnm24" path="res://assets/game/audio/sfx/enemy1_die.mp3" id="18_2jx20"]
 [ext_resource type="AudioStream" uid="uid://btxopwfswvf6v" path="res://assets/game/audio/sfx/beep4.mp3" id="18_acira"]
 [ext_resource type="AudioStream" uid="uid://drnsrb00ts5c2" path="res://assets/game/audio/sfx/beep5.mp3" id="19_eal58"]
+[ext_resource type="AudioStream" uid="uid://bnaktmi660y5i" path="res://assets/game/audio/sfx/friend_die.mp3" id="19_qbycp"]
 [ext_resource type="AudioStream" uid="uid://cblrwvk8jekff" path="res://assets/game/audio/sfx/beep6.mp3" id="20_sopns"]
+[ext_resource type="AudioStream" uid="uid://bgog7ap8n26vn" path="res://assets/game/audio/sfx/friend_happy.mp3" id="20_yugu5"]
 [ext_resource type="AudioStream" uid="uid://dw6y6mxbt7ylp" path="res://assets/game/audio/sfx/beep7.mp3" id="21_clgkm"]
+[ext_resource type="AudioStream" uid="uid://cq3hli4y4vrlc" path="res://assets/game/audio/sfx/player_happy.mp3" id="21_dmlly"]
+[ext_resource type="AudioStream" uid="uid://lmfyjaan38tx" path="res://assets/game/audio/sfx/player_hurt.mp3" id="22_d3dk8"]
 [ext_resource type="AudioStream" uid="uid://xsxldd5r57wm" path="res://assets/game/audio/sfx/beep8.mp3" id="22_f31qs"]
 [ext_resource type="AudioStream" uid="uid://cr7x0rut2rp4i" path="res://assets/game/audio/sfx/casio0.mp3" id="23_nc40l"]
 
 [resource]
-clip_count = 23
+clip_count = 29
 clip_0/name = &"Beep 0"
 clip_0/stream = ExtResource("1_qhkgc")
 clip_0/auto_advance = 0
@@ -95,6 +101,24 @@ clip_21/auto_advance = 0
 clip_22/name = &"Silence"
 clip_22/stream = ExtResource("16_nq31i")
 clip_22/auto_advance = 0
+clip_23/name = &"Enemy 0 Die"
+clip_23/stream = ExtResource("17_uu4ei")
+clip_23/auto_advance = 0
+clip_24/name = &"Enemy 1 Die"
+clip_24/stream = ExtResource("18_2jx20")
+clip_24/auto_advance = 0
+clip_25/name = &"Friend Die"
+clip_25/stream = ExtResource("19_qbycp")
+clip_25/auto_advance = 0
+clip_26/name = &"Friend Happy"
+clip_26/stream = ExtResource("20_yugu5")
+clip_26/auto_advance = 0
+clip_27/name = &"Player Happy"
+clip_27/stream = ExtResource("21_dmlly")
+clip_27/auto_advance = 0
+clip_28/name = &"Player Hurt"
+clip_28/stream = ExtResource("22_d3dk8")
+clip_28/auto_advance = 0
 initial_clip = 22
 _transitions = {
 Vector2i(-1, -1): {

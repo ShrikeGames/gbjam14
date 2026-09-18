@@ -222,7 +222,7 @@ offset_right = 160.0
 offset_bottom = 64.0
 theme = ExtResource("4_aif40")
 script = ExtResource("8_oo18y")
-menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Rows/Options")]
+menu_items = [NodePath("Rows/Continue"), NodePath("Rows/NewGame"), NodePath("Rows/MainMenu")]
 sfx_player = NodePath("MenuSFXPlayer")
 other_menus = [NodePath("../ShopMenu")]
 
@@ -249,9 +249,9 @@ menu_text = "MENU_CONTINUE"
 layout_mode = 2
 menu_text = "MENU_NEW_GAME"
 
-[node name="Options" parent="UI/MainMenu/Rows" unique_id=2139197802 instance=ExtResource("8_hihoh")]
+[node name="MainMenu" parent="UI/MainMenu/Rows" unique_id=513354966 instance=ExtResource("8_hihoh")]
 layout_mode = 2
-menu_text = "MENU_OPTIONS"
+menu_text = "MENU_TITLE"
 
 [node name="MenuSFXPlayer" type="AudioStreamPlayer" parent="UI/MainMenu" unique_id=874919071]
 stream = ExtResource("9_wyj15")
@@ -342,10 +342,8 @@ layout_mode = 2
 color = Color(0.7607843, 0.7882353, 0.9882353, 1)
 
 [node name="TotalTextContainer" type="HBoxContainer" parent="UI" unique_id=1200425232]
-custom_minimum_size = Vector2(144, 16)
-offset_left = 8.0
 offset_top = 128.0
-offset_right = 152.0
+offset_right = 160.0
 offset_bottom = 144.0
 size_flags_vertical = 3
 theme = ExtResource("4_aif40")
@@ -361,7 +359,7 @@ vertical_alignment = 1
 
 [node name="FriendCount" type="RichTextLabel" parent="UI/TotalTextContainer" unique_id=236756412]
 clip_contents = false
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "02/02"
 fit_content = true
@@ -447,7 +445,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="PaletteSwapper" type="ColorRect" parent="UI" unique_id=1665316771 node_paths=PackedStringArray("player", "music_player", "day_timer")]
-visible = false
 material = ExtResource("13_koqv6")
 custom_minimum_size = Vector2(160, 144)
 offset_right = 40.0
@@ -455,7 +452,7 @@ offset_bottom = 40.0
 color = Color(0.7607843, 0.7882353, 0.9882353, 1)
 script = ExtResource("14_koqv6")
 player = NodePath("../../Player")
-depth_palettes = Array[PackedColorArray]([PackedColorArray(0.02, 0.031, 0.137, 1, 0.141, 0.172, 0.418, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1), PackedColorArray(0.25, 0.16, 0.13, 1, 0.63, 0.42, 0.3, 1, 0.85, 0.72, 0.56, 1, 0.96, 0.92, 0.84, 1), PackedColorArray(0.32941177, 0.17254902, 0.11372549, 1, 0.29411766, 0.23921569, 0.13725491, 1, 0.40392157, 0.4392157, 0.23921569, 1, 0.75686276, 0.78431374, 0.49803922, 1), PackedColorArray(0.05, 0.18, 0.22, 1, 0.16, 0.51, 0.53, 1, 0.55, 0.82, 0.8, 1, 0.98, 0.96, 0.95, 1), PackedColorArray(0.1882353, 0.09019608, 0.18039216, 1, 0.52156866, 0.3019608, 0.4509804, 1, 0.8, 0.6392157, 0.7411765, 1, 0.9607843, 0.9098039, 0.9411765, 1), PackedColorArray(0.1882353, 0.09019608, 0, 1, 0.52156866, 0.3019608, 0.05882353, 1, 0.8, 0.6392157, 0.09019608, 1, 0.9607843, 0.9098039, 0.043137256, 1)])
+depth_palettes = Array[PackedColorArray]([PackedColorArray(0.02, 0.031, 0.137, 1, 0.141, 0.172, 0.418, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.8901961, 0.9019608, 0.99215686, 1), PackedColorArray(0.25, 0.16, 0.13, 1, 0.63, 0.42, 0.3, 1, 0.85, 0.72, 0.56, 1, 0.9794838, 0.9589723, 0.91584915, 1), PackedColorArray(0.32941177, 0.17254902, 0.11372549, 1, 0.29411766, 0.23921569, 0.13725491, 1, 0.40392157, 0.4392157, 0.23921569, 1, 0.9384756, 0.9507634, 0.84569746, 1), PackedColorArray(0.05, 0.18, 0.22, 1, 0.16, 0.51, 0.53, 1, 0.55, 0.82, 0.8, 1, 0.98, 0.96, 0.95, 1), PackedColorArray(0.1882353, 0.09019608, 0.18039216, 1, 0.52156866, 0.3019608, 0.4509804, 1, 0.8, 0.6392157, 0.7411765, 1, 0.98364383, 0.9624873, 0.9753937, 1), PackedColorArray(0.1882353, 0.09019608, 0, 1, 0.52156866, 0.3019608, 0.05882353, 1, 0.8, 0.6392157, 0.09019608, 1, 0.9999998, 0.9973895, 0.91998756, 1)])
 music_player = NodePath("../../MusicPlayer")
 day_timer = NodePath("../TimeUi/Timer")
 

@@ -54,9 +54,10 @@ func _ready() -> void:
 				tile_type = tiles.pick_random()
 				if tile_type != 0:
 					_create_tile(x*tile_width, y*tile_height, tile_type)
-	
 
 func _create_tile(x:int, y:int, tile_type:int) -> void:
+	if tile_type == 0:
+		return
 	if tile_type == 5:
 		var tile:MoveableTile = Global.moveable_tile.instantiate()
 		tile.position = Vector2(x,y)

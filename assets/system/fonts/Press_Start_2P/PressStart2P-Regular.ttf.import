@@ -27,7 +27,7 @@ subpixel_positioning=0
 keep_rounding_remainders=false
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://bsdlhq7ql52c8", "res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")]
+fallbacks=[Resource("uid://cyon01jqb3uwn", "res://assets/system/fonts/Public Pixel Font/PublicPixel-rv0pA.ttf"), Resource("uid://b87i66h8335i8", "res://assets/system/fonts/UnifontEX Font/Unifontexmono-lxY45.ttf"), Resource("uid://bsdlhq7ql52c8", "res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")]
 Compress=null
 compress=true
 preload=[{
@@ -37,6 +37,8 @@ preload=[{
 "size": Vector2i(16, 0),
 &"variation_embolden": 0.0
 }]
-language_support={}
+language_support={
+"en": true
+}
 script_support={}
 opentype_features={}

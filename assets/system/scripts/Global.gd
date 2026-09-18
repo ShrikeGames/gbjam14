@@ -20,7 +20,7 @@ var theme:Theme = preload("res://assets/system/ui/theme.tres")
 var en_font:FontFile = preload("res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
 var ja_font:FontFile = preload("res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")
 
-var save_file_location: String = "user://save_data_v1.json"
+var save_file_location: String = "user://save_data_v2.json"
 
 var tile_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
@@ -144,7 +144,8 @@ var DEFAULT_SAVE_DATA:Dictionary = {
 	],
 	"mom": 2,
 	"kid": 2,
-	"pet": 2
+	"pet": 2,
+	"volume": 80.0
 }
 var save_data:Dictionary = DEFAULT_SAVE_DATA.duplicate(true)
 
@@ -177,7 +178,7 @@ func apply_locale_font() -> void:
 	var font_size:int = 8
 	if is_ja:
 		theme.default_font = ja_font
-		font_size = 16
+		font_size = 12
 	
 	theme.default_font_size = font_size
 	for size_name in [
@@ -191,6 +192,7 @@ func apply_locale_font() -> void:
 
 func _ready() -> void:
 	load_data()
+	update_volume()
 	var language = Global.save_data["language"]
 	if language == "automatic":
 		var preferred_language = OS.get_locale_language()
@@ -198,3 +200,8 @@ func _ready() -> void:
 	else:
 		TranslationServer.set_locale(language)
 	apply_locale_font()
+
+func update_volume():
+	var volume_db = 20 * (log(Global.save_data["volume"] * 0.01) / log(10))
+	var audio_bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(audio_bus_index, volume_db)

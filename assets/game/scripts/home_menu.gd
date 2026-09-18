@@ -27,6 +27,7 @@ func select_option():
 	
 func _ready() -> void:
 	super._ready()
+	Global.save()
 	day.text = tr("UI_DAY") % [int(Global.save_data["day"])]
 	gold_value.text = "%05d" % [int(Global.save_data["gold"])]
 	rent_value.text = "-%02d" % [Global.save_data["rent"] + (Global.save_data["completed_days"])]
@@ -51,10 +52,10 @@ func _ready() -> void:
 		for f in family:
 			if Global.save_data[f] > 0:
 				alive_family.append(f)
-		var selected_family: String = alive_family.pick_random()
-		print(selected_family, " hp decreased")
-		Global.save_data[selected_family] -= 1
-		Global.family_hurt.emit(selected_family, int(Global.save_data[selected_family]))
+		if len(alive_family) > 0:
+			var selected_family: String = alive_family.pick_random()
+			Global.save_data[selected_family] -= 1
+			Global.family_hurt.emit(selected_family, int(Global.save_data[selected_family]))
 		
 	Global.save_data["gold"] = clampi(Global.save_data["gold"], 0, 99999)
 	Global.save_data["hp"] = Global.save_data["max_hp"]
@@ -62,4 +63,4 @@ func _ready() -> void:
 	Global.save_data["event_cost"] = ""
 	Global.save_data["current_friends"] = 0
 	Global.save_data["completed_days"] += 1
-	Global.save()
+	

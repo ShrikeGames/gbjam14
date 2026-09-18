@@ -22,7 +22,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcrtc"]
 shader = ExtResource("5_epcoj")
 shader_parameter/reference_palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
-shader_parameter/palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.75686276, 0.78431374, 0.9843137, 1)
+shader_parameter/palette = PackedColorArray(0.019607844, 0.03137255, 0.13725491, 1, 0.14117648, 0.17254902, 0.41960785, 1, 0.40392157, 0.4392157, 0.7058824, 1, 0.8901961, 0.9019608, 0.99215686, 1)
 shader_parameter/shader_active = true
 shader_parameter/multiplier = 1.0
 
