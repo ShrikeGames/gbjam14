@@ -8,5 +8,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	Global.save_data["day"] += 1
+	Global.save_data["game"]["day"] += 1
 	get_tree().change_scene_to_file(home_scene)

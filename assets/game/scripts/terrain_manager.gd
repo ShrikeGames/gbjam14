@@ -68,6 +68,11 @@ func _create_tile(x:int, y:int, tile_type:int) -> void:
 		tile.position = Vector2(x,y)
 		tile.tile_id = tile_type
 		self.add_child(tile)
+	elif tile_type == 7:
+		var tile:MoveableTile = Global.enemy1.instantiate()
+		tile.position = Vector2(x,y)
+		tile.tile_id = tile_type
+		self.add_child(tile)
 	else:
 		var tile:Tile = Global.tile.instantiate()
 		tile.position = Vector2(x,y)

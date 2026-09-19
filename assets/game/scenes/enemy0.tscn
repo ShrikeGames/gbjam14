@@ -41,7 +41,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
-"speed": 2.0
+"speed": 1.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3km7"]
@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6c1c"]
-size = Vector2(18.5, 12)
+size = Vector2(24, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lljm"]
 size = Vector2(16, 9)
@@ -93,6 +93,7 @@ lift_speed = 128.0
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=256388690]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2e36q")
+animation = &"die"
 autoplay = "default"
 
 [node name="TileCollider" type="CollisionShape2D" parent="." unique_id=452210262]
@@ -111,7 +112,7 @@ collision_layer = 3
 collision_mask = 260
 
 [node name="TileCollider" type="CollisionShape2D" parent="KillArea" unique_id=353279900]
-position = Vector2(7.75, 9)
+position = Vector2(8, 9)
 shape = SubResource("RectangleShape2D_p6c1c")
 
 [node name="TurnAroundArea" type="Area2D" parent="." unique_id=1176625893]
@@ -122,5 +123,6 @@ collision_mask = 1027
 position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_1lljm")
 
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
 [connection signal="body_entered" from="TurnAroundArea" to="." method="_on_turn_around_area_body_entered"]

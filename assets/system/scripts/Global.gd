@@ -14,15 +14,15 @@ signal player_max_health_increase
 signal player_died
 signal family_hurt
 
-var enable_rotation:bool = true
+var enable_rotation: bool = true
 
-var theme:Theme = preload("res://assets/system/ui/theme.tres")
-var en_font:FontFile = preload("res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
-var ja_font:FontFile = preload("res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")
+var theme: Theme = preload("res://assets/system/ui/theme.tres")
+var en_font: FontFile = preload("res://assets/system/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+var ja_font: FontFile = preload("res://assets/system/fonts/DotGothic16/DotGothic16-Regular.ttf")
 
-var save_file_location: String = "user://save_data_v2.json"
+var save_file_location: String = "user://save_data_v4.json"
 
-var tile_sprites:Array[Resource] = [
+var tile_sprites: Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
 	ResourceLoader.load("res://assets/game/images/tile1.png"),
 	ResourceLoader.load("res://assets/game/images/tile2.png"),
@@ -34,31 +34,31 @@ var tile_sprites:Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/tile0.png"),
 	ResourceLoader.load("res://assets/game/images/tile9.png")
 ]
-var item_sprites:Array[Resource] = [
+var item_sprites: Array[Resource] = [
 	ResourceLoader.load("res://assets/game/images/item0.png"),
 	ResourceLoader.load("res://assets/game/images/item1.png"),
 	
 ]
-var tile_stats:Dictionary = {
+var tile_stats: Dictionary = {
 	0: {
 		"is_drillable": true,
 		"hp": 1,
 		"hardness": 0,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	1: {
 		"is_drillable": true,
 		"hp": 4,
 		"hardness": 0,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	2: {
 		"is_drillable": true,
 		"hp": 10,
 		"hardness": 6,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	
@@ -80,74 +80,80 @@ var tile_stats:Dictionary = {
 		"is_drillable": true,
 		"hp": 10,
 		"hardness": 4,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	6: {
 		"is_drillable": true,
 		"hp": 1,
 		"hardness": 0,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	7: {
 		"is_drillable": true,
 		"hp": 10,
 		"hardness": 4,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 	9: {
 		"is_drillable": false,
 		"hp": 99,
 		"hardness": 99,
-		"drop_item": -1,
+		"drop_item": - 1,
 		"worth": 0,
 	},
 }
 var tile = load("res://assets/game/scenes/tile.tscn")
 var moveable_tile = load("res://assets/game/scenes/moveabletile.tscn")
 var enemy0 = load("res://assets/game/scenes/enemy0.tscn")
+var enemy1 = load("res://assets/game/scenes/enemy1.tscn")
 var friend = load("res://assets/game/scenes/friend.tscn")
 var item = load("res://assets/game/scenes/item.tscn")
 var heart = load("res://assets/game/scenes/heart.tscn")
 
-func play_audio_clip(audio_player, clip_name:String):
+func play_audio_clip(audio_player, clip_name: String):
 	var playback = audio_player.get_stream_playback() as AudioStreamPlaybackInteractive
 	audio_player.pitch_scale = randf_range(0.5, 1.5)
 	playback.switch_to_clip_by_name(clip_name)
 
 
-var DEFAULT_SAVE_DATA:Dictionary = {
-	"language": "automatic",
-	"day": 1,
-	"completed_days": 0,
-	"rent": 5,
-	"food": 5,
-	"heat": 2,
-	"event_cost": "",
-	"event_name": "",
-	"started": false,
-	"skip_intro": false,
-	"gold": 10,
-	"total_gold": 0,
-	"damage": 1,
-	"current_friends": 0,
-	"max_friends": 2,
-	"hp": 4,
-	"max_hp": 4,
-	"prices": [
-		1,
-		5,
-		10,
-		300
-	],
-	"mom": 2,
-	"kid": 2,
-	"pet": 2,
-	"volume": 80.0
+var DEFAULT_SAVE_DATA: Dictionary = {
+	"settings": {
+		"language": "automatic",
+		"volume": 80.0,
+		"skip_intro": false
+	},
+	"game": {
+		"day": 1,
+		"completed_days": 0,
+		"rent": 5,
+		"food": 5,
+		"heat": 2,
+		"event_cost": "",
+		"event_name": "",
+		"started": false,
+		"gold": 10,
+		"total_gold": 0,
+		"damage": 1,
+		"current_friends": 0,
+		"max_friends": 2,
+		"hp": 4,
+		"max_hp": 4,
+		"prices": [
+			1,
+			5,
+			10,
+			300
+		],
+		"mom": 2,
+		"kid": 2,
+		"pet": 2
+	}
+	
 }
-var save_data:Dictionary = DEFAULT_SAVE_DATA.duplicate(true)
+var save_data: Dictionary = DEFAULT_SAVE_DATA.duplicate(true)
 
 func read_json(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -174,8 +180,8 @@ func load_data() -> void:
 		save_data = saved_json
 	
 func apply_locale_font() -> void:
-	var is_ja:bool = TranslationServer.get_locale().begins_with("ja")
-	var font_size:int = 8
+	var is_ja: bool = TranslationServer.get_locale().begins_with("ja")
+	var font_size: int = 8
 	if is_ja:
 		theme.default_font = ja_font
 		font_size = 12
@@ -190,10 +196,15 @@ func apply_locale_font() -> void:
 		]:
 		theme.set_font_size(size_name, "RichTextLabel", font_size)
 
+func new_game_data() -> Dictionary:
+	var new_save_data:Dictionary = Global.DEFAULT_SAVE_DATA.duplicate(true)
+	new_save_data["settings"] = save_data["settings"]
+	return new_save_data
+
 func _ready() -> void:
 	load_data()
 	update_volume()
-	var language = Global.save_data["language"]
+	var language = Global.save_data["settings"]["language"]
 	if language == "automatic":
 		var preferred_language = OS.get_locale_language()
 		TranslationServer.set_locale(preferred_language)
@@ -202,6 +213,6 @@ func _ready() -> void:
 	apply_locale_font()
 
 func update_volume():
-	var volume_db = 20 * (log(Global.save_data["volume"] * 0.01) / log(10))
+	var volume_db = 20 * (log(Global.save_data["settings"]["volume"] * 0.01) / log(10))
 	var audio_bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(audio_bus_index, volume_db)

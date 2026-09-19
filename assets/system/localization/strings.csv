@@ -32,10 +32,10 @@ STORY_15,Or they will die...,死んでしまうぞ…
 STORY_16,If you save up enough Gold...,金を貯めれば…
 STORY_17,You and your family can escape to live on Mars!,"家族と一緒に
 火星へ脱出だ!"
-HOME_SAVINGS,Savings,積み金
+HOME_SAVINGS,Savings,貯金
 HOME_RENT,Rent,部屋代
 HOME_FOOD,Food,食べ物
-HOME_HEAT,Heat,Heat
+HOME_HEAT,Heat,暖房代
 HOME_REMAINING,Remaining,残額
 EVENT_HOSPITAL,Hospital,病院
 MENU_TITLE,Menu,メニュー
@@ -43,17 +43,17 @@ SHOP_TITLE,Shop,ショップ
 SHOP_SIGN,Shop,ショップ
 MENU_CONTINUE,Continue,続きから始める
 MENU_NEW_GAME,New Game,最初から始める
-MENU_OPTIONS,Options,初期設定
-MENU_BACK,BACK,BACK
+MENU_OPTIONS,Options,オプション
+MENU_BACK,BACK,もどる
 MENU_LANGUAGE,Language,言語
-MENU_RECALL,Recall,取り出す
+MENU_RECALL,Recall,回収
 MENU_HIRE,Hire,雇う
 MENU_DRILL,Drill,ドリル
-MENU_CLOSE,Close,閉めて
-MENU_ESCAPE,Escape,逃亡する
-MENU_ESCAPE_HOME,Escape $300,Escape 300金
-MENU_PRICE_SUFFIX, $%d, $%d
-MENU_SKIP_INTRO,Skip Intro,Skip Intro
+MENU_CLOSE,Close,閉じる
+MENU_ESCAPE,Escape,脱出
+MENU_ESCAPE_HOME,Escape $300,火星へ脱出 300G
+MENU_PRICE_SUFFIX, $%d, %dG
+MENU_SKIP_INTRO,Skip Intro,OPスキップ
 MENU_VOLUME,Volume,音量
 UI_DAY,Day %s,%s日
 UI_GOLD,Gold:%05d,金:%05d
@@ -61,14 +61,14 @@ WIN_TOTAL_GOLD,Total Gold,金の合計
 WIN_MOM,Mom,ママ
 WIN_KID,Kid,子供
 WIN_PET,Pet,ペット
-WIN_DAYS_TAKEN,Days Taken,日の合計
-WIN_RANKING_DESCRIPTION_S,God Gamer,God Gamer
-WIN_RANKING_DESCRIPTION_A,Excellent,Excellent
-WIN_RANKING_DESCRIPTION_B,Very Good!,Very Good!
-WIN_RANKING_DESCRIPTION_C,Not Bad,Not Bad
-WIN_RANKING_DESCRIPTION_D,A little slow!,A little slow!
+WIN_DAYS_TAKEN,Days Taken,所要日数
+WIN_RANKING_DESCRIPTION_S,God Gamer,神ゲーマー
+WIN_RANKING_DESCRIPTION_A,Excellent,お見事!
+WIN_RANKING_DESCRIPTION_B,Very Good!,上出来!
+WIN_RANKING_DESCRIPTION_C,Not Bad,まあまあ
+WIN_RANKING_DESCRIPTION_D,A little slow!,遅いぞ!
 WIN_STATUS_ALIVE,Alive,健在
-WIN_STATUS_SICK,Sick,病める
+WIN_STATUS_SICK,Sick,病気
 WIN_STATUS_DEAD,Dead,死
 WIN_MESSAGE,You escaped!,火星へ脱出だ!
 WIN_TOTAL_SCORE,Total Score,スコアの合計

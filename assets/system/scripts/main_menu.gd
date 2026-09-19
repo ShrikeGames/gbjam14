@@ -30,7 +30,7 @@ func select_option():
 		Global.shop_close.emit()
 		get_tree().paused = false
 	elif selected_id == 1:
-		Global.save_data = Global.DEFAULT_SAVE_DATA.duplicate(true)
+		Global.save_data = Global.new_game_data()
 		get_tree().change_scene_to_file(home_scene)
 	elif selected_id == 2:
 		get_tree().change_scene_to_file(title_scene)

@@ -27,8 +27,8 @@ func _ready() -> void:
 	self.sprite_original_position = sprite.position
 	
 func _add_friend():
-	Global.save_data["max_friends"] += 1
-	friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], 1)
+	Global.save_data["game"]["max_friends"] += 1
+	friend_count_changed.emit(Global.save_data["game"]["current_friends"], Global.save_data["game"]["max_friends"], 1)
 	
 func _process(delta: float) -> void:
 	lifetime += delta
@@ -61,9 +61,9 @@ func _physics_process(_delta: float) -> void:
 	self.apply_central_force(movement)
 
 func _spawn_friend(direction: int = 1):
-	if Global.save_data["current_friends"] < Global.save_data["max_friends"]:
-		Global.save_data["current_friends"] += 1
-		friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], -1)
+	if Global.save_data["game"]["current_friends"] < Global.save_data["game"]["max_friends"]:
+		Global.save_data["game"]["current_friends"] += 1
+		friend_count_changed.emit(Global.save_data["game"]["current_friends"], Global.save_data["game"]["max_friends"], -1)
 	else:
 		return
 	
@@ -85,17 +85,17 @@ func _recall_friend(friend: Friend):
 	Global.play_audio_clip(sfx_player, "Player Happy")
 	if friend.worth > 0:
 		Global.play_audio_clip(sfx_player, "Beep 8")
-		Global.save_data["gold"] += friend.worth
-		Global.save_data["total_gold"] += friend.worth
-		Global.gold_changed.emit(Global.save_data["gold"], friend.worth)
+		Global.save_data["game"]["gold"] += friend.worth
+		Global.save_data["game"]["total_gold"] += friend.worth
+		Global.gold_changed.emit(Global.save_data["game"]["gold"], friend.worth)
 	if friend.hearts_count > 0:
-		Global.save_data["max_hp"] = min(Global.save_data["max_hp"] + 2 * (friend.hearts_count), 14)
-		Global.save_data["hp"] = Global.save_data["max_hp"]
+		Global.save_data["game"]["max_hp"] = min(Global.save_data["game"]["max_hp"] + 2 * (friend.hearts_count), 14)
+		Global.save_data["game"]["hp"] = Global.save_data["game"]["max_hp"]
 		Global.player_max_health_increase.emit()
 	
 	friend.get_parent().remove_child(friend)
-	Global.save_data["current_friends"] -= 1
-	friend_count_changed.emit(Global.save_data["current_friends"], Global.save_data["max_friends"], 1)
+	Global.save_data["game"]["current_friends"] -= 1
+	friend_count_changed.emit(Global.save_data["game"]["current_friends"], Global.save_data["game"]["max_friends"], 1)
 
 func _on_collection_area_body_entered(body: Node2D) -> void:
 	if not is_instance_of(body, Friend) and not is_instance_of(body, Item):
@@ -105,13 +105,13 @@ func _on_collection_area_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, Item):
 		Global.play_audio_clip(sfx_player, "Beep 5")
 		if body.worth > 0:
-			Global.save_data["gold"] += body.worth
-			Global.save_data["total_gold"] += body.worth
-			Global.gold_changed.emit(Global.save_data["gold"], body.worth)
+			Global.save_data["game"]["gold"] += body.worth
+			Global.save_data["game"]["total_gold"] += body.worth
+			Global.gold_changed.emit(Global.save_data["game"]["gold"], body.worth)
 		if body.item_id == 1:
 			# heart
-			Global.save_data["max_hp"] = min(Global.save_data["max_hp"] + 2, 14)
-			Global.save_data["hp"] = Global.save_data["max_hp"]
+			Global.save_data["game"]["max_hp"] = min(Global.save_data["game"]["max_hp"] + 2, 14)
+			Global.save_data["game"]["hp"] = Global.save_data["game"]["max_hp"]
 			Global.player_max_health_increase.emit()
 		portrait.play("happy")
 		Global.play_audio_clip(sfx_player, "Player Happy")

@@ -21,9 +21,9 @@ func _ready() -> void:
 	Global.shop_open.connect(_shop_open)
 	Global.shop_close.connect(_shop_close)
 	Global.player_hurt.connect(_player_hurt)
-	day.text = tr("UI_DAY") % [int(Global.save_data["day"])]
-	_gold_changed(Global.save_data["gold"], 0)
-	_friend_count_changed(Global.save_data["current_friends"], Global.save_data["max_friends"], 0)
+	day.text = tr("UI_DAY") % [int(Global.save_data["game"]["day"])]
+	_gold_changed(Global.save_data["game"]["gold"], 0)
+	_friend_count_changed(Global.save_data["game"]["current_friends"], Global.save_data["game"]["max_friends"], 0)
 	
 func _shop_open():
 	player.portrait.play("idle")
@@ -48,9 +48,9 @@ func _friend_died(body: Friend):
 	if body.dead:
 		friend.play("sad")
 		Global.play_audio_clip(player.sfx_player, "Friend Die")
-		Global.save_data["max_friends"] -= 1
-		Global.save_data["current_friends"] -= 1
-		_friend_count_changed(Global.save_data["current_friends"], Global.save_data["max_friends"], 0)
+		Global.save_data["game"]["max_friends"] -= 1
+		Global.save_data["game"]["current_friends"] -= 1
+		_friend_count_changed(Global.save_data["game"]["current_friends"], Global.save_data["game"]["max_friends"], 0)
 		
 
 func _friend_count_changed(friend_count: int, max_friend_count: int, friend_increment_count: int):

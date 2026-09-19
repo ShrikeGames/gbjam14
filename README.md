@@ -136,16 +136,19 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 - [Done] Create options menu with skip intro toggle, language toggle, volume controls
 - [Done] Increase collision size of friends
 - [Done] Add some sound effects for happy/sad
+
+## Day 9 Plan
+
+- [Fixed] starting new game wipes your saved settings
+- [Fixed] spawning of second enemy type isn't working
+- [Fixed] first enemy isn't always turning around (because it spawns beside a block and its area doesn't "enter" it?)
+- [Done] Make enemy graves go away
 - Tons of SFX needed for everything
 - Depth title pop-up when goes being depth palettes?
   - slide in from the top center of the screen
 - Other polish
 - Consider having map persistant between days
 - Maybe possibly try and finish translating text manually into Japanese
-
-
-## Day 9 Plan
-
 - Playtesting and making everything as smooth as possible
 - Itch.io page GIFs/screenshots, description, etc
 - Tutorial in-game? (probably not)

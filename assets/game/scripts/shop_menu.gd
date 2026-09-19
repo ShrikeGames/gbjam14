@@ -1,37 +1,36 @@
 extends MainMenu
 class_name ShopMenu
 
-var win_scene:String = "res://assets/game/scenes/win.tscn"
+var win_scene: String = "res://assets/game/scenes/win.tscn"
 
 func _ready() -> void:
 	super._ready()
 
 func select_option():
-	
 	if selected_id == 3:
 		self.visible = false
 		Global.shop_close.emit()
 		get_tree().paused = false
 		return
 	
-	var price:int = Global.save_data["prices"][selected_id]
+	var price: int = Global.save_data["game"]["prices"][selected_id]
 	
-	if Global.save_data["gold"] >= price:
+	if Global.save_data["game"]["gold"] >= price:
 		if selected_id == 0:
-			Global.save_data["prices"][selected_id] *= 1.5
+			Global.save_data["game"]["prices"][selected_id] *= 1.5
 			Global.recall_friends.emit()
-			Global.save_data["gold"] -= price
-			Global.gold_changed.emit(Global.save_data["gold"], -price)
+			Global.save_data["game"]["gold"] -= price
+			Global.gold_changed.emit(Global.save_data["game"]["gold"], -price)
 		elif selected_id == 1:
-			Global.save_data["prices"][selected_id] *= 1.5
+			Global.save_data["game"]["prices"][selected_id] *= 1.5
 			Global.add_friend.emit()
-			Global.save_data["gold"] -= price
-			Global.gold_changed.emit(Global.save_data["gold"], -price)
+			Global.save_data["game"]["gold"] -= price
+			Global.gold_changed.emit(Global.save_data["game"]["gold"], -price)
 		elif selected_id == 2:
-			Global.save_data["prices"][selected_id] = int(Global.save_data["prices"][selected_id] * 1.5)
-			Global.save_data["damage"] += 2
-			Global.save_data["gold"] -= price
-			Global.gold_changed.emit(Global.save_data["gold"], -price)
+			Global.save_data["game"]["prices"][selected_id] = int(Global.save_data["game"]["prices"][selected_id] * 1.5)
+			Global.save_data["game"]["damage"] += 2
+			Global.save_data["game"]["gold"] -= price
+			Global.gold_changed.emit(Global.save_data["game"]["gold"], -price)
 			
 		menu_items[selected_id].update()
 	else:

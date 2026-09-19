@@ -39,10 +39,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_65d8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_65d8h")
 }],
 "loop": false,
 "name": &"die",
-"speed": 2.0
+"speed": 1.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3km7"]

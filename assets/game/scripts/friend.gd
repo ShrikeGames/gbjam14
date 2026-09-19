@@ -2,24 +2,24 @@ extends RigidBody2D
 
 class_name Friend
 
-var direction:int = 1
-var move_speed:float = 48
-var lift_speed:float = 0.0
-var movement:Vector2 = Vector2.ZERO
-@export var drill:FriendDrill
-var lifetime:float = 0.0
-var worth:int = 0
-@export var sfx_player:AudioStreamPlayer2D
-@export var sprite:AnimatedSprite2D
-@export var arm:LegSegment
-@export var arm_container:Node2D
-var hp:int
-var hearts_count:int = 0
+var direction: int = 1
+var move_speed: float = 48
+var lift_speed: float = 0.0
+var movement: Vector2 = Vector2.ZERO
+@export var drill: FriendDrill
+var lifetime: float = 0.0
+var worth: int = 0
+@export var sfx_player: AudioStreamPlayer2D
+@export var sprite: AnimatedSprite2D
+@export var arm: LegSegment
+@export var arm_container: Node2D
+var hp: int
+var hearts_count: int = 0
 
-var dead:bool = false
+var dead: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.hp = int(Global.save_data["max_hp"] / 2.0)
+	self.hp = int(Global.save_data["game"]["max_hp"] / 2.0)
 	drill.cannot_drill.connect(_cannot_drill)
 	drill.turn_around.connect(_turn_around)
 	
@@ -28,13 +28,13 @@ func _ready() -> void:
 	sfx_player.play()
 	
 	
-func _turn_around(_tile:MoveableTile):
+func _turn_around(_tile: MoveableTile):
 	if dead:
 		return
 	drill.stop_drill()
 	self.direction *= -1
 
-func _cannot_drill(_tile:Tile):
+func _cannot_drill(_tile: Tile):
 	if dead:
 		return
 	drill.stop_drill()
@@ -80,7 +80,7 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 			worth += body.worth
 		if body.item_id == 1:
 			self.hearts_count += 1
-			self.hp = int(Global.save_data["max_hp"] / 2.0)
+			self.hp = int(Global.save_data["game"]["max_hp"] / 2.0)
 		Global.play_audio_clip(sfx_player, "Beep 3")
 		body.get_parent().remove_child(body)
 
