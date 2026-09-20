@@ -12,6 +12,7 @@ class_name MoveableTile
 @export var lift_speed: float = 0.0
 @export var los_raycast: RayCast2D
 @export var los_distance: float = 64.0
+@export var sfx_player: AudioStreamPlayer
 
 var movement: Vector2 = Vector2.ZERO
 var direction: int = -1
@@ -21,7 +22,10 @@ var max_iframes: float = 0.3
 var being_drilled: bool = false
 var sprite_original_position: Vector2
 var lifetime: float = 0
-var turn_timer:float = 0
+var turn_timer: float = 0
+var time_since_last_attack: float = 0.0
+var attack_cooldown: float = 3.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.max_hp = Global.tile_stats[tile_id]["hp"]
@@ -43,12 +47,14 @@ func _process(delta: float) -> void:
 	
 	lifetime += delta
 	turn_timer += delta
+	time_since_last_attack += delta
 	iframes = clampf(iframes - delta, 0, max_iframes)
 	if move_speed > 0 and turn_timer > 3.0:
 		self.direction *= -1
 		turn_timer = 0
 	
 	if being_drilled and iframes <= 0 and is_drillable():
+		Global.play_audio_clip(sfx_player, "Beep 0")
 		hp -= (Global.save_data["game"]["damage"] - Global.tile_stats[tile_id]["hardness"])
 		# 1, 0.75, 0.5, 0.25
 		# 4, 3, 2, 1
@@ -90,8 +96,9 @@ func _process(delta: float) -> void:
 	
 	if los_raycast and los_raycast.is_colliding():
 		var body = los_raycast.get_collider()
-		if body and (is_instance_of(body, Friend) or is_instance_of(body, Player)):
+		if body and time_since_last_attack > attack_cooldown and (is_instance_of(body, Friend) or is_instance_of(body, Player)):
 			self.animated_sprite.play("attack")
+			Global.play_audio_clip(sfx_player, "Beep 8")
 			var tile: MoveableTile = Global.moveable_tile.instantiate()
 			if direction > 0:
 				tile.global_position = self.global_position + Vector2(24, -8)
@@ -100,7 +107,8 @@ func _process(delta: float) -> void:
 			tile.tile_id = 5
 			self.get_parent().add_child(tile)
 			tile.apply_central_force(Vector2(movement.normalized().x * 6028, 0))
-			# TODO add sound effect
+			time_since_last_attack = 0
+			
 
 func _physics_process(_delta: float) -> void:
 	if move_speed > 0 and self.animated_sprite.animation == "die":
@@ -125,10 +133,12 @@ func _create_item(item_id: int, worth: int):
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	if move_speed > 0 and self.animated_sprite.animation == "die":
 		return
-	if body and is_instance_of(body, Friend) and not body.dead and body.global_position.y > self.global_position.y + 24 and abs(self.linear_velocity.length()) > 0.1:
+	if body and time_since_last_attack > attack_cooldown and is_instance_of(body, Friend) and not body.dead and body.global_position.y > self.global_position.y + 24 and abs(self.linear_velocity.length()) > 0.1:
 		body.hp -= 3
+		time_since_last_attack = 0.0
 		if body.hp <= 0:
 			body.sprite.play("die")
+			Global.play_audio_clip(sfx_player, "Enemy 0 Die")
 			body.dead = true
 			if body and body.arm_container and body.arm_container.get_parent():
 				body.arm_container.get_parent().remove_child(body.arm_container)

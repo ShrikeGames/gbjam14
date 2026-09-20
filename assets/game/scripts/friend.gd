@@ -9,7 +9,7 @@ var movement: Vector2 = Vector2.ZERO
 @export var drill: FriendDrill
 var lifetime: float = 0.0
 var worth: int = 0
-@export var sfx_player: AudioStreamPlayer2D
+@export var sfx_player: AudioStreamPlayer
 @export var sprite: AnimatedSprite2D
 @export var arm: LegSegment
 @export var arm_container: Node2D
@@ -22,10 +22,6 @@ func _ready() -> void:
 	self.hp = int(Global.save_data["game"]["max_hp"] / 2.0)
 	drill.cannot_drill.connect(_cannot_drill)
 	drill.turn_around.connect(_turn_around)
-	
-	var audio_stream_player_stream = preload("res://assets/game/audio/sfx_interactive_stream.tres")
-	sfx_player.stream = audio_stream_player_stream
-	sfx_player.play()
 	
 	
 func _turn_around(_tile: MoveableTile):

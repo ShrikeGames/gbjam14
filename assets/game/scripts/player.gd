@@ -71,6 +71,7 @@ func _spawn_friend(direction: int = 1):
 	var friend: Friend = Global.friend.instantiate()
 	friend.global_position = self.global_position - Vector2(0, 8.0)
 	friend.direction = direction
+	friend.sfx_player = sfx_player
 	friends_container.add_child(friend)
 
 func _recall_friends():

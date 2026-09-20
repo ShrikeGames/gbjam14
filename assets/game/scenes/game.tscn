@@ -154,8 +154,9 @@ position_smoothing_speed = 16.0
 script = ExtResource("1_aif40")
 player = NodePath("../Player")
 
-[node name="TerrainManager" type="Node2D" parent="." unique_id=712860163]
+[node name="TerrainManager" type="Node2D" parent="." unique_id=712860163 node_paths=PackedStringArray("sfx_player")]
 script = ExtResource("2_fxu02")
+sfx_player = NodePath("../SFXPlayer")
 
 [node name="Shop" type="Sprite2D" parent="." unique_id=2020397157 node_paths=PackedStringArray("shop_menu")]
 position = Vector2(198, 64)
@@ -190,6 +191,9 @@ texture = ExtResource("6_1e2d6")
 
 [node name="Player" parent="." unique_id=447483926 node_paths=PackedStringArray("friends_container", "sfx_player", "portrait") instance=ExtResource("3_fxu02")]
 position = Vector2(80, 81)
+move_speed = null
+lift_speed = null
+right_speed = null
 friends_container = NodePath("../Friends")
 sfx_player = NodePath("../SFXPlayer")
 portrait = NodePath("../UI/PlayerPortrait")

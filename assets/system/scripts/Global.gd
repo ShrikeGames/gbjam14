@@ -114,9 +114,10 @@ var item = load("res://assets/game/scenes/item.tscn")
 var heart = load("res://assets/game/scenes/heart.tscn")
 
 func play_audio_clip(audio_player, clip_name: String):
-	var playback = audio_player.get_stream_playback() as AudioStreamPlaybackInteractive
-	audio_player.pitch_scale = randf_range(0.5, 1.5)
-	playback.switch_to_clip_by_name(clip_name)
+	if audio_player:
+		var playback = audio_player.get_stream_playback() as AudioStreamPlaybackInteractive
+		audio_player.pitch_scale = randf_range(0.5, 1.5)
+		playback.switch_to_clip_by_name(clip_name)
 
 
 var DEFAULT_SAVE_DATA: Dictionary = {
@@ -145,7 +146,7 @@ var DEFAULT_SAVE_DATA: Dictionary = {
 			1,
 			5,
 			10,
-			300
+			150
 		],
 		"mom": 2,
 		"kid": 2,
@@ -197,7 +198,7 @@ func apply_locale_font() -> void:
 		theme.set_font_size(size_name, "RichTextLabel", font_size)
 
 func new_game_data() -> Dictionary:
-	var new_save_data:Dictionary = Global.DEFAULT_SAVE_DATA.duplicate(true)
+	var new_save_data: Dictionary = Global.DEFAULT_SAVE_DATA.duplicate(true)
 	new_save_data["settings"] = save_data["settings"]
 	return new_save_data
 

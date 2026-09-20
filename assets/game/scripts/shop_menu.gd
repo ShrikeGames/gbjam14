@@ -22,7 +22,7 @@ func select_option():
 			Global.save_data["game"]["gold"] -= price
 			Global.gold_changed.emit(Global.save_data["game"]["gold"], -price)
 		elif selected_id == 1:
-			Global.save_data["game"]["prices"][selected_id] *= 1.5
+			Global.save_data["game"]["prices"][selected_id] = int(Global.save_data["game"]["prices"][selected_id] * 1.2)
 			Global.add_friend.emit()
 			Global.save_data["game"]["gold"] -= price
 			Global.gold_changed.emit(Global.save_data["game"]["gold"], -price)

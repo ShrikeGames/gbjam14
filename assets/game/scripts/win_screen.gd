@@ -23,10 +23,10 @@ func _ready() -> void:
 	var total_score: int = 0
 	
 	total_score += Global.save_data["game"]["total_gold"]
-	total_score += Global.save_data["game"]["mom"] * 300.0
-	total_score += Global.save_data["game"]["kid"] * 300.0
-	total_score += Global.save_data["game"]["pet"] * 300.0
-	total_score += max(0, 300.0 - 50 * max(0, (Global.save_data["game"]["completed_days"] - 7)))
+	total_score += Global.save_data["game"]["mom"] * 150.0
+	total_score += Global.save_data["game"]["kid"] * 150.0
+	total_score += Global.save_data["game"]["pet"] * 150.0
+	total_score += max(0, 150.0 - 50 * max(0, (Global.save_data["game"]["completed_days"] - 7)))
 	total_score_value.text = "%5d" % [total_score]
 	if total_score >= 1800:
 		ranking.text = "S"

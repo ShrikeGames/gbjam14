@@ -51,7 +51,7 @@ MENU_HIRE,Hire,雇う
 MENU_DRILL,Drill,ドリル
 MENU_CLOSE,Close,閉じる
 MENU_ESCAPE,Escape,脱出
-MENU_ESCAPE_HOME,Escape $300,火星へ脱出 300G
+MENU_ESCAPE_HOME,Escape $150,火星へ脱出 150G
 MENU_PRICE_SUFFIX, $%d, %dG
 MENU_SKIP_INTRO,Skip Intro,OPスキップ
 MENU_VOLUME,Volume,音量

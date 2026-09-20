@@ -4,7 +4,7 @@ Game Jam Information: https://itch.io/jam/gbjam-14
 
 Secondary Theme: OLD GOLD
 
-Playtest Version: https://shrikegames.itch.io/dirtpay?secret=irszjjL4nkHbgykxTtw9JQkepT0
+Play for free (In web or download): https://shrikegames.itch.io/rikooftheend
 
 ## Day 1:
 
@@ -143,15 +143,10 @@ https://github.com/user-attachments/assets/cbfaa0bd-e91c-4644-9241-1265efabdbce
 - [Fixed] spawning of second enemy type isn't working
 - [Fixed] first enemy isn't always turning around (because it spawns beside a block and its area doesn't "enter" it?)
 - [Done] Make enemy graves go away
-- Tons of SFX needed for everything
-- Depth title pop-up when goes being depth palettes?
-  - slide in from the top center of the screen
-- Other polish
-- Consider having map persistant between days
-- Maybe possibly try and finish translating text manually into Japanese
-- Playtesting and making everything as smooth as possible
-- Itch.io page GIFs/screenshots, description, etc
-- Tutorial in-game? (probably not)
+- [Done] Rebalance the game. Only costs 150 to win now. Give cooldown to enemy shots and damage, shop prices, spawn rates, etc.
+- [Done] Add SFX for enemies
+
+
 
 ## Day 10 Plan
 

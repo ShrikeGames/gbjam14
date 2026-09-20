@@ -13,8 +13,8 @@ var win_scene: String = "res://assets/game/scenes/win.tscn"
 
 func select_option():
 	if selected_id == 0:
-		if Global.save_data["game"]["gold"] >= 300:
-			Global.save_data["game"]["gold"] -= 300
+		if Global.save_data["game"]["gold"] >= 150:
+			Global.save_data["game"]["gold"] -= 150
 			get_tree().paused = false
 			get_tree().change_scene_to_file(win_scene)
 		else:
