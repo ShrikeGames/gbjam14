@@ -20,6 +20,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://clli2hut8t2ww"
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/mix_rate=48000
+
 [autoload]
 
 Global="*uid://btb05x82m5cco"
