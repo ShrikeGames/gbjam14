@@ -17,7 +17,7 @@ config/name_localized={
 run/main_scene="uid://bje58ixhdolj8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://dxc4bl5n7f7nj"
+boot_splash/image="uid://clli2hut8t2ww"
 config/icon="res://icon.svg"
 
 [autoload]

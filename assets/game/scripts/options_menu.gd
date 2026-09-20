@@ -47,7 +47,11 @@ func select_option():
 		return
 	if selected_id == 2:
 		var options_menu_item: GBOptionsMenuItem = menu_items[selected_id]
-		options_menu_item.toggle_sprite.frame = wrapi(options_menu_item.toggle_sprite.frame + 1, 0, options_menu_item.sprite_frames.get_frame_count("default"))
+		if Input.is_action_just_pressed("A") or Input.is_action_just_pressed("RIGHT"):
+			options_menu_item.toggle_sprite.frame = wrapi(options_menu_item.toggle_sprite.frame + 1, 0, options_menu_item.sprite_frames.get_frame_count("default"))
+		elif Input.is_action_just_pressed("B") or Input.is_action_just_pressed("LEFT"):
+			options_menu_item.toggle_sprite.frame = wrapi(options_menu_item.toggle_sprite.frame - 1, 0, options_menu_item.sprite_frames.get_frame_count("default"))
+		
 		Global.save_data["settings"]["volume"] = options_menu_item.toggle_sprite.frame * 10
 		Global.save()
 		options_menu_item.update()

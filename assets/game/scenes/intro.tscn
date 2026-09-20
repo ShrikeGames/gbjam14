@@ -143,7 +143,7 @@
 [ext_resource type="Texture2D" uid="uid://lsu35eroq3yt" path="res://assets/system/art/shrikegames_intro_gbsize0138.jpg" id="140_demqs"]
 [ext_resource type="Texture2D" uid="uid://cov2botisxiil" path="res://assets/system/art/shrikegames_intro_gbsize0139.jpg" id="141_c4ejd"]
 [ext_resource type="Shader" uid="uid://cuuoovgpne3pq" path="res://assets/game/scripts/pallet_swap.gdshader" id="142_40jxv"]
-[ext_resource type="AudioStream" uid="uid://dp0pd1v3e6v5s" path="res://assets/system/audio/shrikegames_intro.mp3" id="143_40jxv"]
+[ext_resource type="AudioStream" uid="uid://dsveft5ewq64s" path="res://assets/game/audio/music/music4.mp3" id="144_wfdmr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g6mp"]
 animations = [{
@@ -698,8 +698,7 @@ offset_bottom = 40.0
 color = Color(0.7607843, 0.7882353, 0.9882353, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1541596330]
-stream = ExtResource("143_40jxv")
-autoplay = true
+stream = ExtResource("144_wfdmr")
 bus = &"Music"
 
 [connection signal="animation_finished" from="UI/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
 				return
 	
 	if self.visible:
-		if Input.is_action_just_pressed("DOWN"):
+		if Input.is_action_just_pressed("DOWN") :
 			selected_id = wrapi(selected_id + 1, 0, len(menu_items))
 			Global.play_audio_clip(sfx_player, "Beep 0")
 			_update()
@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 			selected_id = wrapi(selected_id - 1, 0, len(menu_items))
 			Global.play_audio_clip(sfx_player, "Beep 0")
 			_update()
-		if Input.is_action_just_pressed("B") or Input.is_action_just_pressed("START"):
+		if Input.is_action_just_pressed("B") or Input.is_action_just_pressed("START") or Input.is_action_just_pressed("RIGHT") or Input.is_action_just_pressed("LEFT"):
 			select_option()
 	else:
 		other_options()
